@@ -1,0 +1,32 @@
+Algoritmo CruzarLago
+    Definir pesoCarlos, pesoFrancisco, pesoJuan, pesoPablo Como Entero
+    Definir pesoTotal Como Entero
+    
+    pesoCarlos <- 100
+    pesoFrancisco <- 52
+    pesoJuan <- 46
+    pesoPablo <- 49
+    
+    // Carlos cruza solo primero
+    Escribir "Carlos cruza el lago solo."
+    
+    // Carlos regresa
+    Escribir "Carlos regresa."
+    
+    // Francisco y Juan cruzan juntos
+    Escribir "Francisco y Juan cruzan juntos."
+    
+    // Francisco regresa
+    Escribir "Francisco regresa."
+    
+    // Carlos y Pablo cruzan juntos
+    Escribir "Carlos y Pablo cruzan juntos."
+    
+    // Carlos regresa
+    Escribir "Carlos regresa."
+    
+    // Finalmente, Carlos y Francisco cruzan juntos
+    Escribir "Carlos y Francisco cruzan juntos."
+    
+    Escribir "Todos han cruzado el lago."
+FinAlgoritmo
