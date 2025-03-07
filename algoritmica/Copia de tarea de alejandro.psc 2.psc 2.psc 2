@@ -1,8 +1,0 @@
-Algoritmo ValorDeM
-    Definir m Como Entero
-    
-    // Supongamos que m es el resultado de una ecuación simple
-    m <- 5 + 3 * 2
-    
-    Escribir "El valor de m es: ", m
-FinAlgoritmo
