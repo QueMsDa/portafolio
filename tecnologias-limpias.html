@@ -1,81 +1,92 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-mx">
 <head>
     <meta charset="UTF-8">
-    <title>Tecnologías Limpias</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #eef6f9;
-            margin: 0;
-            padding: 40px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #1f3c88;
-        }
-
-        .card {
-            max-width: 600px;
-            margin: 40px auto;
-        }
-
-        summary {
-            background-color: #d4f1f9;
-            padding: 12px 18px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        summary:hover {
-            background-color: #b8e0f5;
-        }
-
-        .contenido {
-            background-color: white;
-            padding: 20px;
-            margin-top: 10px;
-            border-radius: 10px;
-            line-height: 1.6;
-            box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-        }
-
-        details[open] summary {
-            font-size: 18px;
-        }
-    </style>
-
+    <title>Tecnologías Limpias</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
 
-    <h1>Tecnologías Limpias en los Procesos Industriales</h1>
+<header class="header">
+    <nav class="header__menu">
+        <a class="header__menu__link" href="index.html">Home</a>
+        <a class="header__menu__link" href="about.html">Sobre mí</a>
+        <a class="header__menu__link header__menu__link--active" href="tecnologias-limpias.html">Tecnologías Limpias</a>
+        <a class="header__menu__link" href="riesgos-ambientales.html">Riesgos Ambientales</a>
+        <a class="header__menu__link" href="enlaces-proyectos.html">Enlaces a Proyectos</a>
+    </nav>
+</header>
 
-    <div class="card">
-        <details>
-            <summary>Tema 1 – Producción Más Limpia</summary>
+<main class="presentacion">
+    <section class="presentacion__contenido">
+        <h1 class="presentacion__contenido__titulo">
+            Tecnologías Limpias en los Procesos Industriales
+        </h1>
 
-            <div class="contenido">
-                <p>
-                    La Producción Más Limpia es una estrategia ambiental preventiva 
-                    aplicada a procesos industriales con el objetivo de reducir la 
-                    generación de residuos, optimizar el uso de recursos y disminuir 
-                    impactos ambientales.
-                </p>
+        <div class="temas">
 
-                <p>
-                    Se enfoca en mejorar la eficiencia energética, reducir emisiones 
-                    contaminantes y promover prácticas sostenibles dentro del sector productivo.
-                </p>
-            </div>
-        </details>
-    </div>
+            <details class="tema">
+                <summary>Tema 1 – Producción Más Limpia</summary>
+                <p>Estrategia preventiva enfocada en reducir residuos, optimizar recursos y minimizar impactos ambientales en procesos industriales.</p>
+            </details>
+
+            <details class="tema">
+                <summary>Tema 2 – Eficiencia Energética</summary>
+                <p>Optimización del consumo energético mediante mejoras tecnológicas y gestión eficiente en sistemas productivos.</p>
+            </details>
+
+            <details class="tema">
+                <summary>Tema 3 – Economía Circular</summary>
+                <p>Modelo que busca cerrar ciclos productivos reutilizando materiales y reduciendo la generación de desechos.</p>
+            </details>
+
+            <details class="tema">
+                <summary>Tema 4 – Gestión de Residuos Industriales</summary>
+                <p>Clasificación, tratamiento y disposición adecuada de residuos generados en actividades industriales.</p>
+            </details>
+
+            <details class="tema">
+                <summary>Tema 5 – Tecnologías de Control de Emisiones</summary>
+                <p>Aplicación de filtros, lavadores de gases y sistemas de captura para disminuir contaminantes atmosféricos.</p>
+            </details>
+
+            <details class="tema">
+                <summary>Tema 6 – Análisis de Ciclo de Vida</summary>
+                <p>Evaluación integral de impactos ambientales desde la extracción de materias primas hasta la disposición final.</p>
+            </details>
+
+            <details class="tema">
+                <summary>Tema 7 – Ecoeficiencia</summary>
+                <p>Producción con menor uso de recursos y menor impacto ambiental manteniendo la competitividad.</p>
+            </details>
+
+            <details class="tema">
+                <summary>Tema 8 – Sustitución de Sustancias Peligrosas</summary>
+                <p>Reemplazo de insumos contaminantes por alternativas menos dañinas para el ambiente y la salud.</p>
+            </details>
+
+            <details class="tema">
+                <summary>Tema 9 – Innovación Tecnológica Ambiental</summary>
+                <p>Implementación de nuevas tecnologías orientadas a mejorar el desempeño ambiental industrial.</p>
+            </details>
+
+            <details class="tema">
+                <summary>Tema 10 – Auditorías Ambientales</summary>
+                <p>Evaluación sistemática del cumplimiento normativo y desempeño ambiental en procesos productivos.</p>
+            </details>
+
+        </div>
+
+    </section>
+</main>
+
+<footer class="footer">
+    <p>Desarrollado por Karsten Guillermo Garcia Palomino</p>
+</footer>
 
 </body>
 </html>
+
 
