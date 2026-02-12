@@ -1,52 +1,51 @@
 <!DOCTYPE html>
-<html lang="es-mx">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enlaces a Proyectos</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Mis Proyectos</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 40px; }
+        h1 { text-align: center; }
+        .proyectos { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .card h2 { margin-bottom: 10px; }
+        .card p { color: #555; }
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .card a:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-
-<header class="header">
-    <nav class="header__menu">
-        <a class="header__menu__link" href="index.html">Home</a>
-        <a class="header__menu__link" href="about.html">Sobre mí</a>
-        <a class="header__menu__link" href="tecnologias-limpias.html">Tecnologías Limpias</a>
-        <a class="header__menu__link" href="riesgos-ambientales.html">Riesgos Ambientales</a>
-    </nav>
-</header>
-
-<main class="presentacion">
-    <section class="presentacion__contenido">
-        <h1 class="presentacion__contenido__titulo">
-            Enlaces a Proyectos
-        </h1>
-
-        <p class="presentacion__contenido__texto">
-            Aquí se encuentran los enlaces a los proyectos desarrollados 
-            durante mi formación académica y profesional.
-        </p>
-
-        <div class="presentacion__enlaces">
-            <a class="presentacion__enlaces__link" href="#" target="_blank">
-                Proyecto 1
-            </a>
-
-            <a class="presentacion__enlaces__link" href="#" target="_blank">
-                Proyecto 2
-            </a>
-
-            <a class="presentacion__enlaces__link" href="#" target="_blank">
-                Proyecto 3
-            </a>
+    <h1>Mis Proyectos en Vercel</h1>
+    <div class="proyectos">
+        <div class="card">
+            <h2>Calculadora de Promedio</h2>
+            <p>Aplicación web para calcular el promedio de notas.</p>
+            <a href="https://promedio-calculator-3xwg.vercel.app/" target="_blank">Ver Proyecto</a>
         </div>
-    </section>
-</main>
 
-<footer class="footer">
-    <p>Desarrollado por Karsten Guillermo Garcia Palomino</p>
-</footer>
-
+        <div class="card">
+            <h2>Convertidor de Temperatura</h2>
+            <p>Convierte temperaturas entre Celsius, Fahrenheit y Kelvin.</p>
+            <a href="https://convertidor-de-temperatura.vercel.app/" target="_blank">Ver Proyecto</a>
+        </div>
+    </div>
 </body>
 </html>
+
