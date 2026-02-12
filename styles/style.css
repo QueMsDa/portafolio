@@ -139,3 +139,33 @@ body {
         width: auto;
     }
 }
+/* SECCIÓN TEMAS TECNOLOGÍAS LIMPIAS */
+
+.temas {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.tema {
+    margin-bottom: 15px;
+    background-color: #1f3c88;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.tema summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.tema p {
+    background-color: #f4f6fc;
+    color: #000;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
