@@ -4,6 +4,51 @@
     <meta charset="UTF-8">
     <title>Enlaces a Proyectos</title>
     <link rel="stylesheet" href="styles.css"> <!-- tu CSS global -->
+    <style>
+        /* Estilos adicionales para proyectos */
+        .grid-proyectos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-top: 40px;
+        }
+        .card-proyecto {
+            background-color: var(--color-hover);
+            border: 2px solid var(--color-terciaria);
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            color: var(--color-secundaria);
+            font-family: var(--fuente-montserrat);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card-proyecto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(34, 212, 253, 0.3);
+        }
+        .card-proyecto h3 {
+            font-family: var(--fuente-krona);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--color-terciaria);
+        }
+        .card-proyecto p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        .card-proyecto a {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: var(--color-terciaria);
+            color: var(--color-primaria);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+        .card-proyecto a:hover {
+            background-color: #1fb9d8;
+        }
+    </style>
 </head>
 <body>
     <!-- Encabezado y navegación -->
@@ -28,24 +73,18 @@
                 Aquí puedes explorar algunas de mis aplicaciones web desplegadas en Vercel.
             </p>
 
-            <div class="presentacion__enlaces">
-                <h3 class="presentacion__enlaces__subtitulo">Proyectos destacados</h3>
-
+            <div class="grid-proyectos">
                 <!-- Proyecto 1 -->
-                <div class="presentacion__enlaces__link">
-                    <div>
-                        <strong>📊 Calculadora de Promedio</strong>
-                        <p>Aplicación web para calcular el promedio de notas.</p>
-                    </div>
+                <div class="card-proyecto">
+                    <h3>📊 Calculadora de Promedio</h3>
+                    <p>Aplicación web para calcular el promedio de notas.</p>
                     <a href="https://promedio-calculator-3xwg.vercel.app/" target="_blank">Ver Proyecto</a>
                 </div>
 
                 <!-- Proyecto 2 -->
-                <div class="presentacion__enlaces__link">
-                    <div>
-                        <strong>🌡️ Convertidor de Temperatura</strong>
-                        <p>Convierte temperaturas entre Celsius, Fahrenheit y Kelvin.</p>
-                    </div>
+                <div class="card-proyecto">
+                    <h3>🌡️ Convertidor de Temperatura</h3>
+                    <p>Convierte temperaturas entre Celsius, Fahrenheit y Kelvin.</p>
                     <a href="https://convertidor-de-temperatura.vercel.app/" target="_blank">Ver Proyecto</a>
                 </div>
             </div>
