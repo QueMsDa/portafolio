@@ -3,49 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Mis Proyectos</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 40px; }
-        h1 { text-align: center; }
-        .proyectos { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            text-align: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-        .card h2 { margin-bottom: 10px; }
-        .card p { color: #555; }
-        .card a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 15px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .card a:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- tu CSS global -->
 </head>
 <body>
-    <h1>Mis Proyectos en Vercel</h1>
-    <div class="proyectos">
-        <div class="card">
-            <h2>Calculadora de Promedio</h2>
-            <p>Aplicación web para calcular el promedio de notas.</p>
-            <a href="https://promedio-calculator-3xwg.vercel.app/" target="_blank">Ver Proyecto</a>
-        </div>
+    <header>
+        <h1>Portafolio de Karsten</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
 
-        <div class="card">
-            <h2>Convertidor de Temperatura</h2>
-            <p>Convierte temperaturas entre Celsius, Fahrenheit y Kelvin.</p>
-            <a href="https://convertidor-de-temperatura.vercel.app/" target="_blank">Ver Proyecto</a>
+    <main class="contenedor">
+        <h2>Mis Proyectos en Vercel</h2>
+        <div class="grid-proyectos">
+            <div class="card">
+                <h3>Calculadora de Promedio</h3>
+                <p>Aplicación web para calcular el promedio de notas.</p>
+                <a class="boton" href="https://promedio-calculator-3xwg.vercel.app/" target="_blank">Ver Proyecto</a>
+            </div>
+
+            <div class="card">
+                <h3>Convertidor de Temperatura</h3>
+                <p>Convierte temperaturas entre Celsius, Fahrenheit y Kelvin.</p>
+                <a class="boton" href="https://convertidor-de-temperatura.vercel.app/" target="_blank">Ver Proyecto</a>
+            </div>
         </div>
-    </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Karsten García Palomino</p>
+    </footer>
 </body>
 </html>
+
 
