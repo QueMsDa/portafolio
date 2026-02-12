@@ -2,48 +2,50 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mis Proyectos</title>
+    <title>Enlaces a Proyectos</title>
     <link rel="stylesheet" href="styles.css"> <!-- tu CSS global -->
 </head>
 <body>
     <!-- Encabezado y navegación -->
-    <header>
-        <h1>Portafolio de Karsten</h1>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="sobre-mi.html">Sobre mí</a>
-            <a href="tecnologias.html">Tecnologías Limpias</a>
-            <a href="riesgos.html">Riesgos Ambientales</a>
-            <a href="proyectos.html" class="activo">Enlaces a Proyectos</a>
-            <a href="contacto.html">Contacto</a>
+    <header class="header">
+        <nav class="header__menu">
+            <a class="header__menu__link" href="index.html">Home</a>
+            <a class="header__menu__link" href="sobre-mi.html">Sobre mí</a>
+            <a class="header__menu__link" href="tecnologias.html">Tecnologías Limpias</a>
+            <a class="header__menu__link" href="riesgos.html">Riesgos Ambientales</a>
+            <a class="header__menu__link header__menu__link--active" href="proyectos.html">Enlaces a Proyectos</a>
+            <a class="header__menu__link" href="contacto.html">Contacto</a>
         </nav>
     </header>
 
     <!-- Sección de proyectos -->
-    <main class="contenedor">
-        <h2>Mis Proyectos en Vercel</h2>
-        <div class="grid-proyectos">
-            <!-- Proyecto 1 -->
-            <div class="card">
-                <h3>Calculadora de Promedio</h3>
-                <p>Aplicación web para calcular el promedio de notas.</p>
-                <a class="boton" href="https://promedio-calculator-3xwg.vercel.app/" target="_blank">Ver Proyecto</a>
-            </div>
+    <main class="presentacion">
+        <section class="presentacion__contenido">
+            <h2 class="presentacion__contenido__titulo">Mis Proyectos en <span class="titulo-destaque">Vercel</span></h2>
+            <p class="presentacion__contenido__texto">
+                Aquí puedes explorar algunas de mis aplicaciones web desplegadas en Vercel.
+            </p>
 
-            <!-- Proyecto 2 -->
-            <div class="card">
-                <h3>Convertidor de Temperatura</h3>
-                <p>Convierte temperaturas entre Celsius, Fahrenheit y Kelvin.</p>
-                <a class="boton" href="https://convertidor-de-temperatura.vercel.app/" target="_blank">Ver Proyecto</a>
+            <div class="presentacion__enlaces">
+                <h3 class="presentacion__enlaces__subtitulo">Proyectos destacados</h3>
+
+                <!-- Proyecto 1 -->
+                <a class="presentacion__enlaces__link" href="https://promedio-calculator-3xwg.vercel.app/" target="_blank">
+                    📊 Calculadora de Promedio
+                </a>
+
+                <!-- Proyecto 2 -->
+                <a class="presentacion__enlaces__link" href="https://convertidor-de-temperatura.vercel.app/" target="_blank">
+                    🌡️ Convertidor de Temperatura
+                </a>
             </div>
-        </div>
+        </section>
     </main>
 
     <!-- Pie de página -->
-    <footer>
+    <footer class="footer">
         <p>© 2026 Karsten García Palomino</p>
     </footer>
 </body>
 </html>
-
 
