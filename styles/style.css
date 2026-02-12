@@ -14,6 +14,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    transition: all 0.3s ease; /* transición global */
 }
 
 body {
@@ -34,6 +35,7 @@ body {
 .header__menu {
     display: flex;
     gap: 60px;
+    flex-wrap: wrap;
 }
 
 .header__menu__link {
@@ -41,11 +43,22 @@ body {
     font-weight: 600;
     color: var(--color-terciaria);
     text-decoration: none;
-    transition: color 0.3s ease;
+    position: relative;
 }
 
-.header__menu__link:hover {
-    color: var(--color-secundaria);
+.header__menu__link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-terciaria);
+    transition: width 0.3s ease;
+}
+
+.header__menu__link:hover::after {
+    width: 100%;
 }
 
 .header__menu__link--active {
@@ -106,12 +119,13 @@ body {
     padding: 16px;
     text-decoration: none;
     color: var(--color-secundaria);
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: transparent;
 }
 
 .presentacion__enlaces__link:hover {
     background-color: var(--color-hover);
     transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(34, 212, 253, 0.3);
 }
 
 /* PROYECTOS */
@@ -158,11 +172,60 @@ body {
     text-decoration: none;
     font-weight: bold;
     border-radius: 6px;
-    transition: background-color 0.2s ease;
 }
 
 .card-proyecto a:hover {
     background-color: #1fb9d8;
+}
+
+/* BOTONES DESPLEGABLES */
+.tema {
+    margin-bottom: 15px;
+    background-color: var(--color-hover);
+    border: 2px solid var(--color-terciaria);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tema summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: var(--fuente-montserrat);
+    color: var(--color-secundaria);
+    padding: 15px 20px;
+    position: relative;
+}
+
+.tema summary::marker {
+    display: none;
+}
+
+.tema summary::after {
+    content: "▼";
+    position: absolute;
+    right: 20px;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.tema[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.tema p {
+    background-color: var(--color-secundaria);
+    color: var(--color-primaria);
+    padding: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+    border-top: 1px solid var(--color-terciaria);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* FOOTER */
@@ -184,7 +247,6 @@ body {
 
     .header__menu {
         justify-content: center;
-        flex-wrap: wrap;
     }
 
     .presentacion {
