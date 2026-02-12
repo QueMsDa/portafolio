@@ -1,47 +1,81 @@
 <!DOCTYPE html>
-<html lang="es-mx">
+<html lang="es">
 <head>
-    <meta charset="UTF-8"> 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
     <title>Tecnologías Limpias</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef6f9;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1f3c88;
+        }
+
+        .card {
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        summary {
+            background-color: #d4f1f9;
+            padding: 12px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        summary:hover {
+            background-color: #b8e0f5;
+        }
+
+        .contenido {
+            background-color: white;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 10px;
+            line-height: 1.6;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+        }
+
+        details[open] summary {
+            font-size: 18px;
+        }
+    </style>
+
 </head>
-
 <body>
-    <header class="header">
-        <nav class="header__menu">
-            <a class="header__menu__link" href="index.html">Home</a>
-            <a class="header__menu__link" href="about.html">Sobre mí</a>
-            <a class="header__menu__link header__menu__link--active" href="tecnologias-limpias.html">Tecnologías Limpias</a>
-            <a class="header__menu__link" href="riesgos-ambientales.html">Riesgos Ambientales</a>
-        </nav>
-    </header>
 
-    <main class="presentacion">
-        <section class="presentacion__contenido">
-            <h1 class="presentacion__contenido__titulo">
-                Tecnologías Limpias en los Procesos Industriales
-            </h1>
+    <h1>Tecnologías Limpias en los Procesos Industriales</h1>
 
-            <p class="presentacion__contenido__texto">
-                Este curso se enfoca en la aplicación de estrategias preventivas 
-                dentro de los procesos industriales para reducir impactos ambientales, 
-                optimizar el uso de recursos y promover la sostenibilidad.
-            </p>
+    <div class="card">
+        <details>
+            <summary>Tema 1 – Producción Más Limpia</summary>
 
-            <p class="presentacion__contenido__texto">
-                Se desarrollan temas como producción más limpia, eficiencia energética, 
-                economía circular y optimización de procesos industriales.
-            </p>
-        </section>
+            <div class="contenido">
+                <p>
+                    La Producción Más Limpia es una estrategia ambiental preventiva 
+                    aplicada a procesos industriales con el objetivo de reducir la 
+                    generación de residuos, optimizar el uso de recursos y disminuir 
+                    impactos ambientales.
+                </p>
 
-        <img class="presentacion__imagen" src="./assets/image0333.png" 
-        alt="Imagen representativa del curso">
-    </main>
+                <p>
+                    Se enfoca en mejorar la eficiencia energética, reducir emisiones 
+                    contaminantes y promover prácticas sostenibles dentro del sector productivo.
+                </p>
+            </div>
+        </details>
+    </div>
 
-    <footer class="footer">
-        <p>Desarrollado por Karsten Guillermo Garcia Palomino</p>
-    </footer>
 </body>
 </html>
+
