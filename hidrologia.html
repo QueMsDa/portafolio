@@ -1,185 +1,86 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-mx">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sección de Hidrología del portafolio profesional.">
     <title>Hidrología | Portafolio</title>
 
-    <style>
-        :root {
-            --color-primario: #0a192f;
-            --color-secundario: #112240;
-            --color-acento: #64ffda;
-            --color-texto: #ccd6f6;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: var(--color-primario);
-            color: var(--color-texto);
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: var(--color-secundario);
-            padding: 15px 5%;
-        }
-
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--color-texto);
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        nav a:hover,
-        .active {
-            color: var(--color-acento);
-        }
-
-        main {
-            padding: 40px 8%;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: var(--color-acento);
-        }
-
-        .temas {
-            display: grid;
-            gap: 15px;
-        }
-
-        details {
-            background-color: var(--color-secundario);
-            padding: 15px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        summary {
-            font-weight: bold;
-            font-size: 1rem;
-        }
-
-        details p {
-            margin-top: 10px;
-            font-size: 0.95rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: var(--color-secundario);
-            margin-top: 40px;
-            font-size: 0.85rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            main {
-                padding: 30px 5%;
-            }
-        }
-    </style>
+    <!-- Hoja de estilos principal -->
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
 
-<header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">Sobre mí</a>
-        <a href="tecnologias-limpias.html">Tecnologías Limpias</a>
-        <a href="riesgos-ambientales.html">Riesgos Ambientales</a>
-        <a href="enlaces-proyectos.html">Proyectos</a>
-        <a href="hidrologia.html" class="active">Hidrología</a>
+<!-- Encabezado -->
+<header class="header">
+    <nav class="header__menu" aria-label="Menú principal">
+        <ul>
+            <li><a class="header__menu__link" href="index.html">Home</a></li>
+            <li><a class="header__menu__link" href="about.html">Sobre mí</a></li>
+            <li><a class="header__menu__link" href="tecnologias-limpias.html">Tecnologías Limpias</a></li>
+            <li><a class="header__menu__link" href="riesgos-ambientales.html">Riesgos Ambientales</a></li>
+            <li><a class="header__menu__link" href="enlaces-proyectos.html">Enlaces a Proyectos</a></li>
+            <li><a class="header__menu__link header__menu__link--active" href="hidrologia.html">Hidrología</a></li>
+        </ul>
     </nav>
 </header>
 
-<main>
-    <h1>Hidrología</h1>
+<!-- Contenido principal -->
+<main class="presentacion">
+    <section class="presentacion__contenido">
 
-    <div class="temas">
+        <h1 class="presentacion__contenido__titulo">
+            Hidrología y Gestión del Recurso Hídrico
+        </h1>
 
-        <details>
-            <summary>Tema 1 – Ciclo Hidrológico</summary>
-            <p>Proceso continuo de evaporación, condensación, precipitación e infiltración que regula la dinámica del agua en la Tierra.</p>
-        </details>
+        <p class="presentacion__contenido__texto">
+            La hidrología estudia el comportamiento del agua en la superficie y subsuelo, 
+            considerando procesos físicos, climáticos y ambientales que influyen en su 
+            disponibilidad y calidad.
+        </p>
 
-        <details>
-            <summary>Tema 2 – Cuencas Hidrográficas</summary>
-            <p>Unidades territoriales donde el agua converge hacia un mismo punto de salida, fundamentales para la gestión integrada del recurso hídrico.</p>
-        </details>
+        <div class="grid-proyectos">
 
-        <details>
-            <summary>Tema 3 – Precipitación</summary>
-            <p>Variable hidrometeorológica clave que determina la disponibilidad de agua superficial y subterránea.</p>
-        </details>
+            <article class="card-proyecto">
+                <h2>Ciclo Hidrológico</h2>
+                <p>Evaporación, condensación, precipitación, infiltración y escorrentía como procesos dinámicos del sistema hídrico.</p>
+            </article>
 
-        <details>
-            <summary>Tema 4 – Escorrentía</summary>
-            <p>Flujo superficial generado cuando la precipitación supera la capacidad de infiltración del suelo.</p>
-        </details>
+            <article class="card-proyecto">
+                <h2>Cuencas Hidrográficas</h2>
+                <p>Unidades territoriales fundamentales para la planificación sostenible del agua.</p>
+            </article>
 
-        <details>
-            <summary>Tema 5 – Infiltración</summary>
-            <p>Proceso mediante el cual el agua penetra en el suelo y recarga acuíferos.</p>
-        </details>
+            <article class="card-proyecto">
+                <h2>Balance Hídrico</h2>
+                <p>Relación cuantitativa entre entradas, salidas y almacenamiento de agua.</p>
+            </article>
 
-        <details>
-            <summary>Tema 6 – Balance Hídrico</summary>
-            <p>Relación entre entradas, salidas y almacenamiento de agua en un sistema determinado.</p>
-        </details>
+            <article class="card-proyecto">
+                <h2>Aguas Subterráneas</h2>
+                <p>Importancia de los acuíferos en el abastecimiento humano y agrícola.</p>
+            </article>
 
-        <details>
-            <summary>Tema 7 – Aguas Subterráneas</summary>
-            <p>Reservas de agua almacenadas en acuíferos que representan una fuente estratégica para consumo humano.</p>
-        </details>
+            <article class="card-proyecto">
+                <h2>Modelación Hidrológica</h2>
+                <p>Simulación matemática aplicada a la gestión de riesgos por inundaciones y sequías.</p>
+            </article>
 
-        <details>
-            <summary>Tema 8 – Modelación Hidrológica</summary>
-            <p>Simulación matemática del comportamiento del agua para la planificación y gestión ambiental.</p>
-        </details>
+            <article class="card-proyecto">
+                <h2>Cambio Climático</h2>
+                <p>Impactos sobre los patrones de precipitación y disponibilidad hídrica.</p>
+            </article>
 
-        <details>
-            <summary>Tema 9 – Gestión de Recursos Hídricos</summary>
-            <p>Planificación sostenible del uso del agua considerando criterios ambientales, sociales y económicos.</p>
-        </details>
+        </div>
 
-        <details>
-            <summary>Tema 10 – Cambio Climático e Hidrología</summary>
-            <p>Impacto de la variabilidad climática en patrones de precipitación, sequías e inundaciones.</p>
-        </details>
-
-    </div>
+    </section>
 </main>
 
-<footer>
-    <p>Desarrollado por Karsten Guillermo Garcia Palomino</p>
+<!-- Pie de página -->
+<footer class="footer">
+    <p>&copy; 2026 Karsten García Palomino</p>
 </footer>
 
 </body>
 </html>
-
