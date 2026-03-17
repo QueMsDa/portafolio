@@ -225,10 +225,10 @@ body {
 /* CONTENIDO CON IMAGEN A LA DERECHA */
 .tema__contenido {
     display: flex;
-    align-items: flex-start;
-    gap: 20px;
+    flex-direction: column; /*  esto cambia todo */
+    align-items: center;    /* centra horizontal */
+    text-align: center;
 }
-
 .tema__contenido p {
     flex: 2;
     text-align: justify;
