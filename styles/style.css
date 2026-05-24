@@ -225,9 +225,11 @@ body {
 /* CONTENIDO CON IMAGEN A LA DERECHA */
 .tema__contenido {
     display: flex;
-    flex-direction: column; /*  esto cambia todo */
-    align-items: center;    /* centra horizontal */
-    text-align: center;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+    text-align: left;
+    padding: 20px;
 }
 .tema__contenido p {
     flex: 2;
@@ -236,10 +238,12 @@ body {
 
 .tema__contenido img {
     flex: 1;
-    max-width: 250px;
+    max-width: 240px;
+    width: 100%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    object-fit: cover;
 }
 .tema__contenido img:hover {
     transform: scale(1.05);
