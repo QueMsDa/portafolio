@@ -391,32 +391,32 @@ body.unidad-abierta .unidad-wrapper.unidad-activa .unidad__contenido {
     from { opacity: 0; transform: translateY(-5px); }
     to { opacity: 1; transform: translateY(0); }
 }
-/* CONTENIDO CON IMAGEN A LA DERECHA */
+/* TEMA: contenido centrado en texto para desktop */
 .tema__contenido {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 24px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
     text-align: left;
-    padding: 20px;
+    padding: 22px;
 }
 .tema__contenido p {
-    flex: 2;
+    flex: none;
     text-align: justify;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-secundaria);
 }
 
-.tema__contenido img {
-    flex: 1;
-    max-width: 240px;
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    object-fit: cover;
+.tema__recursos {
+    margin-top: auto;
+    display: flex;
+    gap: 12px;
+    align-items: center;
 }
-.tema__contenido img:hover {
-    transform: scale(1.05);
-}
+
+/* Mantener reglas de imagen si se usan en otras partes, pero ocultar imágenes por defecto dentro de tema */
+.tema__contenido img { display: none; }
 /* FOOTER */
 .footer {
     color: var(--color-primaria);
