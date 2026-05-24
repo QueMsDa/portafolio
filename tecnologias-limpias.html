@@ -274,6 +274,11 @@
                                 </div>
                             </div>
                         </details>
+                        <div class="unidad__imagen">
+                            <h3>📌 Gráfico de Balance de Materia</h3>
+                            <img id="balance-materia-img" src="assets/Documentos/apuntes-Tecnologias/grafcio%20de%20balance%20de%20materia.png" alt="Gráfico de balance de materia" />
+                            <p>Haz clic en la imagen para verla a pantalla completa.</p>
+                        </div>
                     </div>
                 </details>
             </div>
@@ -319,15 +324,39 @@
         }, true);
 
         // Recompute state on DOMContentLoaded and when visibility changes (switching entre ventanas)
-        document.addEventListener('DOMContentLoaded', updateUnidadState);
+        document.addEventListener('DOMContentLoaded', () => {
+            updateUnidadState();
+            attachFullscreenImage();
+        });
         document.addEventListener('visibilitychange', () => {
             // small timeout helps when returning focus to the window
             setTimeout(updateUnidadState, 120);
         });
 
+        function attachFullscreenImage() {
+            const image = document.getElementById('balance-materia-img');
+            if (!image) {
+                return;
+            }
+
+            image.addEventListener('click', () => {
+                const element = image;
+                if (element.requestFullscreen) {
+                    element.requestFullscreen();
+                } else if (element.webkitRequestFullscreen) {
+                    element.webkitRequestFullscreen();
+                } else if (element.msRequestFullscreen) {
+                    element.msRequestFullscreen();
+                }
+            });
+        }
+
         // Initial run in case script is executed after load
         if (document.readyState === 'complete' || document.readyState === 'interactive') {
-            setTimeout(updateUnidadState, 0);
+            setTimeout(() => {
+                updateUnidadState();
+                attachFullscreenImage();
+            }, 0);
         }
     })();
 </script>
