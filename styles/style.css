@@ -70,22 +70,24 @@ body {
 
 /* PRESENTACIÓN */
 .presentacion {
-    padding: 5% 15%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 4% 6%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 40px;
 }
 
 .presentacion__contenido {
-    width: 50%;
+    width: 55%;
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
 .presentacion__imagen {
-    width: 45%;
+    width: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,10 +95,51 @@ body {
 
 .presentacion__imagen img {
     width: 100%;
-    max-width: 420px;
+    max-width: 520px;
     border-radius: 24px;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
     object-fit: cover;
+}
+
+.temas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(320px, 1fr));
+    gap: 28px;
+    margin-top: 32px;
+    width: 100%;
+}
+
+.unidad-wrapper {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 16px;
+    width: 100%;
+}
+
+.unidad__panel {
+    width: 100%;
+    min-height: 280px;
+    border-radius: 24px;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(34, 212, 253, 0.15), rgba(0, 0, 0, 0.15));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.unidad__panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.unidad {
+    width: 100%;
+}
+
+.unidad__contenido {
+    min-height: 280px;
 }
 
 .presentacion__contenido__titulo {
@@ -332,6 +375,14 @@ body {
         width: auto;
     }
 
+    .presentacion__imagen {
+        width: 100%;
+    }
+
+    .temas {
+        grid-template-columns: 1fr;
+    }
+
     .grid-proyectos {
         flex-direction: column;
         align-items: center;
@@ -341,10 +392,10 @@ body {
         width: 90%;
     }
     .tema__contenido {
-    flex-direction: column;
-}
+        flex-direction: column;
+    }
 
-.tema__contenido img {
-    max-width: 100%;
-}
+    .tema__contenido img {
+        max-width: 100%;
+    }
 }
