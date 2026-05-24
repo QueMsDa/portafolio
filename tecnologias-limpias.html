@@ -192,18 +192,43 @@
 </main>
 
 <script>
-    document.querySelectorAll('.unidad').forEach(unidad => {
-        unidad.addEventListener('toggle', () => {
-            const anyOpen = Array.from(document.querySelectorAll('.unidad')).some(d => d.open);
-            document.body.classList.toggle('unidad-abierta', anyOpen);
-            document.querySelectorAll('.unidad-wrapper').forEach(wrapper => {
-                const details = wrapper.querySelector('.unidad');
-                const isOpen = details && details.open;
-                wrapper.classList.toggle('unidad-activa', isOpen);
-                wrapper.classList.toggle('unidad-oculta', anyOpen && !isOpen);
-            });
+    (function () {
+        function updateUnidadState() {
+            try {
+                const unidades = Array.from(document.querySelectorAll('.unidad'));
+                const anyOpen = unidades.some(d => d.open);
+                document.body.classList.toggle('unidad-abierta', anyOpen);
+                document.querySelectorAll('.unidad-wrapper').forEach(wrapper => {
+                    const details = wrapper.querySelector('.unidad');
+                    const isOpen = details && details.open;
+                    wrapper.classList.toggle('unidad-activa', !!isOpen);
+                    wrapper.classList.toggle('unidad-oculta', anyOpen && !isOpen);
+                });
+            } catch (e) {
+                console.warn('Error actualizando estado de unidades:', e);
+            }
+        }
+
+        // Use a single delegated listener to avoid duplicating handlers
+        document.addEventListener('toggle', (ev) => {
+            const target = ev.target;
+            if (target && target.classList && target.classList.contains('unidad')) {
+                updateUnidadState();
+            }
+        }, true);
+
+        // Recompute state on DOMContentLoaded and when visibility changes (switching entre ventanas)
+        document.addEventListener('DOMContentLoaded', updateUnidadState);
+        document.addEventListener('visibilitychange', () => {
+            // small timeout helps when returning focus to the window
+            setTimeout(updateUnidadState, 120);
         });
-    });
+
+        // Initial run in case script is executed after load
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            setTimeout(updateUnidadState, 0);
+        }
+    })();
 </script>
 
 <footer class="footer">
