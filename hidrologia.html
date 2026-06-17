@@ -5,83 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sección de Hidrología del portafolio profesional.">
     <title>Hidrología | Portafolio</title>
-
-    <!-- Hoja de estilos principal -->
     <link rel="stylesheet" href="styles/style.css">
+    <script>if(localStorage.getItem('portfolio-dark-mode')==='dark')document.documentElement.classList.add('dark-mode');</script>
 </head>
-
 <body>
+    <header class="header">
+        <nav class="header__menu" aria-label="Menú principal">
+            <ul>
+                <li><a class="header__menu__link" href="index.html">Home</a></li>
+                <li><a class="header__menu__link" href="about.html">Sobre mí</a></li>
+                <li><a class="header__menu__link" href="tecnologias-limpias.html">Tecnologías Limpias</a></li>
+                <li><a class="header__menu__link" href="riesgos-ambientales.html">Riesgos Ambientales</a></li>
+                <li><a class="header__menu__link header__menu__link--active" href="hidrologia.html">Hidrología</a></li>
+                <li><a class="header__menu__link" href="enlaces-proyectos.html">Enlaces a Proyectos</a></li>
+                <li><a class="header__menu__link" href="topicos-de-produccion-mas-limpia.html">Tópicos de Producción Más Limpia</a></li>
+            </ul>
+        </nav>
+        <button class="btn-dark-mode" id="btn-dark-mode" aria-label="Alternar modo oscuro" title="Modo oscuro / Claro">🌙</button>
+    </header>
 
-<!-- Encabezado -->
-<header class="header">
-    <nav class="header__menu" aria-label="Menú principal">
-        <ul>
-            <li><a class="header__menu__link" href="index.html">Home</a></li>
-            <li><a class="header__menu__link" href="about.html">Sobre mí</a></li>
-            <li><a class="header__menu__link" href="tecnologias-limpias.html">Tecnologías Limpias</a></li>
-            <li><a class="header__menu__link" href="riesgos-ambientales.html">Riesgos Ambientales</a></li>
-            <li><a class="header__menu__link header__menu__link--active" href="hidrologia.html">Hidrología</a></li>
-            <li><a class="header__menu__link" href="enlaces-proyectos.html">Enlaces a Proyectos</a></li>
-            <li><a class="header__menu__link" href="topicos-de-produccion-mas-limpia.html">Tópicos de producción mas limpia</a></li>
-        </ul>
-    </nav>
-</header>
+    <main class="presentacion">
+        <section class="presentacion__contenido">
+            <h1 class="presentacion__contenido__titulo">
+                Hidrología y Gestión del Recurso Hídrico
+            </h1>
+            <p class="presentacion__contenido__texto">
+                La hidrología estudia el comportamiento del agua en la superficie y subsuelo,
+                considerando procesos físicos, climáticos y ambientales que influyen en su
+                disponibilidad y calidad.
+            </p>
 
-<!-- Contenido principal -->
-<main class="presentacion">
-    <section class="presentacion__contenido">
+            <div class="grid-proyectos">
+                <article class="card-proyecto">
+                    <h2>Ciclo Hidrológico</h2>
+                    <p>Evaporación, condensación, precipitación, infiltración y escorrentía como procesos dinámicos del sistema hídrico.</p>
+                </article>
+                <article class="card-proyecto">
+                    <h2>Cuencas Hidrográficas</h2>
+                    <p>Unidades territoriales fundamentales para la planificación sostenible del agua.</p>
+                </article>
+                <article class="card-proyecto">
+                    <h2>Balance Hídrico</h2>
+                    <p>Relación cuantitativa entre entradas, salidas y almacenamiento de agua.</p>
+                </article>
+                <article class="card-proyecto">
+                    <h2>Aguas Subterráneas</h2>
+                    <p>Importancia de los acuíferos en el abastecimiento humano y agrícola.</p>
+                </article>
+                <article class="card-proyecto">
+                    <h2>Modelación Hidrológica</h2>
+                    <p>Simulación matemática aplicada a la gestión de riesgos por inundaciones y sequías.</p>
+                </article>
+                <article class="card-proyecto">
+                    <h2>Cambio Climático</h2>
+                    <p>Impactos sobre los patrones de precipitación y disponibilidad hídrica.</p>
+                </article>
+            </div>
+        </section>
+    </main>
 
-        <h1 class="presentacion__contenido__titulo">
-            Hidrología y Gestión del Recurso Hídrico
-        </h1>
-
-        <p class="presentacion__contenido__texto">
-            La hidrología estudia el comportamiento del agua en la superficie y subsuelo, 
-            considerando procesos físicos, climáticos y ambientales que influyen en su 
-            disponibilidad y calidad.
-        </p>
-
-        <div class="grid-proyectos">
-
-            <article class="card-proyecto">
-                <h2>Ciclo Hidrológico</h2>
-                <p>Evaporación, condensación, precipitación, infiltración y escorrentía como procesos dinámicos del sistema hídrico.</p>
-            </article>
-
-            <article class="card-proyecto">
-                <h2>Cuencas Hidrográficas</h2>
-                <p>Unidades territoriales fundamentales para la planificación sostenible del agua.</p>
-            </article>
-
-            <article class="card-proyecto">
-                <h2>Balance Hídrico</h2>
-                <p>Relación cuantitativa entre entradas, salidas y almacenamiento de agua.</p>
-            </article>
-
-            <article class="card-proyecto">
-                <h2>Aguas Subterráneas</h2>
-                <p>Importancia de los acuíferos en el abastecimiento humano y agrícola.</p>
-            </article>
-
-            <article class="card-proyecto">
-                <h2>Modelación Hidrológica</h2>
-                <p>Simulación matemática aplicada a la gestión de riesgos por inundaciones y sequías.</p>
-            </article>
-
-            <article class="card-proyecto">
-                <h2>Cambio Climático</h2>
-                <p>Impactos sobre los patrones de precipitación y disponibilidad hídrica.</p>
-            </article>
-
-        </div>
-
-    </section>
-</main>
-
-<!-- Pie de página -->
-<footer class="footer">
-    <p>&copy; 2026 Karsten García Palomino</p>
-</footer>
-
+    <footer class="footer">
+        <p>&copy; 2026 Karsten García Palomino</p>
+    </footer>
+    <script src="scripts/main.js"></script>
 </body>
 </html>

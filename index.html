@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="es-mx">
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio</title>
+    <title>Portafolio | Karsten García</title>
     <link rel="stylesheet" href="styles/style.css">
-
+    <script>if(localStorage.getItem('portfolio-dark-mode')==='dark')document.documentElement.classList.add('dark-mode');</script>
 </head>
 <body>
     <header class="header">
-    <nav class="header__menu" aria-label="Menú principal">
-        <ul>
-            <li><a class="header__menu__link header__menu__link--active " href="index.html">Home</a></li>
-            <li><a class="header__menu__link" href="about.html">Sobre mí</a></li>
-            <li><a class="header__menu__link" href="tecnologias-limpias.html">Tecnologías Limpias</a></li>
-            <li><a class="header__menu__link" href="riesgos-ambientales.html">Riesgos Ambientales</a></li>
-            <li><a class="header__menu__link" href="hidrologia.html">Hidrología</a></li>
-            <li><a class="header__menu__link" href="enlaces-proyectos.html">Enlaces a Proyectos</a></li>
-            <li><a class="header__menu__link" href="topicos-de-produccion-mas-limpia.html">Tópicos de producción mas limpia</a></li>
-        </ul>
-    </nav>
-</header>
+        <nav class="header__menu" aria-label="Menú principal">
+            <ul>
+                <li><a class="header__menu__link header__menu__link--active" href="index.html">Home</a></li>
+                <li><a class="header__menu__link" href="about.html">Sobre mí</a></li>
+                <li><a class="header__menu__link" href="tecnologias-limpias.html">Tecnologías Limpias</a></li>
+                <li><a class="header__menu__link" href="riesgos-ambientales.html">Riesgos Ambientales</a></li>
+                <li><a class="header__menu__link" href="hidrologia.html">Hidrología</a></li>
+                <li><a class="header__menu__link" href="enlaces-proyectos.html">Enlaces a Proyectos</a></li>
+                <li><a class="header__menu__link" href="topicos-de-produccion-mas-limpia.html">Tópicos de Producción Más Limpia</a></li>
+            </ul>
+        </nav>
+        <button class="btn-dark-mode" id="btn-dark-mode" aria-label="Alternar modo oscuro" title="Modo oscuro / Claro">🌙</button>
+    </header>
+
     <main class="presentacion">
         <section class="presentacion__contenido">
             <h1 class="presentacion__contenido__titulo">
-                Eleve tu negocio digital a otro nivel 
-                <strong class="titulo-destaque">con un Front-end de calidad!
-                </strong></h1>
-                <p class="presentacion__contenido__texto">¡Hola! Soy Karsten Guillermo García Palomino, desarrollador Front-end con
-                    especialización en React, HTML y CSS. Ayudo a pequeños
-                    negocios y diseñadores a llevar a cabo buenas ideas.
-                    ¿Hablamos?
-
-                </p>
-                <div class="presentacion__enlaces">
-                    <h2 class="presentacion__enlaces__subtitulo">Accede a mis redes</h2>
-                    <a class="presentacion__enlaces__link" href="https://github.com/QueMsDa">
-                        <img src="./assets/github.png">
-                        Github
-                    </a>
-                    <a class="presentacion__enlaces__link" href="https://www.linkedin.com/in/karsten-guillermo2000/">
-                        <img src="./assets/linkedin.png">
-                        Linkedin
-                    </a>
-                    <a class="presentacion__enlaces__link" href="https://www.twitch.tv/karstengp">
-                        <img src="./assets/twitch.png">
-                        Twitch
-                    </a>
-                </div>
-               
+                Portafolio académico en
+                <strong class="titulo-destaque">Ingeniería Ambiental</strong>
+            </h1>
+            <p class="presentacion__contenido__texto">
+                Soy Karsten Guillermo García Palomino, estudiante de Ingeniería Ambiental con
+                enfoque en sostenibilidad, cambio climático y gestión de recursos.
+                Este portafolio reúne mis trabajos académicos, investigaciones y proyectos técnicos.
+            </p>
+            <div class="presentacion__enlaces">
+                <h2 class="presentacion__enlaces__subtitulo">Mis redes</h2>
+                <a class="presentacion__enlaces__link" href="https://github.com/QueMsDa" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/github.png" alt="GitHub">
+                    GitHub
+                </a>
+                <a class="presentacion__enlaces__link" href="https://www.linkedin.com/in/karsten-guillermo2000/" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/linkedin.png" alt="LinkedIn">
+                    LinkedIn
+                </a>
+                <a class="presentacion__enlaces__link" href="https://www.twitch.tv/karstengp" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/twitch.png" alt="Twitch">
+                    Twitch
+                </a>
+            </div>
         </section>
-            <img class="presentacion__imagen" src="./assets/image0333.png" alt="Foto de karsten García desarrolando un proyecto">
+        <img class="presentacion__imagen" src="./assets/image0333.png" alt="Foto de Karsten García">
     </main>
+
     <footer class="footer">
-        <p>Desarrollado por Karsten Guillermo Garcia Palomino</p>
+        <p>Desarrollado por Karsten Guillermo García Palomino</p>
     </footer>
+    <script src="scripts/main.js"></script>
 </body>
 </html>

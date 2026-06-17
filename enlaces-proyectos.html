@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enlaces a Proyectos</title>
+    <title>Enlaces a Proyectos | Portafolio</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script>if(localStorage.getItem('portfolio-dark-mode')==='dark')document.documentElement.classList.add('dark-mode');</script>
 </head>
 <body>
-    <!-- Encabezado y navegación -->
-  <header class="header">
-    <nav class="header__menu" aria-label="Menú principal">
-        <ul>
-            <li><a class="header__menu__link" href="index.html">Home</a></li>
-            <li><a class="header__menu__link" href="about.html">Sobre mí</a></li>
-            <li><a class="header__menu__link" href="tecnologias-limpias.html">Tecnologías Limpias</a></li>
-            <li><a class="header__menu__link" href="riesgos-ambientales.html">Riesgos Ambientales</a></li>
-            <li><a class="header__menu__link" href="hidrologia.html">Hidrología</a></li>
-            <li><a class="header__menu__link header__menu__link--active" href="enlaces-proyectos.html">Enlaces a Proyectos</a></li>
-            <li><a class="header__menu__link" href="topicos-de-produccion-mas-limpia.html">Tópicos de producción mas limpia</a></li>
-        </ul>
-    </nav>
-</header>
-    <!-- Sección de proyectos -->
+    <header class="header">
+        <nav class="header__menu" aria-label="Menú principal">
+            <ul>
+                <li><a class="header__menu__link" href="index.html">Home</a></li>
+                <li><a class="header__menu__link" href="about.html">Sobre mí</a></li>
+                <li><a class="header__menu__link" href="tecnologias-limpias.html">Tecnologías Limpias</a></li>
+                <li><a class="header__menu__link" href="riesgos-ambientales.html">Riesgos Ambientales</a></li>
+                <li><a class="header__menu__link" href="hidrologia.html">Hidrología</a></li>
+                <li><a class="header__menu__link header__menu__link--active" href="enlaces-proyectos.html">Enlaces a Proyectos</a></li>
+                <li><a class="header__menu__link" href="topicos-de-produccion-mas-limpia.html">Tópicos de Producción Más Limpia</a></li>
+            </ul>
+        </nav>
+        <button class="btn-dark-mode" id="btn-dark-mode" aria-label="Alternar modo oscuro" title="Modo oscuro / Claro">🌙</button>
+    </header>
+
     <main class="presentacion">
         <section class="presentacion__contenido">
             <h1 class="presentacion__contenido__titulo">
@@ -32,18 +33,15 @@
             </p>
 
             <div class="grid-proyectos">
-                <!-- Proyecto 1 -->
                 <article class="card-proyecto">
-                    <h2>📊 Calculadora de Promedio</h2>
+                    <h2>Calculadora de Promedio</h2>
                     <p>Aplicación web para calcular el promedio de notas.</p>
                     <a href="https://promedio-calculator-3xwg.vercel.app/" target="_blank" rel="noopener noreferrer">
                         Ver Proyecto
                     </a>
                 </article>
-
-                <!-- Proyecto 2 -->
                 <article class="card-proyecto">
-                    <h2>🌡️ Convertidor de Temperatura</h2>
+                    <h2>Convertidor de Temperatura</h2>
                     <p>Convierte temperaturas entre Celsius, Fahrenheit y Kelvin.</p>
                     <a href="https://convertidor-de-temperatura.vercel.app/" target="_blank" rel="noopener noreferrer">
                         Ver Proyecto
@@ -53,16 +51,9 @@
         </section>
     </main>
 
-    <!-- Pie de página -->
     <footer class="footer">
         <p>&copy; 2026 Karsten García Palomino</p>
     </footer>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
