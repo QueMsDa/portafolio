@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum Vitae · Karsten García Palomino</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <style>
+        /* ── CV-specific styles ── */
+        .cv-header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: start;
+            padding: 2.5rem 0 2rem;
+            border-bottom: 1px solid var(--border-em);
+            margin-bottom: 2.5rem;
+        }
+        .cv-name {
+            font-family: var(--ff-serif);
+            font-size: clamp(1.9rem, 4vw, 3rem);
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.1;
+            margin-bottom: .4rem;
+        }
+        .cv-name em { font-style: italic; color: var(--forest); }
+        .cv-title {
+            font-size: .82rem;
+            font-weight: 500;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--quill);
+            margin-bottom: 1rem;
+        }
+        .cv-contact-inline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: .6rem;
+        }
+        .cv-contact-inline a {
+            font-size: .76rem;
+            font-weight: 500;
+            color: var(--forest);
+            border: 1px solid var(--border-em);
+            border-radius: var(--r-xs);
+            padding: 3px 10px;
+            transition: background-color .18s;
+        }
+        .cv-contact-inline a:hover { background-color: var(--moss); }
+        .cv-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .4rem;
+            text-align: center;
+        }
+        .cv-badge-circle {
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            border: 1.5px solid var(--border-em);
+            background-color: var(--surface);
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--ff-serif);
+            font-size: 1.6rem;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--forest);
+        }
+        .cv-badge-lbl {
+            font-size: .62rem;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--mist);
+        }
+
+        /* ── Sección CV ── */
+        .cv-section {
+            margin-bottom: 2.8rem;
+        }
+        .cv-section-title {
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: .6rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .cv-section-title h2 {
+            font-family: var(--ff-serif);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--ink);
+        }
+        .cv-section-title .section-marker {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            border: 1.5px solid var(--border-em);
+            background-color: var(--surface);
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--ff-serif);
+            font-size: .88rem;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--forest);
+            flex-shrink: 0;
+        }
+
+        /* ── Ítem de timeline ── */
+        .cv-items { display: flex; flex-direction: column; gap: 1px; }
+        .cv-item {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-md);
+            padding: 1.3rem 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: .5rem 1.5rem;
+            transition: border-color .18s, box-shadow .18s;
+            margin-bottom: 10px;
+        }
+        .cv-item:hover { border-color: var(--border-em); box-shadow: var(--shadow-sm); }
+        .cv-item-main {}
+        .cv-item-period {
+            font-size: .7rem;
+            font-weight: 600;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--forest);
+            white-space: nowrap;
+            margin-top: 3px;
+        }
+        .cv-item h3 {
+            font-family: var(--ff-serif);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.25;
+            margin-bottom: .25rem;
+        }
+        .cv-item .institution {
+            font-size: .78rem;
+            font-weight: 500;
+            color: var(--forest);
+            margin-bottom: .5rem;
+        }
+        .cv-item p {
+            font-size: .82rem;
+            color: var(--quill);
+            line-height: 1.7;
+        }
+        .cv-item .status-chip {
+            display: inline-block;
+            margin-top: .5rem;
+            padding: 2px 8px;
+            border: 1px solid var(--border-em);
+            border-radius: var(--r-xs);
+            font-size: .63rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--forest);
+        }
+
+        /* ── Certificados ── */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 12px;
+        }
+        .cert-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-md);
+            padding: 1.2rem 1.3rem;
+            display: flex; flex-direction: column; gap: .4rem;
+            transition: border-color .18s, box-shadow .18s;
+        }
+        .cert-card:hover { border-color: var(--border-em); box-shadow: var(--shadow-sm); }
+        .cert-icon {
+            font-size: 1.2rem;
+            margin-bottom: .2rem;
+            line-height: 1;
+        }
+        .cert-card h4 {
+            font-family: var(--ff-serif);
+            font-size: .97rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.25;
+        }
+        .cert-issuer {
+            font-size: .72rem;
+            font-weight: 500;
+            color: var(--forest);
+        }
+        .cert-year {
+            font-size: .68rem;
+            color: var(--mist);
+            margin-top: auto;
+        }
+
+        /* ── Competencias doble columna ── */
+        .skills-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .skills-group h4 {
+            font-size: .67rem;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--mist);
+            margin-bottom: .5rem;
+        }
+
+        @media (max-width: 768px) {
+            .cv-header { grid-template-columns: 1fr; }
+            .cv-badge { display: none; }
+            .cv-item { grid-template-columns: 1fr; }
+            .cv-item-period { order: -1; }
+            .skills-cols { grid-template-columns: 1fr; }
+            .cert-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <script>if(localStorage.getItem('portfolio-dark-mode')==='dark')document.documentElement.classList.add('dark-mode');</script>
+</head>
+<body>
+
+<nav class="nav">
+    <a href="index.html" class="nav-logo">K. García Palomino <span>· Ing. Ambiental</span></a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">Sobre mí</a></li>
+        <li><a href="hidrologia.html">Hidrología</a></li>
+        <li><a href="tecnologias-limpias.html">Tec. Limpias</a></li>
+        <li><a href="riesgos-ambientales.html">Riesgos</a></li>
+        <li><a href="topicos-de-produccion-mas-limpia.html">Tópicos PML</a></li>
+        <li><a href="enlaces-proyectos.html">Proyectos</a></li>
+        <li><a href="cv.html" class="active">CV</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <div class="nav-actions">
+        <button class="btn-dark" id="btn-dark-mode" title="Alternar modo oscuro">☾</button>
+        <button class="nav-burger" id="burger" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<main class="main">
+
+    <!-- Encabezado del CV -->
+    <div class="cv-header">
+        <div>
+            <div class="cv-title">Currículum Vitae · Perfil Profesional</div>
+            <h1 class="cv-name">Karsten Guillermo<br><em>García Palomino</em></h1>
+            <div class="cv-contact-inline">
+                <a href="mailto:yoninnn5pelotudon@gmail.com">Correo electrónico</a>
+                <a href="https://github.com/QueMsDa" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/in/karsten-guillermo2000/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://www.twitch.tv/karstengp" target="_blank" rel="noopener">Twitch</a>
+                <a href="contacto.html">Ver contacto completo</a>
+            </div>
+        </div>
+        <div class="cv-badge">
+            <div class="cv-badge-circle">K</div>
+            <span class="cv-badge-lbl">UAC · 8.º Sem.</span>
+        </div>
+    </div>
+
+    <!-- Perfil -->
+    <div class="cv-section">
+        <div class="cv-section-title">
+            <span class="section-marker">·</span>
+            <h2>Perfil Profesional</h2>
+        </div>
+        <div class="card" style="margin-bottom:0">
+            <p>
+                Profesional de trayectoria multidisciplinar con formación académica superior en
+                Ingeniería Ambiental, Psicología y Administración de Empresas. Combina una sólida
+                base técnica en gestión ambiental, modelamiento hidrológico y tecnologías limpias
+                con competencias transversales adquiridas en el desarrollo web, la mixología profesional,
+                la terapia manual y el emprendimiento comercial. Orientado a la resolución de problemas
+                complejos con rigor técnico, visión estratégica y capacidad de adaptación a entornos
+                cambiantes. Basado en Cusco, Perú.
+            </p>
+        </div>
+    </div>
+
+    <!-- Formación Académica -->
+    <div class="cv-section">
+        <div class="cv-section-title">
+            <span class="section-marker">I</span>
+            <h2>Formación Académica</h2>
+        </div>
+        <div class="cv-items">
+
+            <div class="cv-item">
+                <div class="cv-item-main">
+                    <h3>Ingeniería Ambiental</h3>
+                    <div class="institution">Universidad Andina del Cusco (UAC) · Cusco, Perú</div>
+                    <p>Carrera de ingeniería con énfasis en gestión sostenible de recursos hídricos,
+                    evaluación de impacto ambiental y tecnologías de producción más limpia. Formación
+                    en modelamiento hidrológico con HEC-HMS, análisis espacial con ArcGIS y gestión
+                    de cuencas bajo el marco normativo de la Ley 29338.</p>
+                    <span class="status-chip">En curso · 8.º semestre</span>
+                </div>
+                <div class="cv-item-period">2021 – Presente</div>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-item-main">
+                    <h3>Psicología</h3>
+                    <div class="institution">Universidad de Buenos Aires (UBA) · Buenos Aires, Argentina</div>
+                    <p>Estudios superiores en ciencias del comportamiento humano con formación en
+                    metodología de investigación científica, psicología social, estadística aplicada
+                    a las ciencias sociales y fundamentos del análisis clínico. La UBA, institución de
+                    excelencia académica a nivel latinoamericano, ofreció un entorno intelectualmente
+                    riguroso que consolidó habilidades analíticas y de pensamiento crítico.</p>
+                    <span class="status-chip">Estudios cursados</span>
+                </div>
+                <div class="cv-item-period">Buenos Aires</div>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-item-main">
+                    <h3>Administración de Empresas</h3>
+                    <div class="institution">Universidad Nacional de Lomas de Zamora (UNLZ) · Buenos Aires, Argentina</div>
+                    <p>Formación en gestión organizacional, contabilidad general, economía de empresas,
+                    dirección estratégica y fundamentos del derecho comercial. Los estudios en administración
+                    aportaron una perspectiva estructurada para la toma de decisiones en contextos
+                    empresariales y para la gestión eficiente de emprendimientos propios.</p>
+                    <span class="status-chip">Estudios cursados</span>
+                </div>
+                <div class="cv-item-period">Buenos Aires</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Experiencia Profesional -->
+    <div class="cv-section">
+        <div class="cv-section-title">
+            <span class="section-marker">II</span>
+            <h2>Experiencia Profesional</h2>
+        </div>
+        <div class="cv-items">
+
+            <div class="cv-item">
+                <div class="cv-item-main">
+                    <h3>Desarrollador Web Freelance</h3>
+                    <div class="institution">Actividad independiente</div>
+                    <p>Diseño, desarrollo y despliegue de sitios web y aplicaciones interactivas
+                    mediante tecnologías modernas del ecosistema web. Especialización en interfaces
+                    responsivas elaboradas con HTML5, CSS3 y JavaScript; experiencia con la biblioteca
+                    React para el desarrollo de interfaces de usuario dinámicas. Gestión autónoma de
+                    proyectos desde la conceptualización hasta el despliegue en plataformas cloud
+                    como Vercel y GitHub Pages.</p>
+                    <span class="status-chip">Actividad vigente</span>
+                </div>
+                <div class="cv-item-period">Vigente</div>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-item-main">
+                    <h3>Emprendedor — Comercialización de Artículos para el Bienestar Íntimo</h3>
+                    <div class="institution">Emprendimiento propio · Buenos Aires, Argentina</div>
+                    <p>Fundación y gestión integral de un emprendimiento comercial orientado a la
+                    distribución de productos para el bienestar íntimo y la salud sexual adulta.
+                    Responsable de la selección y aprovisionamiento de catálogo, estrategia de
+                    marketing digital, comunicación con proveedores, atención personalizada al
+                    cliente y administración general del negocio. La experiencia fortaleció
+                    competencias en ventas, gestión de inventario, servicio al cliente y
+                    operación comercial en entornos competitivos.</p>
+                </div>
+                <div class="cv-item-period">Buenos Aires</div>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-item-main">
+                    <h3>Bartender Profesional</h3>
+                    <div class="institution">Industria de la hospitalidad · Buenos Aires, Argentina</div>
+                    <p>Elaboración de cócteles clásicos y de autor bajo protocolos de mixología
+                    profesional. Atención al cliente en entornos de alta demanda y exigencia de
+                    calidad. Gestión de stock e insumos, mantenimiento de estándares de presentación
+                    y contribución a la experiencia global del establecimiento. Desarrollo de
+                    habilidades de comunicación interpersonal, trabajo bajo presión y resolución
+                    ágil de situaciones en entornos de servicio.</p>
+                </div>
+                <div class="cv-item-period">Buenos Aires</div>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-item-main">
+                    <h3>Masajista Profesional — Masoterapia</h3>
+                    <div class="institution">Actividad independiente · Buenos Aires, Argentina</div>
+                    <p>Aplicación de técnicas de masoterapia de relajación, deportiva y terapéutica
+                    orientadas al bienestar integral del cliente. Atención personalizada con evaluación
+                    previa de necesidades, adaptación de la técnica al perfil de cada persona y
+                    seguimiento posterior. Gestión autónoma de agenda, coordinación de sesiones y
+                    mantenimiento de un entorno profesional de confianza y confidencialidad.</p>
+                </div>
+                <div class="cv-item-period">Buenos Aires</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Certificaciones -->
+    <div class="cv-section">
+        <div class="cv-section-title">
+            <span class="section-marker">III</span>
+            <h2>Certificaciones y Formación Complementaria</h2>
+        </div>
+        <div class="cert-grid">
+
+            <div class="cert-card">
+                <div class="cert-icon">◇</div>
+                <h4>Desarrollo Web — HTML, CSS y JavaScript</h4>
+                <div class="cert-issuer">Formación autodidacta y cursos en línea</div>
+                <div class="cert-year">Agregar institución y año</div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-icon">◈</div>
+                <h4>React — Desarrollo de Interfaces Modernas</h4>
+                <div class="cert-issuer">Formación en línea</div>
+                <div class="cert-year">Agregar institución y año</div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-icon">◉</div>
+                <h4>Bartender Profesional — Mixología</h4>
+                <div class="cert-issuer">Agregar institución</div>
+                <div class="cert-year">Agregar año</div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-icon">◎</div>
+                <h4>Masoterapia Profesional</h4>
+                <div class="cert-issuer">Agregar institución</div>
+                <div class="cert-year">Agregar año</div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-icon">◌</div>
+                <h4>Agregar certificado</h4>
+                <div class="cert-issuer">Institución</div>
+                <div class="cert-year">Año</div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-icon">◆</div>
+                <h4>Agregar certificado</h4>
+                <div class="cert-issuer">Institución</div>
+                <div class="cert-year">Año</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Competencias -->
+    <div class="cv-section">
+        <div class="cv-section-title">
+            <span class="section-marker">IV</span>
+            <h2>Competencias</h2>
+        </div>
+        <div class="skills-cols">
+            <div class="skills-group">
+                <h4>Ingeniería Ambiental</h4>
+                <div class="skill-chips">
+                    <span class="chip accent">ArcGIS · SIG</span>
+                    <span class="chip accent">HEC-HMS</span>
+                    <span class="chip accent">Evaluación de impacto</span>
+                    <span class="chip">Gestión de cuencas</span>
+                    <span class="chip">Ley 29338</span>
+                    <span class="chip">Producción más limpia</span>
+                    <span class="chip">ACV · PINCH</span>
+                    <span class="chip">ISO 50001</span>
+                </div>
+            </div>
+            <div class="skills-group">
+                <h4>Desarrollo Web</h4>
+                <div class="skill-chips">
+                    <span class="chip accent">HTML5 · CSS3</span>
+                    <span class="chip accent">JavaScript</span>
+                    <span class="chip accent">React</span>
+                    <span class="chip">Diseño responsivo</span>
+                    <span class="chip">Git · GitHub</span>
+                    <span class="chip">Vercel</span>
+                    <span class="chip">Accesibilidad web</span>
+                </div>
+            </div>
+            <div class="skills-group">
+                <h4>Habilidades Transversales</h4>
+                <div class="skill-chips">
+                    <span class="chip">Gestión de proyectos</span>
+                    <span class="chip">Atención al cliente</span>
+                    <span class="chip">Mixología profesional</span>
+                    <span class="chip">Masoterapia</span>
+                    <span class="chip">Emprendimiento</span>
+                    <span class="chip">Marketing digital</span>
+                </div>
+            </div>
+            <div class="skills-group">
+                <h4>Idiomas</h4>
+                <div class="skill-chips">
+                    <span class="chip accent">Español — Nativo</span>
+                    <span class="chip">Inglés — Intermedio avanzado</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Datos adicionales -->
+    <div class="data-row" style="margin-top:1rem">
+        <div class="data-item">
+            <span class="data-num">3</span>
+            <span class="data-lbl">Universidades</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">4+</span>
+            <span class="data-lbl">Áreas de práctica</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">Bilingüe</span>
+            <span class="data-lbl">ES · EN</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">ARG · PER</span>
+            <span class="data-lbl">Experiencia regional</span>
+        </div>
+    </div>
+
+</main>
+
+<footer class="footer">
+    <p>Portafolio académico · <a href="about.html">Karsten Guillermo García Palomino</a> · UAC 2026</p>
+</footer>
+
+<script src="scripts/main.js"></script>
+</body>
+</html>

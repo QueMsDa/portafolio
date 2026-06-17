@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto · Karsten García Palomino</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <style>
+        /* ── Contacto-specific styles ── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+            margin-bottom: 3rem;
+        }
+
+        .contact-intro h2 {
+            font-family: var(--ff-serif);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.2;
+            margin-bottom: .7rem;
+        }
+        .contact-intro h2 em { font-style: italic; color: var(--forest); }
+        .contact-intro p {
+            font-size: .88rem;
+            color: var(--quill);
+            line-height: 1.75;
+        }
+
+        .contact-links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .contact-link-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.2rem;
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-md);
+            color: var(--ink);
+            transition: border-color .18s, box-shadow .18s, transform .18s;
+        }
+        .contact-link-item:hover {
+            border-color: var(--border-em);
+            box-shadow: var(--shadow-sm);
+            transform: translateX(3px);
+        }
+        .contact-link-icon {
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            border: 1.5px solid var(--border-em);
+            background-color: var(--raised);
+            display: flex; align-items: center; justify-content: center;
+            font-size: .95rem;
+            flex-shrink: 0;
+            font-family: var(--ff-serif);
+            font-weight: 700;
+            font-style: italic;
+            color: var(--forest);
+        }
+        .contact-link-info { flex: 1; }
+        .contact-link-label {
+            font-size: .67rem;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--mist);
+            display: block;
+            margin-bottom: 2px;
+        }
+        .contact-link-value {
+            font-size: .88rem;
+            font-weight: 500;
+            color: var(--ink);
+        }
+        .contact-link-arrow {
+            font-size: .8rem;
+            color: var(--forest);
+        }
+
+        /* ── Redes sociales grande ── */
+        .social-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 2.5rem;
+        }
+        .social-feature-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-md);
+            padding: 1.5rem 1.3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: .6rem;
+            transition: border-color .18s, box-shadow .18s, transform .18s;
+        }
+        .social-feature-card:hover {
+            border-color: var(--border-em);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
+        }
+        .social-platform-badge {
+            width: 52px; height: 52px;
+            border-radius: 50%;
+            border: 1.5px solid var(--border-em);
+            background-color: var(--raised);
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--ff-serif);
+            font-size: 1.3rem;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--forest);
+        }
+        .social-feature-card .platform-name {
+            font-size: .67rem;
+            font-weight: 600;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--mist);
+        }
+        .social-feature-card .platform-handle {
+            font-family: var(--ff-serif);
+            font-size: .95rem;
+            font-weight: 600;
+            color: var(--ink);
+        }
+        .social-feature-card .platform-desc {
+            font-size: .76rem;
+            color: var(--quill);
+            line-height: 1.55;
+        }
+        .social-feature-card .platform-cta {
+            font-size: .73rem;
+            font-weight: 600;
+            color: var(--forest);
+            margin-top: .2rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <script>if(localStorage.getItem('portfolio-dark-mode')==='dark')document.documentElement.classList.add('dark-mode');</script>
+</head>
+<body>
+
+<nav class="nav">
+    <a href="index.html" class="nav-logo">K. García Palomino <span>· Ing. Ambiental</span></a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">Sobre mí</a></li>
+        <li><a href="hidrologia.html">Hidrología</a></li>
+        <li><a href="tecnologias-limpias.html">Tec. Limpias</a></li>
+        <li><a href="riesgos-ambientales.html">Riesgos</a></li>
+        <li><a href="topicos-de-produccion-mas-limpia.html">Tópicos PML</a></li>
+        <li><a href="enlaces-proyectos.html">Proyectos</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+    </ul>
+    <div class="nav-actions">
+        <button class="btn-dark" id="btn-dark-mode" title="Alternar modo oscuro">☾</button>
+        <button class="nav-burger" id="burger" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <span class="eyebrow">Contacto y Redes</span>
+        <h1>Ponerse en <em>contacto</em></h1>
+        <p class="lead">Para consultas académicas, colaboraciones, proyectos de desarrollo web
+        o cualquier otro asunto, utiliza cualquiera de los canales disponibles.</p>
+    </div>
+</section>
+
+<main class="main">
+
+    <!-- Redes principales -->
+    <div class="area-head">
+        <div>
+            <h2>Redes y Plataformas</h2>
+            <p>Perfiles públicos y canales de comunicación activos.</p>
+        </div>
+    </div>
+
+    <div class="social-feature-grid">
+
+        <a href="https://github.com/QueMsDa" target="_blank" rel="noopener" class="social-feature-card">
+            <div class="social-platform-badge">G</div>
+            <span class="platform-name">GitHub</span>
+            <span class="platform-handle">QueMsDa</span>
+            <p class="platform-desc">Repositorios de código, proyectos web y este portafolio académico.</p>
+            <span class="platform-cta">Ver perfil →</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/karsten-guillermo2000/" target="_blank" rel="noopener" class="social-feature-card">
+            <div class="social-platform-badge">in</div>
+            <span class="platform-name">LinkedIn</span>
+            <span class="platform-handle">karsten-guillermo2000</span>
+            <p class="platform-desc">Perfil profesional, trayectoria académica y conexiones del sector.</p>
+            <span class="platform-cta">Ver perfil →</span>
+        </a>
+
+        <a href="https://www.twitch.tv/karstengp" target="_blank" rel="noopener" class="social-feature-card">
+            <div class="social-platform-badge">Tw</div>
+            <span class="platform-name">Twitch</span>
+            <span class="platform-handle">karstengp</span>
+            <p class="platform-desc">Canal de streaming. Contenido en vivo, comunidad y entretenimiento.</p>
+            <span class="platform-cta">Ver canal →</span>
+        </a>
+
+        <a href="mailto:yoninnn5pelotudon@gmail.com" class="social-feature-card">
+            <div class="social-platform-badge">@</div>
+            <span class="platform-name">Correo electrónico</span>
+            <span class="platform-handle">Gmail</span>
+            <p class="platform-desc">Para consultas directas, colaboraciones o propuestas profesionales.</p>
+            <span class="platform-cta">Enviar correo →</span>
+        </a>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Links rápidos -->
+    <div class="contact-grid">
+
+        <div>
+            <div class="area-head" style="padding-top:0; border-top:none;">
+                <div>
+                    <h2>¿En qué puedo <em>ayudarte?</em></h2>
+                </div>
+            </div>
+            <p style="font-size:.88rem; color:var(--quill); line-height:1.75; margin-bottom:1.2rem;">
+                Me encuentro disponible para consultas en las siguientes áreas:
+                proyectos de ingeniería ambiental, desarrollo y diseño web,
+                colaboraciones académicas o cualquier iniciativa de interés común.
+                Prefiero el contacto inicial por LinkedIn o correo electrónico.
+            </p>
+            <div class="data-row" style="margin-bottom:0">
+                <div class="data-item">
+                    <span class="data-num">Cusco</span>
+                    <span class="data-lbl">Perú</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-num">ES · EN</span>
+                    <span class="data-lbl">Idiomas</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-num">Remoto</span>
+                    <span class="data-lbl">Disponible</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-links-list">
+
+            <a href="https://www.linkedin.com/in/karsten-guillermo2000/" target="_blank" rel="noopener" class="contact-link-item">
+                <div class="contact-link-icon">in</div>
+                <div class="contact-link-info">
+                    <span class="contact-link-label">LinkedIn</span>
+                    <span class="contact-link-value">karsten-guillermo2000</span>
+                </div>
+                <span class="contact-link-arrow">→</span>
+            </a>
+
+            <a href="mailto:yoninnn5pelotudon@gmail.com" class="contact-link-item">
+                <div class="contact-link-icon">@</div>
+                <div class="contact-link-info">
+                    <span class="contact-link-label">Correo electrónico</span>
+                    <span class="contact-link-value">yoninnn5pelotudon@gmail.com</span>
+                </div>
+                <span class="contact-link-arrow">→</span>
+            </a>
+
+            <a href="https://github.com/QueMsDa" target="_blank" rel="noopener" class="contact-link-item">
+                <div class="contact-link-icon">G</div>
+                <div class="contact-link-info">
+                    <span class="contact-link-label">GitHub</span>
+                    <span class="contact-link-value">github.com/QueMsDa</span>
+                </div>
+                <span class="contact-link-arrow">→</span>
+            </a>
+
+            <a href="https://www.twitch.tv/karstengp" target="_blank" rel="noopener" class="contact-link-item">
+                <div class="contact-link-icon">Tw</div>
+                <div class="contact-link-info">
+                    <span class="contact-link-label">Twitch</span>
+                    <span class="contact-link-value">twitch.tv/karstengp</span>
+                </div>
+                <span class="contact-link-arrow">→</span>
+            </a>
+
+            <a href="cv.html" class="contact-link-item">
+                <div class="contact-link-icon">CV</div>
+                <div class="contact-link-info">
+                    <span class="contact-link-label">Currículum Vitae</span>
+                    <span class="contact-link-value">Ver trayectoria completa</span>
+                </div>
+                <span class="contact-link-arrow">→</span>
+            </a>
+
+        </div>
+    </div>
+
+</main>
+
+<footer class="footer">
+    <p>Portafolio académico · <a href="about.html">Karsten Guillermo García Palomino</a> · UAC 2026</p>
+</footer>
+
+<script src="scripts/main.js"></script>
+</body>
+</html>
