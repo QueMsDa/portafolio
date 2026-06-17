@@ -1,115 +1,150 @@
 <!DOCTYPE html>
-<html lang="es-mx">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tópicos de Producción Más Limpia | Portafolio</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Tópicos de PML · Portafolio Ing. Ambiental</title>
+    <link rel="stylesheet" href="styles/global.css">
     <script>if(localStorage.getItem('portfolio-dark-mode')==='dark')document.documentElement.classList.add('dark-mode');</script>
 </head>
 <body>
-    <header class="header">
-        <nav class="header__menu" aria-label="Menú principal">
-            <ul>
-                <li><a class="header__menu__link" href="index.html">Home</a></li>
-                <li><a class="header__menu__link" href="about.html">Sobre mí</a></li>
-                <li><a class="header__menu__link" href="tecnologias-limpias.html">Tecnologías Limpias</a></li>
-                <li><a class="header__menu__link" href="riesgos-ambientales.html">Riesgos Ambientales</a></li>
-                <li><a class="header__menu__link" href="hidrologia.html">Hidrología</a></li>
-                <li><a class="header__menu__link" href="enlaces-proyectos.html">Enlaces a Proyectos</a></li>
-                <li><a class="header__menu__link header__menu__link--active" href="topicos-de-produccion-mas-limpia.html">Tópicos de Producción Más Limpia</a></li>
-            </ul>
-        </nav>
-        <button class="btn-dark-mode" id="btn-dark-mode" aria-label="Alternar modo oscuro" title="Modo oscuro / Claro">🌙</button>
-    </header>
 
-    <main class="presentacion">
-        <section class="presentacion__contenido">
-            <h1 class="presentacion__contenido__titulo">
-                Tópicos de Producción Más Limpia
-            </h1>
+<nav class="nav">
+    <a href="index.html" class="nav-logo">K. García Palomino <span>· Ing. Ambiental</span></a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">Sobre mí</a></li>
+        <li><a href="hidrologia.html">Hidrología</a></li>
+        <li><a href="tecnologias-limpias.html">Tec. Limpias</a></li>
+        <li><a href="riesgos-ambientales.html">Riesgos</a></li>
+        <li><a href="topicos-de-produccion-mas-limpia.html" class="active">Tópicos PML</a></li>
+        <li><a href="enlaces-proyectos.html">Proyectos</a></li>
+    </ul>
+    <div class="nav-actions">
+        <button class="btn-dark" id="btn-dark-mode" title="Alternar modo oscuro">☾</button>
+        <button class="nav-burger" id="burger" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
 
-            <div class="temas">
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <span class="eyebrow">Portafolio de Curso · UAC</span>
+        <h1>Tópicos de <em>Producción Más Limpia</em></h1>
+        <p class="lead">Profundización conceptual y aplicada en PML: principios, herramientas
+        de diagnóstico, normativa peruana e internacional y casos de implementación industrial.</p>
+    </div>
+</section>
 
-                <details class="tema">
-                    <summary>Tema 1 – Concepto de Producción Más Limpia</summary>
-                    <div class="tema__contenido">
-                        <p>La Producción Más Limpia (PML) es una estrategia ambiental preventiva que busca reducir los impactos negativos desde el origen del proceso productivo. A diferencia de los enfoques tradicionales que se centran en el tratamiento de residuos, la PML actúa antes de que estos se generen.</p>
-                        <img src="assets/1.jfif" alt="Producción más limpia">
-                    </div>
-                </details>
+<main class="main">
 
-                <details class="tema">
-                    <summary>Tema 2 – Principios Fundamentales</summary>
-                    <div class="tema__contenido">
-                        <p>Los principios de la PML se centran en la prevención, la eficiencia y la sustitución de insumos peligrosos. La prevención implica anticiparse a los problemas ambientales antes de que ocurran. La eficiencia busca optimizar el uso de recursos como agua, energía y materias primas, reduciendo costos y emisiones.</p>
-                        <img src="assets/20260317_110410.png" alt="Producción más limpia">
-                    </div>
-                </details>
+    <div class="card-grid">
 
-                <details class="tema">
-                    <summary>Tema 3 – Beneficios Ambientales y Económicos</summary>
-                    <div class="tema__contenido">
-                        <p>La PML ofrece beneficios ambientales claros, como la reducción de emisiones contaminantes y la disminución de residuos sólidos. En el plano económico, las empresas que aplican PML reducen costos operativos gracias al menor consumo de recursos y al aprovechamiento de subproductos.</p>
-                    </div>
-                </details>
+        <div class="card">
+            <span class="card-lbl">Tema 1</span>
+            <h3>Concepto de Producción Más Limpia</h3>
+            <p>La PML es una estrategia ambiental preventiva que busca reducir los impactos
+            negativos desde el origen del proceso productivo. A diferencia de los enfoques
+            tradicionales centrados en el tratamiento de residuos, la PML actúa antes de
+            que estos se generen.</p>
+            <span class="card-pill">Estrategia preventiva</span>
+        </div>
 
-                <details class="tema">
-                    <summary>Tema 4 – Herramientas y Técnicas de PML</summary>
-                    <div class="tema__contenido">
-                        <p>Entre las herramientas más utilizadas se encuentran las auditorías ambientales y los diagnósticos de procesos, que permiten identificar oportunidades de mejora. Las técnicas incluyen la implementación de tecnologías limpias, el rediseño de productos y la aplicación de buenas prácticas de mantenimiento y operación.</p>
-                    </div>
-                </details>
+        <div class="card">
+            <span class="card-lbl">Tema 2</span>
+            <h3>Principios Fundamentales de la PML</h3>
+            <p>Los principios se centran en la prevención, la eficiencia y la sustitución de
+            insumos peligrosos. La prevención implica anticiparse a los problemas antes de
+            que ocurran; la eficiencia busca optimizar el uso de recursos reduciendo costos
+            y emisiones simultáneamente.</p>
+            <span class="card-pill">Prevención · Eficiencia</span>
+        </div>
 
-                <details class="tema">
-                    <summary>Tema 5 – Implementación en la Industria</summary>
-                    <div class="tema__contenido">
-                        <p>La implementación de la PML sigue un proceso estructurado: diagnóstico inicial, identificación de oportunidades, evaluación técnica y económica, aplicación de medidas y seguimiento. Este proceso requiere el compromiso de la gerencia y la participación activa de los trabajadores.</p>
-                    </div>
-                </details>
+        <div class="card">
+            <span class="card-lbl">Tema 3</span>
+            <h3>Beneficios Ambientales y Económicos</h3>
+            <p>La PML ofrece beneficios ambientales claros: reducción de emisiones contaminantes
+            y disminución de residuos sólidos. En el plano económico, las empresas que aplican
+            PML reducen costos operativos gracias al menor consumo de recursos y al
+            aprovechamiento de subproductos.</p>
+            <span class="card-pill">Doble dividendo</span>
+        </div>
 
-                <details class="tema">
-                    <summary>Tema 6 – ¿Qué establece la ISO 10628?</summary>
-                    <div class="tema__contenido">
-                        <p>La ISO 10628 es una norma internacional que establece las reglas para la elaboración de diagramas de flujo de procesos en ingeniería química e industrial. Su aplicación en PML facilita la identificación de puntos críticos dentro de procesos productivos.</p>
-                    </div>
-                </details>
+        <div class="card">
+            <span class="card-lbl">Tema 4</span>
+            <h3>Herramientas y Técnicas de PML</h3>
+            <p>Entre las herramientas más utilizadas se encuentran las auditorías ambientales
+            y los diagnósticos de procesos, que permiten identificar oportunidades de mejora.
+            Incluye rediseño de productos, buenas prácticas operativas y mantenimiento preventivo.</p>
+            <span class="card-pill">Diagnóstico · Auditoría</span>
+        </div>
 
-                <details class="tema">
-                    <summary>Tema 7 – Aplicaciones y ejemplos</summary>
-                    <div class="tema__contenido">
-                        <p>Próximamente.</p>
-                    </div>
-                </details>
+        <div class="card">
+            <span class="card-lbl">Tema 5</span>
+            <h3>Implementación en la Industria</h3>
+            <p>La implementación sigue un proceso estructurado: diagnóstico inicial,
+            identificación de oportunidades, evaluación técnica y económica, aplicación de
+            medidas y seguimiento de resultados. Requiere compromiso de la gerencia y
+            participación activa de los trabajadores.</p>
+            <span class="card-pill">Ciclo de mejora continua</span>
+        </div>
 
-                <details class="tema">
-                    <summary>Tema 8 – Manejo de sustancias peligrosas</summary>
-                    <div class="tema__contenido">
-                        <p>Continuará.</p>
-                    </div>
-                </details>
+        <div class="card">
+            <span class="card-lbl">Tema 6 · Norma</span>
+            <h3>ISO 10628 — Diagramas de Proceso</h3>
+            <p>Norma internacional que establece las reglas para la elaboración de PFDs y
+            P&IDs en ingeniería química e industrial. Su aplicación en PML facilita la
+            identificación de puntos críticos dentro de procesos productivos y la comunicación
+            técnica precisa entre equipos.</p>
+            <span class="card-pill">PFDs · P&IDs</span>
+        </div>
 
-                <details class="tema">
-                    <summary>Tema 9 – Casos prácticos</summary>
-                    <div class="tema__contenido">
-                        <p>Próximamente.</p>
-                    </div>
-                </details>
+        <div class="card">
+            <span class="card-lbl">Tema 7</span>
+            <h3>Aplicaciones Sectoriales</h3>
+            <p>Casos de aplicación de PML en industrias de alto impacto ambiental: textil,
+            curtiembre, petroquímica y manufactura metálica. Comparación de indicadores antes
+            y después de la implementación de medidas preventivas.</p>
+            <span class="card-pill">Casos reales</span>
+        </div>
 
-                <details class="tema">
-                    <summary>Tema 10 – Cierre</summary>
-                    <div class="tema__contenido">
-                        <p>Gracias por leer.</p>
-                    </div>
-                </details>
+        <div class="card">
+            <span class="card-lbl">Tema 8</span>
+            <h3>Manejo de Sustancias Peligrosas</h3>
+            <p>Inventario, etiquetado y almacenamiento de sustancias peligrosas bajo criterios
+            GHS y la normativa peruana. Sustitución de insumos peligrosos como medida clave
+            de producción más limpia en el sector industrial.</p>
+            <span class="card-pill">GHS · Sustitución</span>
+        </div>
 
-            </div>
-        </section>
-    </main>
+        <div class="card">
+            <span class="card-lbl">Tema 9</span>
+            <h3>Casos Prácticos — Cusco</h3>
+            <p>Análisis de casos locales con potencial de aplicación PML en la región Cusco.
+            Identificación de sectores prioritarios: agroindustria, curtiembre artesanal
+            y pequeña minería. Propuestas adaptadas al contexto andino.</p>
+            <span class="card-pill">Contexto local</span>
+        </div>
 
-    <footer class="footer">
-        <p>Desarrollado por Karsten Guillermo García Palomino</p>
-    </footer>
-    <script src="scripts/main.js"></script>
+        <div class="card">
+            <span class="card-lbl">Tema 10 · Cierre</span>
+            <h3>PML como Eje de la Ingeniería Ambiental</h3>
+            <p>La producción más limpia no es un conjunto de técnicas aisladas, sino una
+            filosofía de gestión que integra la prevención ambiental con la competitividad
+            industrial. Su adopción es indispensable para la transición hacia economías
+            más sostenibles en el contexto peruano.</p>
+            <span class="card-pill">Síntesis</span>
+        </div>
+
+    </div>
+
+</main>
+
+<footer class="footer">
+    <p>Portafolio académico · <a href="about.html">Karsten Guillermo García Palomino</a> · UAC 2026</p>
+</footer>
+
+<script src="scripts/main.js"></script>
 </body>
 </html>

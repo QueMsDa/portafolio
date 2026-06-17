@@ -1,72 +1,418 @@
 <!DOCTYPE html>
-<html lang="es-mx">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sección de Hidrología del portafolio profesional.">
-    <title>Hidrología | Portafolio</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Hidrología · Portafolio Ing. Ambiental</title>
+    <link rel="stylesheet" href="styles/global.css">
     <script>if(localStorage.getItem('portfolio-dark-mode')==='dark')document.documentElement.classList.add('dark-mode');</script>
 </head>
 <body>
-    <header class="header">
-        <nav class="header__menu" aria-label="Menú principal">
-            <ul>
-                <li><a class="header__menu__link" href="index.html">Home</a></li>
-                <li><a class="header__menu__link" href="about.html">Sobre mí</a></li>
-                <li><a class="header__menu__link" href="tecnologias-limpias.html">Tecnologías Limpias</a></li>
-                <li><a class="header__menu__link" href="riesgos-ambientales.html">Riesgos Ambientales</a></li>
-                <li><a class="header__menu__link header__menu__link--active" href="hidrologia.html">Hidrología</a></li>
-                <li><a class="header__menu__link" href="enlaces-proyectos.html">Enlaces a Proyectos</a></li>
-                <li><a class="header__menu__link" href="topicos-de-produccion-mas-limpia.html">Tópicos de Producción Más Limpia</a></li>
-            </ul>
-        </nav>
-        <button class="btn-dark-mode" id="btn-dark-mode" aria-label="Alternar modo oscuro" title="Modo oscuro / Claro">🌙</button>
-    </header>
 
-    <main class="presentacion">
-        <section class="presentacion__contenido">
-            <h1 class="presentacion__contenido__titulo">
-                Hidrología y Gestión del Recurso Hídrico
-            </h1>
-            <p class="presentacion__contenido__texto">
-                La hidrología estudia el comportamiento del agua en la superficie y subsuelo,
-                considerando procesos físicos, climáticos y ambientales que influyen en su
-                disponibilidad y calidad.
-            </p>
+<nav class="nav">
+    <a href="index.html" class="nav-logo">K. García Palomino <span>· Ing. Ambiental</span></a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">Sobre mí</a></li>
+        <li><a href="hidrologia.html" class="active">Hidrología</a></li>
+        <li><a href="tecnologias-limpias.html">Tec. Limpias</a></li>
+        <li><a href="riesgos-ambientales.html">Riesgos</a></li>
+        <li><a href="topicos-de-produccion-mas-limpia.html">Tópicos PML</a></li>
+        <li><a href="enlaces-proyectos.html">Proyectos</a></li>
+    </ul>
+    <div class="nav-actions">
+        <button class="btn-dark" id="btn-dark-mode" title="Alternar modo oscuro">☾</button>
+        <button class="nav-burger" id="burger" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
 
-            <div class="grid-proyectos">
-                <article class="card-proyecto">
-                    <h2>Ciclo Hidrológico</h2>
-                    <p>Evaporación, condensación, precipitación, infiltración y escorrentía como procesos dinámicos del sistema hídrico.</p>
-                </article>
-                <article class="card-proyecto">
-                    <h2>Cuencas Hidrográficas</h2>
-                    <p>Unidades territoriales fundamentales para la planificación sostenible del agua.</p>
-                </article>
-                <article class="card-proyecto">
-                    <h2>Balance Hídrico</h2>
-                    <p>Relación cuantitativa entre entradas, salidas y almacenamiento de agua.</p>
-                </article>
-                <article class="card-proyecto">
-                    <h2>Aguas Subterráneas</h2>
-                    <p>Importancia de los acuíferos en el abastecimiento humano y agrícola.</p>
-                </article>
-                <article class="card-proyecto">
-                    <h2>Modelación Hidrológica</h2>
-                    <p>Simulación matemática aplicada a la gestión de riesgos por inundaciones y sequías.</p>
-                </article>
-                <article class="card-proyecto">
-                    <h2>Cambio Climático</h2>
-                    <p>Impactos sobre los patrones de precipitación y disponibilidad hídrica.</p>
-                </article>
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <span class="eyebrow">Portafolio de Curso · UAC</span>
+        <h1><em>Hidrología</em></h1>
+        <p class="lead">Ciclo hidrológico, gestión de cuencas, Ley 29338, modelamiento con HEC-HMS
+        y análisis de caudales. Tres unidades de aprendizaje progresivo.</p>
+    </div>
+</section>
+
+<main class="main">
+
+    <div class="data-row">
+        <div class="data-item">
+            <span class="data-num">3</span>
+            <span class="data-lbl">Unidades</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">Ley 29338</span>
+            <span class="data-lbl">Marco normativo</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">HEC-HMS</span>
+            <span class="data-lbl">Modelamiento</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">ArcGIS</span>
+            <span class="data-lbl">SIG cuencas</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">#1</span>
+            <span class="data-lbl">Ranking Perú</span>
+        </div>
+    </div>
+
+    <!-- Navegación de unidades -->
+    <div class="unit-nav">
+        <a href="#unidad-1" class="unit-nav-item">
+            <span class="unit-numeral">I</span>
+            <span class="unit-nav-lbl">Unidad 1</span>
+            <h3>Agua, Derecho y Cuencas</h3>
+            <p>El agua en el mundo, situación hídrica en Perú, Ley 29338 y sistemas de cuencas.</p>
+            <span class="unit-nav-cta">Ver unidad →</span>
+        </a>
+        <a href="#unidad-2" class="unit-nav-item">
+            <span class="unit-numeral">II</span>
+            <span class="unit-nav-lbl">Unidad 2</span>
+            <h3>GIRH y Parámetros Morfométricos</h3>
+            <p>Gestión integrada, calidad del agua, adaptación climática y caracterización de cuencas.</p>
+            <span class="unit-nav-cta">Ver unidad →</span>
+        </a>
+        <a href="#unidad-3" class="unit-nav-item">
+            <span class="unit-numeral">III</span>
+            <span class="unit-nav-lbl">Unidad 3</span>
+            <h3>Escorrentía y Modelamiento</h3>
+            <p>Sequías, HEC-HMS, balance hídrico, caudales con Manning y fenómeno ENSO.</p>
+            <span class="unit-nav-cta">Ver unidad →</span>
+        </a>
+    </div>
+
+    <!-- ── UNIDAD 1 ── -->
+    <div class="section-head" id="unidad-1">
+        <span class="section-num">I</span>
+        <div>
+            <h2>Unidad 1 — Agua, Derecho y Cuencas</h2>
+            <p>El agua en el mundo, situación en Perú, Ley 29338 y sistemas de cuencas hidrográficas</p>
+        </div>
+    </div>
+
+    <div class="card-grid card-grid-2">
+
+        <div class="card">
+            <span class="card-lbl">Tema 1.1</span>
+            <h3>El Agua en el Mundo</h3>
+            <p>Distribución global del agua, ciclo hidrológico y disponibilidad por regiones.
+            Escasez hídrica como desafío para la sostenibilidad del siglo XXI.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%201/El%20agua%20en%20el%20mundo.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    El agua en el mundo (PDF)
+                </a>
             </div>
-        </section>
-    </main>
+        </div>
 
-    <footer class="footer">
-        <p>&copy; 2026 Karsten García Palomino</p>
-    </footer>
-    <script src="scripts/main.js"></script>
+        <div class="card">
+            <span class="card-lbl">Tema 1.2</span>
+            <h3>Agua en Perú y Estrés Hídrico</h3>
+            <p>Situación hídrica del Perú, distribución espacial del recurso hídrico y zonas
+            de estrés hídrico. Brecha entre disponibilidad y demanda en la región andina.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%201/El%20agua%20en%20el%20peru.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Agua en Perú (PDF)
+                </a>
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%201/ESTRES%20HIDRICO%20EN%20EL%20PERU.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Estrés hídrico (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Tema 1.3 · Marco legal</span>
+            <h3>Ley 29338 — Ley de Recursos Hídricos</h3>
+            <p>Marco normativo nacional del agua en Perú. Principios, derechos de uso, autoridades
+            competentes y regímenes de licencias. Base legal para cualquier proyecto hídrico.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%201/LEY%2029338%20Ley%20de%20los%20recursos%20hidricos.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Ley 29338 (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Tema 1.4</span>
+            <h3>Cuencas Hidrográficas y Licencias de Uso</h3>
+            <p>Delimitación y caracterización de cuencas, regímenes hidrológicos y tipos de
+            licencias de uso de agua en el marco de la legislación peruana.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%201/cuencas%20y%20licencias.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Cuencas y licencias (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Tema 1.5 · Reflexión</span>
+            <h3>Pluralismo Legal y Gestión del Agua</h3>
+            <p>Coexistencia de sistemas legales formales e informales en la gestión del agua.
+            Conflictos entre derecho positivo y usos consuetudinarios en comunidades andinas.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%201/Pluralismo%20legal%20y%20gestion%20del%20agua.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Pluralismo legal (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">IF · Portafolio U1</span>
+            <h3>Investigación Formativa — Unidad 1</h3>
+            <p>Portafolio de la primera unidad: compilación de aprendizajes, reflexiones y
+            evidencias sobre el recurso hídrico y su marco normativo en Perú.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%201/PORTAFOLIO%20U1.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Portafolio U1 (PDF)
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ── UNIDAD 2 ── -->
+    <div class="section-head" id="unidad-2">
+        <span class="section-num">II</span>
+        <div>
+            <h2>Unidad 2 — GIRH y Parámetros Morfométricos</h2>
+            <p>Gestión integrada, calidad del agua, adaptación climática y caracterización de cuencas</p>
+        </div>
+    </div>
+
+    <div class="card-grid card-grid-2">
+
+        <div class="card">
+            <span class="card-lbl">Tema 2.1</span>
+            <h3>Gestión Integrada de Recursos Hídricos</h3>
+            <p>Enfoque GIRH: coordinación entre usos del agua, actores institucionales y
+            planificación a escala de cuenca. Principios de Dublín y gobernanza del agua.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%202/GIRH.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    GIRH (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Tema 2.2</span>
+            <h3>Calidad del Agua</h3>
+            <p>Parámetros fisicoquímicos y biológicos. Estándares de calidad ambiental (ECA)
+            para agua en Perú. Índices de calidad y protocolos de monitoreo.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%202/Calidad%20del%20agua.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Calidad del agua (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Tema 2.3</span>
+            <h3>Adaptación al Cambio Climático</h3>
+            <p>Estrategias de adaptación para sistemas hídricos frente a variabilidad climática.
+            Reducción de vulnerabilidad en cuencas andinas expuestas a glaciares en retroceso.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%202/Adaptacion%20climatica.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Adaptación climática (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Tema 2.4 · Normativa</span>
+            <h3>Normas Sectoriales del Agua</h3>
+            <p>Regulaciones sectoriales complementarias a la Ley 29338: minería, agricultura,
+            uso poblacional. Interacción entre MINAM, ANA y gobiernos regionales.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%202/Normas%20Sectoriales.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Normas sectoriales (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Tema 2.5 · SIG</span>
+            <h3>Parámetros Morfométricos de Cuencas</h3>
+            <p>Cálculo de forma, relieve y red hidrográfica con ArcGIS. Índices de Gravelius,
+            factor de forma, densidad de drenaje y tiempo de concentración.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%202/parametros%20morfometricos.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Parámetros morfométricos (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">IF · Portafolio U2</span>
+            <h3>Investigación Formativa — Unidad 2</h3>
+            <p>Portafolio de la segunda unidad: evidencias de la caracterización morfométrica
+            de cuencas y reflexiones sobre gestión integrada del recurso hídrico.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%202/IF%20CUENCA%20U2.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    IF Cuenca U2 (PDF)
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ── UNIDAD 3 ── -->
+    <div class="section-head" id="unidad-3">
+        <span class="section-num">III</span>
+        <div>
+            <h2>Unidad 3 — Escorrentía y Modelamiento Hidrológico</h2>
+            <p>Sequías, HEC-HMS, balance hídrico P=ET+Q+ΔS, caudales con Manning y fenómeno ENSO</p>
+        </div>
+    </div>
+
+    <div class="card-grid card-grid-2">
+
+        <div class="card">
+            <span class="card-lbl">Tema 3.1</span>
+            <h3>Sequías — Tipos y Gestión</h3>
+            <p>Clasificación de sequías: meteorológica, hidrológica, agrícola y socioeconómica.
+            Índices de sequía (SPI, PDSI) y estrategias de respuesta temprana.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%203/Sequias.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Sequías (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Tema 3.2</span>
+            <h3>Escorrentía Superficial</h3>
+            <p>Génesis de la escorrentía, número de curva CN del SCS, hietogramas de diseño
+            y separación de flujo base. Cálculo de caudales pico para distintos periodos de retorno.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%203/Escorrentia.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Escorrentía (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Tema 3.3 · Trabajo</span>
+            <h3>Trabajo Integrador</h3>
+            <p>Aplicación integrada de los conceptos de la unidad: caracterización de cuenca,
+            modelamiento de eventos de lluvia-escorrentía y análisis de resultados.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%203/Trabajo%20integrador.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Trabajo integrador (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Tema 3.4 · HEC-HMS · Grupo 4</span>
+            <h3>Modelamiento HEC-HMS — Cuenca Chontali</h3>
+            <p>Configuración del modelo HEC-HMS para la cuenca Chontali: ingreso de parámetros
+            morfométricos, calibración y simulación de hidrogramas de crecida.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%203/HEC-HMS%20Cuenca%20Chontali%20Grupo%204.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    HEC-HMS Chontali (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Tema 3.5 · Ecuación</span>
+            <h3>Balance Hídrico — P = ET + Q + ΔS</h3>
+            <p>Aplicación de la ecuación de balance hídrico a escala de cuenca. Estimación de
+            evapotranspiración real con métodos de Penman-Monteith y Hargreaves.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%203/balance%20hidrico.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Balance hídrico (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Tema 3.6 · Hidráulica</span>
+            <h3>Caudales y Fórmula de Manning</h3>
+            <p>Cálculo de caudal en canales y cauces naturales mediante la ecuación de Manning.
+            Determinación de rugosidad, sección hidráulica y pendiente de la lámina de agua.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%203/caudales%20y%20manning.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Caudales y Manning (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Tema 3.7 · Software</span>
+            <h3>Modelamiento Hidrológico</h3>
+            <p>Integración de SIG y modelos hidrológicos para la simulación de eventos extremos.
+            Aplicaciones de ArcGIS Hydrology Toolset para extracción de parámetros de cuenca.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%203/modelamiento%20hidrologico.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Modelamiento (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Tema 3.8 · Climatología</span>
+            <h3>Fenómeno ENSO</h3>
+            <p>El Niño-Oscilación del Sur: mecanismos de teleconexión, impacto en la hidrología
+            del Perú y gestión de riesgo de inundaciones y sequías asociadas.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%203/ENSO.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Fenómeno ENSO (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Opinión · Columnas</span>
+            <h3>Columnas de Opinión</h3>
+            <p>Escritos de reflexión sobre problemáticas hídricas actuales: escasez, cambio
+            climático y gobernanza del agua en el contexto andino peruano.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/documentos%20de%20hidrologia/unidad%203/columnas%20de%20opinion.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Columnas (PDF)
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<footer class="footer">
+    <p>Portafolio académico · <a href="about.html">Karsten Guillermo García Palomino</a> · UAC 2026</p>
+</footer>
+
+<script src="scripts/main.js"></script>
 </body>
 </html>

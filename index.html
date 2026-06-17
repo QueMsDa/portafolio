@@ -1,62 +1,126 @@
 <!DOCTYPE html>
-<html lang="es-mx">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio | Karsten García</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Portafolio · Karsten García Palomino · Ing. Ambiental</title>
+    <link rel="stylesheet" href="styles/global.css">
     <script>if(localStorage.getItem('portfolio-dark-mode')==='dark')document.documentElement.classList.add('dark-mode');</script>
 </head>
 <body>
-    <header class="header">
-        <nav class="header__menu" aria-label="Menú principal">
-            <ul>
-                <li><a class="header__menu__link header__menu__link--active" href="index.html">Home</a></li>
-                <li><a class="header__menu__link" href="about.html">Sobre mí</a></li>
-                <li><a class="header__menu__link" href="tecnologias-limpias.html">Tecnologías Limpias</a></li>
-                <li><a class="header__menu__link" href="riesgos-ambientales.html">Riesgos Ambientales</a></li>
-                <li><a class="header__menu__link" href="hidrologia.html">Hidrología</a></li>
-                <li><a class="header__menu__link" href="enlaces-proyectos.html">Enlaces a Proyectos</a></li>
-                <li><a class="header__menu__link" href="topicos-de-produccion-mas-limpia.html">Tópicos de Producción Más Limpia</a></li>
-            </ul>
-        </nav>
-        <button class="btn-dark-mode" id="btn-dark-mode" aria-label="Alternar modo oscuro" title="Modo oscuro / Claro">🌙</button>
-    </header>
 
-    <main class="presentacion">
-        <section class="presentacion__contenido">
-            <h1 class="presentacion__contenido__titulo">
-                Portafolio académico en
-                <strong class="titulo-destaque">Ingeniería Ambiental</strong>
-            </h1>
-            <p class="presentacion__contenido__texto">
-                Soy Karsten Guillermo García Palomino, estudiante de Ingeniería Ambiental con
-                enfoque en sostenibilidad, cambio climático y gestión de recursos.
-                Este portafolio reúne mis trabajos académicos, investigaciones y proyectos técnicos.
-            </p>
-            <div class="presentacion__enlaces">
-                <h2 class="presentacion__enlaces__subtitulo">Mis redes</h2>
-                <a class="presentacion__enlaces__link" href="https://github.com/QueMsDa" target="_blank" rel="noopener noreferrer">
-                    <img src="./assets/github.png" alt="GitHub">
-                    GitHub
-                </a>
-                <a class="presentacion__enlaces__link" href="https://www.linkedin.com/in/karsten-guillermo2000/" target="_blank" rel="noopener noreferrer">
-                    <img src="./assets/linkedin.png" alt="LinkedIn">
-                    LinkedIn
-                </a>
-                <a class="presentacion__enlaces__link" href="https://www.twitch.tv/karstengp" target="_blank" rel="noopener noreferrer">
-                    <img src="./assets/twitch.png" alt="Twitch">
-                    Twitch
-                </a>
-            </div>
-        </section>
-        <img class="presentacion__imagen" src="./assets/image0333.png" alt="Foto de Karsten García">
-    </main>
+<nav class="nav">
+    <a href="index.html" class="nav-logo">K. García Palomino <span>· Ing. Ambiental</span></a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="about.html">Sobre mí</a></li>
+        <li><a href="hidrologia.html">Hidrología</a></li>
+        <li><a href="tecnologias-limpias.html">Tec. Limpias</a></li>
+        <li><a href="riesgos-ambientales.html">Riesgos</a></li>
+        <li><a href="topicos-de-produccion-mas-limpia.html">Tópicos PML</a></li>
+        <li><a href="enlaces-proyectos.html">Proyectos</a></li>
+    </ul>
+    <div class="nav-actions">
+        <button class="btn-dark" id="btn-dark-mode" title="Alternar modo oscuro">☾</button>
+        <button class="nav-burger" id="burger" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
 
-    <footer class="footer">
-        <p>Desarrollado por Karsten Guillermo García Palomino</p>
-    </footer>
-    <script src="scripts/main.js"></script>
+<section class="hero-home">
+    <div class="hero-inner">
+        <span class="eyebrow">Ing. Ambiental · UAC · Cusco, Perú</span>
+        <h1>Karsten Guillermo<br><em>García Palomino</em></h1>
+        <p class="lead">
+            Portafolio académico de Ingeniería Ambiental. Documentación de aprendizajes
+            en hidrología, tecnologías limpias, riesgos ambientales y producción más limpia.
+        </p>
+        <div class="social-row">
+            <a href="https://github.com/QueMsDa" class="social-btn" target="_blank" rel="noopener">GitHub</a>
+            <a href="about.html" class="social-btn">Sobre mí</a>
+            <a href="enlaces-proyectos.html" class="social-btn">Proyectos</a>
+        </div>
+    </div>
+</section>
+
+<main class="main">
+
+    <div class="data-row">
+        <div class="data-item">
+            <span class="data-num">8.º</span>
+            <span class="data-lbl">Semestre UAC</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">4</span>
+            <span class="data-lbl">Cursos</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">ArcGIS</span>
+            <span class="data-lbl">SIG</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">HEC-HMS</span>
+            <span class="data-lbl">Modelamiento</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">Cusco</span>
+            <span class="data-lbl">Perú</span>
+        </div>
+    </div>
+
+    <div class="area-head">
+        <div>
+            <h2>Cursos del Semestre</h2>
+            <p>Selecciona un curso para explorar los aprendizajes, evidencias y reflexiones de cada unidad.</p>
+        </div>
+    </div>
+
+    <div class="courses-grid">
+        <a href="hidrologia.html" class="course-card">
+            <div class="course-icon">◈</div>
+            <h3>Hidrología</h3>
+            <p>Ciclo hidrológico, cuencas, caudales, HEC-HMS y modelamiento de escorrentía.</p>
+            <span class="course-link">Ver portafolio</span>
+        </a>
+        <a href="tecnologias-limpias.html" class="course-card">
+            <div class="course-icon">◇</div>
+            <h3>Tecnologías Limpias</h3>
+            <p>PML, balances de materia y energía, ACV, análisis PINCH e ISO 50001.</p>
+            <span class="course-link">Ver portafolio</span>
+        </a>
+        <a href="riesgos-ambientales.html" class="course-card">
+            <div class="course-icon">◉</div>
+            <h3>Riesgos Ambientales</h3>
+            <p>Identificación, evaluación cuantitativa y cualitativa, mapas de riesgo con ArcGIS.</p>
+            <span class="course-link">Ver portafolio</span>
+        </a>
+        <a href="topicos-de-produccion-mas-limpia.html" class="course-card">
+            <div class="course-icon">◎</div>
+            <h3>Tópicos de PML</h3>
+            <p>Conceptos, principios, herramientas y casos de implementación de producción más limpia.</p>
+            <span class="course-link">Ver portafolio</span>
+        </a>
+        <a href="about.html" class="course-card">
+            <div class="course-icon">◌</div>
+            <h3>Sobre mí</h3>
+            <p>Perfil académico, competencias, áreas de interés y trayectoria en ingeniería ambiental.</p>
+            <span class="course-link">Ver perfil</span>
+        </a>
+        <a href="enlaces-proyectos.html" class="course-card">
+            <div class="course-icon">◆</div>
+            <h3>Proyectos Web</h3>
+            <p>Herramientas desarrolladas con HTML, CSS y JavaScript. Calculadoras y convertidores.</p>
+            <span class="course-link">Ver proyectos</span>
+        </a>
+    </div>
+
+</main>
+
+<footer class="footer">
+    <p>Portafolio académico · <a href="about.html">Karsten Guillermo García Palomino</a> · UAC 2026</p>
+</footer>
+
+<script src="scripts/main.js"></script>
 </body>
 </html>

@@ -1,59 +1,170 @@
 <!DOCTYPE html>
-<html lang="es-mx">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre mí | Portafolio</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Sobre mí · Karsten García Palomino</title>
+    <link rel="stylesheet" href="styles/global.css">
     <script>if(localStorage.getItem('portfolio-dark-mode')==='dark')document.documentElement.classList.add('dark-mode');</script>
 </head>
 <body>
-    <header class="header">
-        <nav class="header__menu" aria-label="Menú principal">
-            <ul>
-                <li><a class="header__menu__link" href="index.html">Home</a></li>
-                <li><a class="header__menu__link header__menu__link--active" href="about.html">Sobre mí</a></li>
-                <li><a class="header__menu__link" href="tecnologias-limpias.html">Tecnologías Limpias</a></li>
-                <li><a class="header__menu__link" href="riesgos-ambientales.html">Riesgos Ambientales</a></li>
-                <li><a class="header__menu__link" href="hidrologia.html">Hidrología</a></li>
-                <li><a class="header__menu__link" href="enlaces-proyectos.html">Enlaces a Proyectos</a></li>
-                <li><a class="header__menu__link" href="topicos-de-produccion-mas-limpia.html">Tópicos de Producción Más Limpia</a></li>
-            </ul>
-        </nav>
-        <button class="btn-dark-mode" id="btn-dark-mode" aria-label="Alternar modo oscuro" title="Modo oscuro / Claro">🌙</button>
-    </header>
 
-    <main class="presentacion">
-        <section class="presentacion__contenido">
-            <h1 class="presentacion__contenido__titulo">Sobre mí</h1>
-            <p class="presentacion__contenido__texto">
-                Soy <strong>Karsten Guillermo García Palomino</strong>, estudiante de
-                <strong>Ingeniería Ambiental</strong>, con un enfoque integral que vincula
-                el impacto ambiental con el bienestar social. Me especializo en sostenibilidad,
-                cambio climático y calidad ambiental, y he participado en investigaciones sobre
-                contaminación del suelo, biorremediación y biodiversidad en la región de Cusco.
-                Mi objetivo es desarrollar soluciones innovadoras y sostenibles para la gestión
-                ambiental, integrando ciencia, tecnología y compromiso social.
-            </p>
-            <p class="presentacion__contenido__texto">
-                Además de mi formación en ingeniería, cuento con experiencia en diversas áreas
-                que han potenciado mis habilidades interpersonales y técnicas. Me desempeño como
-                <strong>bartender, masajista y caster de videojuegos</strong>, desarrollando
-                liderazgo, trabajo en equipo y adaptabilidad en distintos entornos. También tengo
-                conocimientos en <strong>desarrollo web</strong>, creando sitios funcionales y
-                accesibles con tecnologías modernas. Mi pasión por la tecnología me ha llevado a
-                explorar su aplicación en la ingeniería ambiental, especialmente en el análisis
-                de datos y la optimización de procesos ecológicos. Con una
-                <strong>visión ambiental sólida</strong>, busco contribuir activamente al
-                desarrollo de estrategias sostenibles que generen un impacto positivo.
-            </p>
-        </section>
-        <img class="presentacion__imagen" src="./assets/image03.png" alt="Foto de Karsten García">
-    </main>
+<nav class="nav">
+    <a href="index.html" class="nav-logo">K. García Palomino <span>· Ing. Ambiental</span></a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html" class="active">Sobre mí</a></li>
+        <li><a href="hidrologia.html">Hidrología</a></li>
+        <li><a href="tecnologias-limpias.html">Tec. Limpias</a></li>
+        <li><a href="riesgos-ambientales.html">Riesgos</a></li>
+        <li><a href="topicos-de-produccion-mas-limpia.html">Tópicos PML</a></li>
+        <li><a href="enlaces-proyectos.html">Proyectos</a></li>
+    </ul>
+    <div class="nav-actions">
+        <button class="btn-dark" id="btn-dark-mode" title="Alternar modo oscuro">☾</button>
+        <button class="nav-burger" id="burger" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
 
-    <footer class="footer">
-        <p>Desarrollado por Karsten Guillermo García Palomino</p>
-    </footer>
-    <script src="scripts/main.js"></script>
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <span class="eyebrow">Perfil académico</span>
+        <h1>Karsten Guillermo<br><em>García Palomino</em></h1>
+        <p class="lead">Estudiante de Ingeniería Ambiental en la Universidad Andina del Cusco.
+        Interés en hidrología aplicada, gestión de cuencas y tecnologías de producción más limpia.</p>
+    </div>
+</section>
+
+<main class="main">
+
+    <div class="data-row">
+        <div class="data-item">
+            <span class="data-num">8.º</span>
+            <span class="data-lbl">Semestre</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">UAC</span>
+            <span class="data-lbl">Universidad</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">Cusco</span>
+            <span class="data-lbl">Perú</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">ArcGIS</span>
+            <span class="data-lbl">SIG Avanzado</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">HEC-HMS</span>
+            <span class="data-lbl">Modelamiento</span>
+        </div>
+    </div>
+
+    <div class="profile-wrap">
+        <img src="assets/foto-perfil.jpg" alt="Karsten García Palomino" class="profile-img"
+             onerror="this.style.display='none'">
+        <div class="profile-text">
+            <h2>Ingeniería con <em>propósito ambiental</em></h2>
+            <p>
+                Soy estudiante de Ingeniería Ambiental en la Universidad Andina del Cusco,
+                en el 8.º semestre de la carrera. Mi enfoque académico se centra en la gestión
+                sostenible de recursos hídricos, la aplicación de tecnologías limpias en procesos
+                industriales y la evaluación de riesgos ambientales.
+            </p>
+            <p>
+                Trabajo con herramientas SIG como ArcGIS para modelamiento espacial de cuencas
+                y con software de simulación hidrológica como HEC-HMS. Además, mantengo interés
+                en el desarrollo web como herramienta de comunicación científica.
+            </p>
+            <p>
+                Este portafolio reúne evidencias, reflexiones y aprendizajes de los cursos del
+                semestre vigente. Cada sección documenta no solo los productos entregados,
+                sino el proceso de construcción del conocimiento.
+            </p>
+
+            <div class="skill-chips">
+                <span class="chip accent">Ing. Ambiental</span>
+                <span class="chip accent">Sostenibilidad</span>
+                <span class="chip accent">Cambio Climático</span>
+                <span class="chip">ArcGIS</span>
+                <span class="chip">HEC-HMS</span>
+                <span class="chip">HTML / CSS</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">React</span>
+                <span class="chip">Inglés</span>
+                <span class="chip">Cusco · Perú</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="area-head">
+        <div>
+            <h2>Áreas de Formación</h2>
+            <p>Disciplinas en las que se enfoca el trabajo académico del semestre.</p>
+        </div>
+    </div>
+
+    <div class="card-grid">
+        <div class="card">
+            <span class="card-lbl">Curso 1</span>
+            <h3>Hidrología</h3>
+            <p>Estudio del ciclo hidrológico, gestión de cuencas hidrográficas, modelamiento
+            con HEC-HMS y análisis de caudales con la Ley 29338 del Perú como marco normativo.</p>
+            <div class="doc-list">
+                <a href="hidrologia.html" class="doc-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Ver portafolio
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <span class="card-lbl">Curso 2</span>
+            <h3>Tecnologías Limpias</h3>
+            <p>Producción más limpia, balances de materia y energía, análisis de ciclo de vida
+            (ACV), análisis PINCH y gestión energética bajo ISO 50001.</p>
+            <div class="doc-list">
+                <a href="tecnologias-limpias.html" class="doc-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Ver portafolio
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <span class="card-lbl">Curso 3</span>
+            <h3>Riesgos Ambientales</h3>
+            <p>Identificación y evaluación cuantitativa y cualitativa de riesgos, mapas de
+            riesgo con ArcGIS y planes de manejo ambiental.</p>
+            <div class="doc-list">
+                <a href="riesgos-ambientales.html" class="doc-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Ver portafolio
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <span class="card-lbl">Curso 4</span>
+            <h3>Tópicos de Producción Más Limpia</h3>
+            <p>Profundización en metodologías PML, herramientas de diagnóstico industrial,
+            normativa INACAL y casos de aplicación en curtiembre y manufactura.</p>
+            <div class="doc-list">
+                <a href="topicos-de-produccion-mas-limpia.html" class="doc-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Ver portafolio
+                </a>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="footer">
+    <p>Portafolio académico · <a href="about.html">Karsten Guillermo García Palomino</a> · UAC 2026</p>
+</footer>
+
+<script src="scripts/main.js"></script>
 </body>
 </html>

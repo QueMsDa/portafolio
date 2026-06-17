@@ -1,59 +1,115 @@
 <!DOCTYPE html>
-<html lang="es-mx">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enlaces a Proyectos | Portafolio</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Proyectos Web · Portafolio Ing. Ambiental</title>
+    <link rel="stylesheet" href="styles/global.css">
     <script>if(localStorage.getItem('portfolio-dark-mode')==='dark')document.documentElement.classList.add('dark-mode');</script>
 </head>
 <body>
-    <header class="header">
-        <nav class="header__menu" aria-label="Menú principal">
-            <ul>
-                <li><a class="header__menu__link" href="index.html">Home</a></li>
-                <li><a class="header__menu__link" href="about.html">Sobre mí</a></li>
-                <li><a class="header__menu__link" href="tecnologias-limpias.html">Tecnologías Limpias</a></li>
-                <li><a class="header__menu__link" href="riesgos-ambientales.html">Riesgos Ambientales</a></li>
-                <li><a class="header__menu__link" href="hidrologia.html">Hidrología</a></li>
-                <li><a class="header__menu__link header__menu__link--active" href="enlaces-proyectos.html">Enlaces a Proyectos</a></li>
-                <li><a class="header__menu__link" href="topicos-de-produccion-mas-limpia.html">Tópicos de Producción Más Limpia</a></li>
-            </ul>
-        </nav>
-        <button class="btn-dark-mode" id="btn-dark-mode" aria-label="Alternar modo oscuro" title="Modo oscuro / Claro">🌙</button>
-    </header>
 
-    <main class="presentacion">
-        <section class="presentacion__contenido">
-            <h1 class="presentacion__contenido__titulo">
-                Mis Proyectos en <span class="titulo-destaque">Vercel</span>
-            </h1>
-            <p class="presentacion__contenido__texto">
-                Aquí puedes explorar algunas de mis aplicaciones web desplegadas en Vercel.
-            </p>
+<nav class="nav">
+    <a href="index.html" class="nav-logo">K. García Palomino <span>· Ing. Ambiental</span></a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">Sobre mí</a></li>
+        <li><a href="hidrologia.html">Hidrología</a></li>
+        <li><a href="tecnologias-limpias.html">Tec. Limpias</a></li>
+        <li><a href="riesgos-ambientales.html">Riesgos</a></li>
+        <li><a href="topicos-de-produccion-mas-limpia.html">Tópicos PML</a></li>
+        <li><a href="enlaces-proyectos.html" class="active">Proyectos</a></li>
+    </ul>
+    <div class="nav-actions">
+        <button class="btn-dark" id="btn-dark-mode" title="Alternar modo oscuro">☾</button>
+        <button class="nav-burger" id="burger" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
 
-            <div class="grid-proyectos">
-                <article class="card-proyecto">
-                    <h2>Calculadora de Promedio</h2>
-                    <p>Aplicación web para calcular el promedio de notas.</p>
-                    <a href="https://promedio-calculator-3xwg.vercel.app/" target="_blank" rel="noopener noreferrer">
-                        Ver Proyecto
-                    </a>
-                </article>
-                <article class="card-proyecto">
-                    <h2>Convertidor de Temperatura</h2>
-                    <p>Convierte temperaturas entre Celsius, Fahrenheit y Kelvin.</p>
-                    <a href="https://convertidor-de-temperatura.vercel.app/" target="_blank" rel="noopener noreferrer">
-                        Ver Proyecto
-                    </a>
-                </article>
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <span class="eyebrow">Desarrollo Web</span>
+        <h1>Proyectos <em>en línea</em></h1>
+        <p class="lead">Herramientas interactivas desarrolladas con HTML, CSS y JavaScript,
+        desplegadas en Vercel. Aplicaciones prácticas de programación orientadas a la
+        ingeniería y al cálculo académico.</p>
+    </div>
+</section>
+
+<main class="main">
+
+    <div class="card-grid card-grid-2">
+
+        <div class="card">
+            <span class="card-lbl">Proyecto 1 · JavaScript</span>
+            <h3>Calculadora de Promedio</h3>
+            <p>Herramienta web para el cálculo de promedio ponderado de notas académicas.
+            Permite ingresar calificaciones con distintos pesos y obtener el promedio final
+            de forma inmediata. Desarrollada con HTML, CSS y JavaScript puro.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="https://calculadora-de-promedio-kappa.vercel.app/"
+                   target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Abrir en Vercel
+                </a>
             </div>
-        </section>
-    </main>
+        </div>
 
-    <footer class="footer">
-        <p>&copy; 2026 Karsten García Palomino</p>
-    </footer>
-    <script src="scripts/main.js"></script>
+        <div class="card">
+            <span class="card-lbl">Proyecto 2 · JavaScript</span>
+            <h3>Convertidor de Temperatura</h3>
+            <p>Aplicación web para convertir entre unidades de temperatura: Celsius, Fahrenheit
+            y Kelvin. Interfaz limpia y cálculo instantáneo. Útil para ejercicios de termodinámica
+            y balance de energía en ingeniería ambiental.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="https://convertidor-de-temperatura-seven.vercel.app/"
+                   target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Abrir en Vercel
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="area-head">
+        <div>
+            <h2>Tecnologías utilizadas</h2>
+            <p>Herramientas y plataformas empleadas en el desarrollo y despliegue.</p>
+        </div>
+    </div>
+
+    <div class="data-row">
+        <div class="data-item">
+            <span class="data-num">HTML</span>
+            <span class="data-lbl">Estructura</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">CSS</span>
+            <span class="data-lbl">Estilos</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">JavaScript</span>
+            <span class="data-lbl">Lógica</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">Vercel</span>
+            <span class="data-lbl">Despliegue</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">GitHub</span>
+            <span class="data-lbl">Repositorio</span>
+        </div>
+    </div>
+
+</main>
+
+<footer class="footer">
+    <p>Portafolio académico · <a href="about.html">Karsten Guillermo García Palomino</a> · UAC 2026</p>
+</footer>
+
+<script src="scripts/main.js"></script>
 </body>
 </html>

@@ -1,437 +1,436 @@
 <!DOCTYPE html>
-<html lang="es-mx">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnologías Limpias</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Tecnologías Limpias · Portafolio Ing. Ambiental</title>
+    <link rel="stylesheet" href="styles/global.css">
     <script>if(localStorage.getItem('portfolio-dark-mode')==='dark')document.documentElement.classList.add('dark-mode');</script>
 </head>
-
 <body>
-<header class="header">
-    <nav class="header__menu" aria-label="Menú principal">
-        <ul>
-            <li><a class="header__menu__link nav-home" href="index.html">Home</a></li>
-            <li><a class="header__menu__link header__menu__link--active nav-curso" href="tecnologias-limpias.html">Tecnologías Limpias</a></li>
-            <li><a class="header__menu__link nav-curso" href="riesgos-ambientales.html">Riesgos Ambientales</a></li>
-            <li><a class="header__menu__link nav-curso" href="hidrologia.html">Hidrología</a></li>
-            <li><a class="header__menu__link nav-curso" href="topicos-de-produccion-mas-limpia.html">Tópicos de producción mas limpia</a></li>
-            <li><a class="header__menu__link nav-enlaces" href="enlaces-proyectos.html">Enlaces a Proyectos</a></li>
-            <li><a class="header__menu__link nav-sobre" href="about.html">Sobre mí</a></li>
-        </ul>
-    </nav>
-    <button class="btn-dark-mode" id="btn-dark-mode" aria-label="Alternar modo oscuro" title="Modo oscuro / Claro">🌙</button>
-</header>
 
-<main class="presentacion">
-    <section class="presentacion__contenido">
-        <h1 class="presentacion__contenido__titulo">
-            Tecnologías Limpias en los Procesos Industriales
-        </h1>
+<nav class="nav">
+    <a href="index.html" class="nav-logo">K. García Palomino <span>· Ing. Ambiental</span></a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">Sobre mí</a></li>
+        <li><a href="hidrologia.html">Hidrología</a></li>
+        <li><a href="tecnologias-limpias.html" class="active">Tec. Limpias</a></li>
+        <li><a href="riesgos-ambientales.html">Riesgos</a></li>
+        <li><a href="topicos-de-produccion-mas-limpia.html">Tópicos PML</a></li>
+        <li><a href="enlaces-proyectos.html">Proyectos</a></li>
+    </ul>
+    <div class="nav-actions">
+        <button class="btn-dark" id="btn-dark-mode" title="Alternar modo oscuro">☾</button>
+        <button class="nav-burger" id="burger" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
 
-        <div class="temas">
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <span class="eyebrow">Portafolio de Curso · UAC</span>
+        <h1><em>Tecnologías Limpias</em></h1>
+        <p class="lead">PML, diagramas de proceso, ACV, balances de materia y energía,
+        análisis PINCH e ISO 50001. Tres unidades de aprendizaje progresivo.</p>
+    </div>
+</section>
 
-            <div class="unidad-wrapper">
-                <details class="unidad" id="unidad-1">
-                    <summary>Unidad 1</summary>
-                    <div class="unidad__contenido">
-                        <details class="tema">
-                            <summary>Tema 1 – Tecnologías Limpias en Procesos Industriales</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">Al revisar este tema entendí con mayor claridad cómo cada operación unitaria en una planta (transporte, separación, reacción) tiene implicaciones directas sobre consumo energético y generación de residuos. Como estudiante de Ingeniería Ambiental, reflexiono que incorporar tecnologías limpias no es solo cambiar equipos, sino rediseñar procesos desde su concepción para minimizar entradas y salidas contaminantes. En clase comparé casos reales donde la optimización de una etapa redujo significativamente el consumo de materia prima y energía, lo que confirma que la sostenibilidad aporta ventajas técnicas y económicas. Este tema me dio herramientas conceptuales para proponer mejoras prácticas en procesos industriales reales.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/PL1.pptx" target="_blank" rel="noopener noreferrer">📷 Apuntes del Cuaderno (PPTX)</a>
-                                    <span class="btn-no-archivo">👥 Trabajo Grupal no disponible</span>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Línea de Tiempo Química y Petroquímica – Primer trabajo grupal del Grupo 4</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">Al estudiar la línea de tiempo pude contextualizar cómo la industria química y petroquímica evolucionó desde artesanías hasta sistemas integrados a gran escala. Como futuro ingeniero ambiental, me impactó ver cómo los avances tecnológicos, sin regulaciones, provocaron daños en ecosistemas —pero también cómo la regulación y la innovación han forzado mejoras. Reflexioné sobre ejemplos locales y globales: la modernización de refinerías y la adopción de sistemas integrados (Verbund) muestran que es posible reducir residuos y optimizar energía si se planifica de forma holística. Esta lectura me dejó claro que la historia técnica es también una guía para evitar errores pasados en proyectos que diseñe en el futuro.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/Linea del tiempo Química y Petroquímica 2.pdf8.pdf" target="_blank" rel="noopener noreferrer">📄 Descarga Trabajo Grupal (PDF)</a>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Tema 2 (PL2) – Tecnologías Limpias en Procesos Industriales II</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">En este módulo reforcé el enfoque práctico de producir más con menos: cerrar ciclos productivos mediante reutilización, recuperación y economía circular. Desde la visión de un estudiante, aplicamos herramientas como balances de materia y energía para identificar puntos críticos donde actuar. Comprendí que soluciones sencillas —recuperadores de calor, cambios de materia prima o rediseño de secuencias— pueden reducir drásticamente emisiones y costos. Tomé nota de metodologías para evaluar rentabilidad de tecnologías limpias y cómo justificar propuestas ante gerencias técnicas.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/PL2%2026.pptx" target="_blank" rel="noopener noreferrer">📷 Apuntes del Cuaderno (PPTX)</a>
-                                    <span class="btn-no-archivo">👥 Trabajo Grupal no disponible</span>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>PL3 – Diagramas de Flujo de Procesos</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">Al trabajar con PFDs comprendí que se trata del lenguaje técnico esencial para cualquier ingeniero en procesos: permiten ver el flujo de materia y energía, identificar cuellos de botella y facilitar la comunicación entre diseñadores y operadores. En prácticas, traduje un diagrama en un balance simple y detecté oportunidades de recuperación energética y simplificación de líneas. Reconozco ahora la importancia de usar símbolos y estándares para evitar errores en documentación técnica y para que los equipos multidisciplinares interpreten la información correctamente. Estos ejercicios me preparan para participar en proyectos de diseño y mejora continua en la industria.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/PL3.1.pdf" target="_blank" rel="noopener noreferrer">📷 Apuntes del Cuaderno (PDF)</a>
-                                    <span class="btn-no-archivo">👥 Trabajo Grupal no disponible</span>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>PL4 – Análisis del Ciclo de Vida (ACV)</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">El estudio del Análisis de Ciclo de Vida (ACV) fue una de las partes más formativas: entendí cómo cuantificar impactos desde la cuna hasta la tumba de un producto. Aprendimos a delimitar límites del sistema, recopilar inventarios y traducir datos en impactos (calentamiento global, eutrofización, etc.). En ejercicios comparativos evalué alternativas de diseño y pude justificar cambios por reducción de huella ambiental. Esta metodología me parece fundamental para proponer políticas de ecodiseño y aportar criterios técnicos en decisiones de inversión ambiental en empresas.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/PL4.pdf" target="_blank" rel="noopener noreferrer">📷 Apuntes del Cuaderno (PDF)</a>
-                                    <span class="btn-no-archivo">👥 Trabajo Grupal no disponible</span>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>PL5 – Producción Más Limpia</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">La Producción Más Limpia (PML) me enseñó un enfoque preventivo: evitar generar residuos antes que tratarlos. Como alumno, realicé una propuesta donde identifiqué mejoras simples (ajuste de parámetros, recuperación de solventes) que reducían costos y riesgos. Vi cómo la PML se integra con normas y políticas públicas, y comprendí su valor estratégico para pequeñas y grandes industrias. Personalmente, adquirí criterios para realizar diagnósticos rápidos y proponer acciones priorizadas con retorno de inversión claro.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/Lectura%20PML.pdf" target="_blank" rel="noopener noreferrer">📷 Apuntes del Cuaderno (PDF)</a>
-                                    <span class="btn-no-archivo">👥 Trabajo Grupal no disponible</span>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Taller n° 1 – Producción de Lubricantes (Grupo 4)</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">En el Taller de Producción de Lubricantes pude aplicar diagnóstico de procesos: mapeamos consumo energético, localizamos fugas y cuantificamos pérdidas por reprocesos. Al analizar datos operativos propuse medidas de eficiencia como recuperación de calor, mantenimiento predictivo y mejora de controles que podrían reducir consumo y emisiones. Fue muy valioso comprobar cómo pequeñas intervenciones técnicas se traducen en beneficios ambientales y económicos. Este ejercicio me hace sentir preparado para aportar soluciones concretas en plantas industriales reales.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/grupo 4 taller 1.pdf" target="_blank" rel="noopener noreferrer">📄 Descarga Grupo 4 Taller 1 (PDF)</a>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Taller n° 2 – Diagrama de Flujo Flexicoking (Grupo 4)</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">El análisis del Diagrama de Flujo de Flexicoking me permitió comprender cómo tecnologías avanzadas transforman residuos pesados en productos valiosos, mejorando la eficiencia de una refinería. En clase evaluamos balances energéticos y emisiones; comprendí la importancia de sistemas de control y tratamientos de gases para mitigar impactos como H₂S y CO₂. Comparé Flexicoking con otras tecnologías y aprendí criterios para seleccionar procesos según feedstock y objetivos ambientales. Este taller me dio una visión crítica para evaluar innovaciones tecnológicas en el sector energético desde una perspectiva ambiental.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/Diagrama de flujo Flexicoking-comprimido.pdf" target="_blank" rel="noopener noreferrer">📄 Descarga Diagrama de Flujo Flexicoking (PDF)</a>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Norma ISO 10628 – Diagramas de Flujo de Procesos</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">Estudiar la Norma ISO 10628 me enseñó la disciplina necesaria para representar procesos con precisión: los estándares reducen ambigüedades en documentación técnica. Practiqué convertir descripciones verbales en PFDs y P&IDs, prestando atención a detalles como grosores de líneas y símbolos que facilitan interpretación. Para mí, esto es clave en proyectos reales donde una mala especificación puede derivar en errores de construcción u operación. La norma reforzó la necesidad de documentación estandarizada como base para seguridad y eficiencia en plantas industriales.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/543642075-Norma-ISO-10628-Para-Diagramas-de-Procesos.pdf" target="_blank" rel="noopener noreferrer">📷 Apuntes del Cuaderno (PDF)</a>
-                                    <span class="btn-no-archivo">👥 Trabajo Grupal no disponible</span>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Lectura PML – Producción Más Limpia</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">La lectura complementaria sobre PML me ayudó a consolidar conceptos aplicados: identifiqué casos donde pequeñas mejoras llevaron a grandes reducciones de consumo y generación de residuos. Como estudiante, valoré las metodologías para priorizar acciones (impacto vs costo) y cómo involucrar a la organización en procesos de mejora continua. Este material me motiva a aplicar un enfoque de diagnóstico en futuras prácticas profesionales y a promover la innovación sostenible en la industria.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/Lectura%20PML.pdf" target="_blank" rel="noopener noreferrer">📷 Apuntes del Cuaderno (PDF)</a>
-                                    <span class="btn-no-archivo">👥 Trabajo Grupal no disponible</span>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Responsabilidad Social 1 – Tecnologías Limpias</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">El trabajo de Responsabilidad Social me recordó que aplicar tecnologías limpias no solo es un compromiso ambiental, sino también social. Aprendí que las empresas deben asumir responsabilidad frente a la comunidad, integrando sostenibilidad en su gestión y promoviendo beneficios colectivos. Este documento me ayudó a relacionar la ingeniería ambiental con la ética empresarial y la responsabilidad social.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/RESPONSABILIDAD%20SOCIAL%20%20%281%29.pdf" target="_blank" rel="noopener noreferrer">📄 Descarga RESPONSABILIDAD SOCIAL (PDF)</a>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Unidad investigativa formativa – Análisis de ciclo de vida comparativo de prendas textiles: producción de algodón en Perú frente a manufactura en China</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">La unidad investigativa me permitió integrar y aplicar conceptos teóricos: desarrollamos un análisis comparativo de ciclo de vida para prendas y propuse medidas de mejora en la cadena de suministro. Trabajando en equipo aprendí a dividir tareas técnicas (inventario, análisis de impacto) y a sintetizar resultados para recomendaciones prácticas. Este proyecto reflejó cómo la investigación aplicada puede apoyar decisiones empresariales y políticas públicas en sectores productivos reales.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/IF%20TEC.pdf" target="_blank" rel="noopener noreferrer">📄 Descargar IF TEC (PDF)</a>
-                                </div>
-                            </div>
-                        </details>
-                    </div>
-                </details>
-                <div class="unidad__panel unidad-panel-1">
-                    <img src="assets/Documentos/apuntes-Tecnologias/evaluacuion grupal.jpg" alt="Imagen Unidad 1 sobre Tecnologías Limpias" />
-                </div>
+<main class="main">
+
+    <div class="data-row">
+        <div class="data-item">
+            <span class="data-num">3</span>
+            <span class="data-lbl">Unidades</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">ACV</span>
+            <span class="data-lbl">Ciclo de vida</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">PINCH</span>
+            <span class="data-lbl">Energía</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">ISO 50001</span>
+            <span class="data-lbl">Gestión</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">PML</span>
+            <span class="data-lbl">Prevención</span>
+        </div>
+    </div>
+
+    <!-- Navegación de unidades -->
+    <div class="unit-nav">
+        <a href="#unidad-1" class="unit-nav-item">
+            <span class="unit-numeral">I</span>
+            <span class="unit-nav-lbl">Unidad 1</span>
+            <h3>PML, PFDs y ACV</h3>
+            <p>Tecnologías limpias, diagramas de flujo, análisis de ciclo de vida y responsabilidad social.</p>
+            <span class="unit-nav-cta">Ver unidad →</span>
+        </a>
+        <a href="#unidad-2" class="unit-nav-item">
+            <span class="unit-numeral">II</span>
+            <span class="unit-nav-lbl">Unidad 2</span>
+            <h3>Balance de Materia y Energía</h3>
+            <p>Balances industriales, análisis PINCH, caso Vietnam y evaluación grupal.</p>
+            <span class="unit-nav-cta">Ver unidad →</span>
+        </a>
+        <a href="#unidad-3" class="unit-nav-item">
+            <span class="unit-numeral">III</span>
+            <span class="unit-nav-lbl">Unidad 3</span>
+            <h3>Implementación PML y Energía</h3>
+            <p>Implementación práctica, factibilidad técnico-económica e ISO 50001.</p>
+            <span class="unit-nav-cta">Ver unidad →</span>
+        </a>
+    </div>
+
+    <!-- ── UNIDAD 1 ── -->
+    <div class="section-head" id="unidad-1">
+        <span class="section-num">I</span>
+        <div>
+            <h2>Unidad 1 — PML, PFDs y ACV</h2>
+            <p>Tecnologías limpias, diagramas de proceso, análisis de ciclo de vida y responsabilidad social</p>
+        </div>
+    </div>
+
+    <div class="card-grid card-grid-2">
+
+        <div class="card">
+            <span class="card-lbl">PL1</span>
+            <h3>Introducción a las Tecnologías Limpias</h3>
+            <p>La PML como respuesta sistémica a los impactos industriales. Estrategias preventivas
+            frente al enfoque reactivo de tratamiento de residuos al final del proceso.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/PL1.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Apuntes PL1 (PDF)
+                </a>
             </div>
-
-            <div class="unidad-wrapper">
-                <details class="unidad" id="unidad-2">
-                    <summary>Unidad 2</summary>
-                    <div class="unidad__contenido">
-                        <details class="tema">
-                            <summary>Balance de materia y energía en procesos industriales</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">Al revisar Balance de materia y energía en procesos industriales comprendí que todo proceso es un flujo de masa y energía que debe cerrarse. Yo diría que este tema me permitió visualizar cómo cada entrada, salida y pérdida afectan la eficiencia y la sostenibilidad operativa. Pasé de ver fórmulas a entender los balances como el pulso técnico de una planta industrial.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/Balance%20de%20materia.pdf" target="_blank" rel="noopener noreferrer">📄 Descargar Balance de materia (PDF)</a>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Ejercicios de balance de materia y energía</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">Resolver ejercicios de balance de materia y energía me hizo entrenar mi mente para ver el comportamiento real de procesos complejos. Siento que ahora puedo desmontar un problema en bloques más simples y encontrar la solución paso a paso, como si estuviera actuando en planta. Esto me dio confianza para enfrentar cálculos más avanzados sin perder el foco en el objetivo ambiental.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/cuaderno%20de%20TECNOLOG%C3%8DAS%20LIMPIAS.pdf" target="_blank" rel="noopener noreferrer">📄 Descargar Ejercicios de balance (PDF)</a>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Caso de estudio Vietnam</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">El caso de estudio Vietnam me ayudó a entender cómo adaptar conceptos técnicos a condiciones de un país específico. Yo lo vivo como una prueba de campo: analizar datos reales, buscar brechas y proponer mejoras con sentido técnico. Me dejó claro que la ingeniería ambiental no es solo teoría, sino una práctica que debe ajustarse al contexto y a sus recursos.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/caso%20de%20estudio%20vietman.pdf" target="_blank" rel="noopener noreferrer">📄 Descargar Caso Vietnam (PDF)</a>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Lectura 1: Balance de materia y PML</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">La lectura de Balance de materia y PML me permitió unir la eficiencia técnica con la prevención ambiental. Yo diría que esta conexión es vital: no solo se trata de cerrar balances, sino de hacerlo de forma que se reduzcan residuos y se aproveche mejor la materia prima. Esta lectura reforzó mi criterio para proponer soluciones más inteligentes en procesos industriales.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/Articulo_BMyE_y_PML.pdf" target="_blank" rel="noopener noreferrer">📄 Descargar Artículo BMyE y PML (PDF)</a>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Evaluación de energía y análisis PINCH</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">El análisis PINCH me obligó a buscar oportunidades de ahorro energético donde antes no las veía. Yo siento que este tema me dio herramientas para mapear intercambios térmicos y plantear mejoras concretas en la planta. Fue decisivo para entender que la eficiencia energética es uno de los pilares de los procesos industriales sostenibles.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/v26n3e-21114315.pdf" target="_blank" rel="noopener noreferrer">📄 Descargar PINCH (PDF)</a>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Taller de ejercicios de balance por sector industrial</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">Este taller por sector petroquímico me ayudó a comparar cómo funcionan los balances en distintas áreas industriales. Yo lo sentí como un entrenamiento práctico: ajustar números, reconocer pérdidas y mejorar propuestas. Fue clave para aprender a trabajar con información de planta y tomar decisiones basadas en datos.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/Ejercicios%20de%20Balance%20por%20Sector%20Petroqu%C3%ADmico.pdf" target="_blank" rel="noopener noreferrer">📄 Descargar Taller Petroquímico (PDF)</a>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Taller: Análisis del Caso de Estudio CUSCO VIETNAM</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">El taller grupal de Cusco Vietnam me permitió trabajar en equipo para interpretar resultados y sacar conclusiones claras. Yo diría que fue un buen ejercicio para mejorar mi capacidad de comunicación técnica y presentar recomendaciones con respaldo. Este caso me ayudó a fortalecer mi mirada crítica sobre procesos industriales y su impacto ambiental.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/CUSCO_VIETNAM.pdf" target="_blank" rel="noopener noreferrer">📄 Descargar Taller Cusco Vietnam (PDF)</a>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Investigación II Unidad IF</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">La investigación II me ayudó a organizar datos y trabajar con resultados concretos de la segunda unidad. Yo lo veo como un paso importante para aprender a documentar hallazgos y presentarlos con claridad. Esta actividad me dejó más seguro para elaborar informes técnicos y análisis basados en evidencia.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/IF_SEGUNDA_UNIDAD_TECNOLOGIAS_LIMPAS.pdf" target="_blank" rel="noopener noreferrer">📄 Descargar Investigación II (PDF)</a>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/IF%20DE%20TECNOLOGIAS%20SEGUNDA%20UNIDAD.xlsx" target="_blank" rel="noopener noreferrer">📄 Descargar Tabla IF (XLSX)</a>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Responsabilidad social II unidad</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">Responsabilidad social II me ayudó a pensar cómo la ingeniería ambiental debe cuidar también a las personas y comunidades. Yo considero que esta parte es fundamental para que los proyectos técnicos sean éticos y sostenibles. Esta lección me hizo ver el valor de integrar lo social en cada propuesta técnica.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/RESPONSABILIDAD%20SOCIAL%20%20%281%29_copia%20%281%29.pdf" target="_blank" rel="noopener noreferrer">📄 Descargar Responsabilidad Social II (PDF)</a>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Evaluación grupal</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">La evaluación grupal fue la oportunidad para mostrar mi aprendizaje y coordinar con el equipo. Yo aprendí a estructurar la información, presentar resultados y debatir conclusiones. Fue una experiencia que reforzó mi responsabilidad como miembro del grupo y mi capacidad para comunicar intentos técnicos.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/Examen%20grupal.pdf" target="_blank" rel="noopener noreferrer">📄 Descargar Evaluación Grupal (PDF)</a>
-                                    <a class="btn-cuaderno" href="assets/Documentos/apuntes-Tecnologias/exmen%202.xlsx" target="_blank" rel="noopener noreferrer">📄 Descargar Examen 2 (XLSX)</a>
-                                </div>
-                            </div>
-                        </details>
-                    </div>
-                </details>
-                <div class="unidad__imagen">
-                    <h3>📌 Gráfico de Balance de Materia</h3>
-                    <img id="balance-materia-img" src="assets/Documentos/apuntes-Tecnologias/grafcio%20de%20balance%20de%20materia.png" alt="Gráfico de balance de materia" />
-                    <p>Haz clic en la imagen para verla a pantalla completa.</p>
-                </div>
-            </div>
-
-            <div class="unidad-wrapper">
-                <details class="unidad" id="unidad-3">
-                    <summary>Unidad 3</summary>
-                    <div class="unidad__contenido">
-                        <details class="tema">
-                            <summary>Implementación PML</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">Este documento presenta los pasos básicos para implementar un programa de Producción Más Limpia (PML) en una unidad productiva, desde el diagnóstico inicial hasta el seguimiento de acciones de mejora.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/3%20UNIDAD%2B/Implementación%20PML%2025.2.pptx" target="_blank" rel="noopener noreferrer">📄 Descargar Implementación PML (PPTX)</a>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Factibilidad Técnica y Económica</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">Este archivo evalúa la factibilidad técnica y económica de aplicar soluciones ambientales, permitiendo comparar costos, beneficios y riesgos antes de proponer una intervención.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/3%20UNIDAD%2B/Factibilidad%20PMLCurtiembre.pdf" target="_blank" rel="noopener noreferrer">📄 Descargar Factibilidad Técnica y Económica (PDF)</a>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Guía Implementación PML 2da versión INACAL</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">Esta guía INACAL ofrece una metodología oficial para implementar un programa de Producción Más Limpia con criterios de estándar nacional y buenas prácticas de gestión.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/3%20UNIDAD%2B/786236592-INACAL-CTN19-SC4-N8-GP-900-200-2021-PRODUCCION-MAS-LIMPIA-Guia-Metodologica-Para-La-Implementacion-de-Un-Programa-de-Produccion-Mas-Limpia-2a-Edicio.pdf" target="_blank" rel="noopener noreferrer">📄 Descargar Guía INACAL PML 2da versión (PDF)</a>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Mejoras técnicas para sistemas de gestión de energía y eficiencia energética</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">Este documento aborda mejoras técnicas para implementar sistemas de gestión de energía, con énfasis en eficiencia y ahorro energético en distintos sectores económicos.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/3%20UNIDAD%2B/RE-09_Mejoras-tecnicas-sistemas-de-gestion-de-energia-y-lineamiento-EE-en-sectores-economicos.pdf" target="_blank" rel="noopener noreferrer">📄 Descargar mejoras técnicas en gestión de energía (PDF)</a>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>ISO 50001</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">El estándar ISO 50001 proporciona un marco de gestión de la energía que ayuda a reducir costos energéticos y mejorar el desempeño energético continuo.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/3%20UNIDAD%2B/449015616-ISO-50001-2018-ESP-3.pdf" target="_blank" rel="noopener noreferrer">📄 Descargar ISO 50001 (PDF)</a>
-                                </div>
-                            </div>
-                        </details>
-                        <details class="tema">
-                            <summary>Análisis Guía PML 26.1</summary>
-                            <div class="tema__contenido">
-                                <p class="tema__descripcion">Este análisis presenta la aplicación práctica de la guía PML 26.1, con ejemplos de curtiembras y evaluación de alternativas ambientales.</p>
-                                <div class="tema__recursos">
-                                    <h3>📝 Evidencias de Aprendizaje</h3>
-                                    <a class="btn-cuaderno" href="assets/3%20UNIDAD%2B/Curtiembre%20Piel%20Inca_compressed.pdf" target="_blank" rel="noopener noreferrer">📄 Descargar Curtiembre Piel Inca (PDF)</a>
-                                    <a class="btn-cuaderno" href="assets/3%20UNIDAD%2B/Piel%20inka.pdf" target="_blank" rel="noopener noreferrer">📄 Descargar Piel Inka (PDF)</a>
-                                </div>
-                            </div>
-                        </details>
-                        <div class="unidad__imagen">
-                            <h3>📌 Imagen representativa - Piel Inka</h3>
-                            <img id="unidad3-img" src="assets/3%20UNIDAD%2B/diagrama%20de%20flujo.png" alt="Imagen representativa de Piel Inka" />
-                            <p>Haz clic en la imagen para verla a pantalla completa.</p>
-                        </div>
-                    </div>
-                </details>
-            </div>
-
         </div>
 
-    </section>
+        <div class="card">
+            <span class="card-lbl">PL1 · Línea de tiempo · Grupo 4</span>
+            <h3>Evolución Histórica de las Tecnologías Limpias</h3>
+            <p>Línea de tiempo del Grupo 4: del movimiento ambiental de los 70 hasta las normas ISO
+            de gestión ambiental actuales. Hitos regulatorios y tecnológicos clave.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/linea de tiempo grupo 4.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Línea de tiempo G4 (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">PL2</span>
+            <h3>Procesos Industriales y Medio Ambiente</h3>
+            <p>Interacción entre procesos productivos y ecosistemas. Flujos de materiales,
+            generación de residuos y oportunidades de cierre de ciclos en la industria.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/PL2.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Apuntes PL2 (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">PL3 · Norma</span>
+            <h3>Diagramas de Flujo de Procesos — ISO 10628</h3>
+            <p>Lenguaje técnico esencial: PFDs y P&IDs permiten ver el flujo de materia y
+            energía, identificar cuellos de botella y facilitar la comunicación técnica.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/PL3.1.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Apuntes PL3 (PDF)
+                </a>
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/543642075-Norma-ISO-10628-Para-Diagramas-de-Procesos.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    ISO 10628 (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">PL4</span>
+            <h3>Análisis del Ciclo de Vida (ACV)</h3>
+            <p>Cuantificación de impactos desde la cuna hasta la tumba: delimitación de límites
+            del sistema, inventario de ciclo de vida y evaluación de impacto ambiental.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/PL4.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Apuntes PL4 (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">PL5</span>
+            <h3>Producción Más Limpia — Enfoque Preventivo</h3>
+            <p>Ajuste de parámetros de proceso, recuperación de solventes y sustitución de
+            insumos peligrosos. Integración de PML con normas y políticas públicas.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/Lectura%20PML.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Lectura PML (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Taller 1 · Grupo 4</span>
+            <h3>Producción de Lubricantes</h3>
+            <p>Diagnóstico del proceso: mapeo de consumo energético, localización de fugas y
+            cuantificación de pérdidas. Propuesta de recuperación de calor y mantenimiento predictivo.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/grupo 4 taller 1.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Taller 1 — Grupo 4 (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Taller 2 · Grupo 4</span>
+            <h3>Diagrama de Flujo — Flexicoking</h3>
+            <p>Análisis de cómo tecnologías avanzadas transforman residuos pesados en productos
+            valiosos. Balances energéticos y evaluación de emisiones H₂S y CO₂.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/Diagrama de flujo Flexicoking-comprimido.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Flexicoking (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">IF · Investigación Formativa U1</span>
+            <h3>ACV Comparativo — Textiles Perú vs China</h3>
+            <p>Análisis comparativo de ciclo de vida de prendas: producción de algodón en Perú
+            frente a manufactura en China. Propuestas de mejora con impacto cuantificado.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/IF%20TEC.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    IF TEC (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Responsabilidad Social</span>
+            <h3>RS 1 — Tecnologías Limpias</h3>
+            <p>Las empresas deben asumir responsabilidad frente a la comunidad, integrando
+            sostenibilidad en su gestión. PML como compromiso ambiental y social simultáneo.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/RESPONSABILIDAD%20SOCIAL%20%20%281%29.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    RS 1 (PDF)
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ── UNIDAD 2 ── -->
+    <div class="section-head" id="unidad-2">
+        <span class="section-num">II</span>
+        <div>
+            <h2>Unidad 2 — Balance de Materia y Energía</h2>
+            <p>Balances industriales, análisis PINCH, caso Vietnam y evaluación grupal</p>
+        </div>
+    </div>
+
+    <div class="card-grid card-grid-2">
+
+        <div class="card">
+            <span class="card-lbl">Lectura</span>
+            <h3>Balance de Materia y PML</h3>
+            <p>Todo proceso es un flujo de masa y energía. Cerrar balances de forma preventiva
+            reduce residuos y aprovecha mejor la materia prima. Conexión entre eficiencia y prevención.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/Balance%20de%20materia.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Balance de materia (PDF)
+                </a>
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/cuaderno%20de%20TECNOLOG%C3%8DAS%20LIMPIAS.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Ejercicios (PDF)
+                </a>
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/Articulo_BMyE_y_PML.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Artículo BMyE (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Caso de estudio</span>
+            <h3>Caso Vietnam</h3>
+            <p>Adaptación de conceptos técnicos a condiciones de un país específico. Análisis
+            de datos reales, identificación de brechas y propuesta de mejoras con contexto territorial.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/caso%20de%20estudio%20vietman.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Caso Vietnam (PDF)
+                </a>
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/CUSCO_VIETNAM.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Taller Cusco-Vietnam (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Análisis energético</span>
+            <h3>Análisis PINCH</h3>
+            <p>Herramienta para mapear intercambios térmicos y plantear mejoras concretas en planta.
+            Identificación de oportunidades de ahorro energético. Pilar de procesos industriales sostenibles.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/v26n3e-21114315.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    PINCH (PDF)
+                </a>
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/Ejercicios%20de%20Balance%20por%20Sector%20Petroqu%C3%ADmico.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Taller Petroquímico (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">IF · Evaluación Grupal U2</span>
+            <h3>Investigación Formativa II + Evaluación Grupal</h3>
+            <p>Organización de datos, resultados concretos e informes técnicos basados en evidencia.
+            Trabajo en equipo para comunicar recomendaciones técnicas con respaldo cuantitativo.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/IF_SEGUNDA_UNIDAD_TECNOLOGIAS_LIMPAS.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    IF U2 (PDF)
+                </a>
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/Examen%20grupal.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Evaluación grupal (PDF)
+                </a>
+                <a class="doc-link" href="assets/Documentos/apuntes-Tecnologias/RESPONSABILIDAD%20SOCIAL%20%20%281%29_copia%20%281%29.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    RS II (PDF)
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <figure class="img-fig">
+        <img src="assets/Documentos/apuntes-Tecnologias/grafcio%20de%20balance%20de%20materia.png"
+             alt="Gráfico de balance de materia"
+             onerror="this.style.display='none'">
+        <figcaption>Gráfico de balance de materia — representación visual de flujos en proceso industrial.</figcaption>
+    </figure>
+
+    <div class="divider"></div>
+
+    <!-- ── UNIDAD 3 ── -->
+    <div class="section-head" id="unidad-3">
+        <span class="section-num">III</span>
+        <div>
+            <h2>Unidad 3 — Implementación PML y Gestión Energética</h2>
+            <p>Implementación práctica, factibilidad técnico-económica, ISO 50001 y curtiembre Piel Inka</p>
+        </div>
+    </div>
+
+    <div class="card-grid card-grid-2">
+
+        <div class="card">
+            <span class="card-lbl">Implementación</span>
+            <h3>Implementación de un Programa PML</h3>
+            <p>Pasos básicos: diagnóstico inicial, identificación de oportunidades, evaluación,
+            aplicación y seguimiento. Requiere compromiso de gerencia y participación activa.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/3%20UNIDAD%2B/Implementación%20PML%2025.2.pptx">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Implementación PML (PPTX)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Evaluación técnico-económica</span>
+            <h3>Factibilidad Técnica y Económica</h3>
+            <p>Comparación de costos, beneficios y riesgos antes de proponer una intervención
+            ambiental. Análisis de curtiembre como caso de aplicación práctica.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/3%20UNIDAD%2B/Factibilidad%20PMLCurtiembre.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Factibilidad (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Norma nacional</span>
+            <h3>Guía INACAL — PML 2.ª Versión</h3>
+            <p>Metodología oficial para implementar un programa PML con criterios de estándar
+            nacional y buenas prácticas de gestión ambiental en el contexto peruano.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/3%20UNIDAD%2B/786236592-INACAL-CTN19-SC4-N8-GP-900-200-2021-PRODUCCION-MAS-LIMPIA-Guia-Metodologica-Para-La-Implementacion-de-Un-Programa-de-Produccion-Mas-Limpia-2a-Edicio.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Guía INACAL (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Gestión energética</span>
+            <h3>ISO 50001 y Eficiencia Energética</h3>
+            <p>Marco de gestión de la energía para reducir costos y mejorar el desempeño
+            energético de forma continua. Aplicaciones en distintos sectores económicos.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/3%20UNIDAD%2B/449015616-ISO-50001-2018-ESP-3.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    ISO 50001 (PDF)
+                </a>
+                <a class="doc-link" href="assets/3%20UNIDAD%2B/RE-09_Mejoras-tecnicas-sistemas-de-gestion-de-energia-y-lineamiento-EE-en-sectores-economicos.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Mejoras técnicas (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-lbl">Caso práctico</span>
+            <h3>Análisis Curtiembre Piel Inka</h3>
+            <p>Aplicación práctica de la guía PML 26.1: evaluación de alternativas ambientales,
+            diagrama de flujo del proceso productivo y propuestas de mejora técnica.</p>
+            <div class="doc-list">
+                <a class="doc-link" href="assets/3%20UNIDAD%2B/Curtiembre%20Piel%20Inca_compressed.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Piel Inca (PDF)
+                </a>
+                <a class="doc-link" href="assets/3%20UNIDAD%2B/Piel%20inka.pdf">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Piel Inka (PDF)
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <figure class="img-fig">
+        <img src="assets/3%20UNIDAD%2B/diagrama%20de%20flujo.png"
+             alt="Diagrama de flujo Curtiembre Piel Inka"
+             onerror="this.style.display='none'">
+        <figcaption>Diagrama de flujo — Curtiembre Piel Inka. Identificación de puntos de mejora PML en el proceso productivo.</figcaption>
+    </figure>
+
 </main>
 
-<script>
-    (function () {
-        function updateUnidadState() {
-            try {
-                const unidades = Array.from(document.querySelectorAll('.unidad'));
-                const anyOpen = unidades.some(d => d.open);
-                document.body.classList.toggle('unidad-abierta', anyOpen);
-                document.querySelectorAll('.unidad-wrapper').forEach(wrapper => {
-                    const details = wrapper.querySelector('.unidad');
-                    const isOpen = details && details.open;
-                    wrapper.classList.toggle('unidad-activa', !!isOpen);
-                    wrapper.classList.toggle('unidad-oculta', anyOpen && !isOpen);
-                });
-            } catch (e) {
-                console.warn('Error actualizando estado de unidades:', e);
-            }
-        }
-
-        // Use a single delegated listener to avoid duplicating handlers
-        document.addEventListener('toggle', (ev) => {
-            const target = ev.target;
-            if (target && target.classList && target.classList.contains('unidad')) {
-                updateUnidadState();
-            }
-        }, true);
-
-        // Recompute state on DOMContentLoaded and when visibility changes (switching entre ventanas)
-        document.addEventListener('DOMContentLoaded', () => {
-            updateUnidadState();
-            attachFullscreenImage();
-        });
-        document.addEventListener('visibilitychange', () => {
-            // small timeout helps when returning focus to the window
-            setTimeout(updateUnidadState, 120);
-        });
-
-        function attachFullscreenImage() {
-            const images = document.querySelectorAll('[id$="-img"]');
-            if (!images.length) {
-                return;
-            }
-
-            images.forEach((image) => {
-                image.addEventListener('click', () => {
-                    const element = image;
-                    if (element.requestFullscreen) {
-                        element.requestFullscreen();
-                    } else if (element.webkitRequestFullscreen) {
-                        element.webkitRequestFullscreen();
-                    } else if (element.msRequestFullscreen) {
-                        element.msRequestFullscreen();
-                    }
-                });
-            });
-        }
-
-        // Initial run in case script is executed after load
-        if (document.readyState === 'complete' || document.readyState === 'interactive') {
-            setTimeout(() => {
-                updateUnidadState();
-                attachFullscreenImage();
-            }, 0);
-        }
-    })();
-</script>
-
 <footer class="footer">
-    <p>Desarrollado por Karsten Guillermo Garcia Palomino</p>
+    <p>Portafolio académico · <a href="about.html">Karsten Guillermo García Palomino</a> · UAC 2026</p>
 </footer>
 
 <script src="scripts/main.js"></script>
