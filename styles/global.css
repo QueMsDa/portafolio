@@ -502,6 +502,16 @@ html.dark-mode .unit-bubble.active .bubble-circle {
 .hero-inner h1 em { font-style: italic; color: var(--forest); }
 .hero-inner .lead { font-size: 1rem; color: var(--quill); line-height: 1.72; margin-bottom: 2.2rem; }
 
+.hero-avatar {
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    border: 2px solid var(--border-em);
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 1.4rem;
+    background-color: var(--raised);
+}
+
 .social-row { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
 .social-btn {
     display: inline-flex; align-items: center; gap: 7px;
