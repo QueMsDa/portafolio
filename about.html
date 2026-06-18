@@ -102,6 +102,95 @@
         </div>
     </div>
 
+    <!-- Galería de fotos -->
+    <style>
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 12px;
+            margin: 2rem 0 2.5rem;
+        }
+        .gallery-item {
+            border-radius: var(--r-md);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            transition: border-color .18s, box-shadow .18s, transform .18s;
+        }
+        .gallery-item:hover {
+            border-color: var(--border-em);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-caption {
+            padding: .55rem .85rem;
+            font-size: .72rem;
+            font-weight: 500;
+            color: var(--quill);
+            font-style: italic;
+            border-top: 1px solid var(--border);
+        }
+        .gallery-caption strong {
+            display: block;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--forest);
+            font-size: .68rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin-bottom: 1px;
+        }
+    </style>
+
+    <div class="area-head" style="margin-top:2rem">
+        <div>
+            <h2>Momentos</h2>
+            <p>Registros de la trayectoria académica y personal.</p>
+        </div>
+    </div>
+
+    <div class="photo-gallery">
+
+        <div class="gallery-item">
+            <img src="assets/yo.jpg" alt="Karsten García Palomino"
+                 onerror="this.parentElement.style.display='none'">
+            <div class="gallery-caption">
+                <strong>Perfil</strong>Karsten Guillermo García Palomino
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/yo de viaje .jpg" alt="De viaje"
+                 onerror="this.parentElement.style.display='none'">
+            <div class="gallery-caption">
+                <strong>Viaje</strong>Explorando nuevos horizontes
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/disparando.jpg" alt="Actividad"
+                 onerror="this.parentElement.style.display='none'">
+            <div class="gallery-caption">
+                <strong>Actividad</strong>Vida fuera del aula
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/20260317_110410.png" alt="Foro Nacional del Agua 2025"
+                 onerror="this.parentElement.style.display='none'">
+            <div class="gallery-caption">
+                <strong>Evento académico</strong>I Foro Nacional — Semana Mundial del Agua · UAC, mar. 2025
+            </div>
+        </div>
+
+    </div>
+
     <div class="divider"></div>
 
     <div class="area-head">

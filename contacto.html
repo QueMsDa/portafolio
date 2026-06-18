@@ -145,8 +145,38 @@
             margin-top: .2rem;
         }
 
+        /* ── Foto header de contacto ── */
+        .contact-photo-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1.8rem 0 2.2rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2.5rem;
+        }
+        .contact-photo-header img {
+            width: 110px; height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--border-em);
+            background: var(--raised);
+            flex-shrink: 0;
+        }
+        .contact-photo-header h2 {
+            font-family: var(--ff-serif);
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.2;
+            margin-bottom: .3rem;
+        }
+        .contact-photo-header h2 em { font-style: italic; color: var(--forest); }
+        .contact-photo-header .tagline { font-size: .8rem; color: var(--quill); margin-bottom: .35rem; }
+        .contact-photo-header .mail-link { font-size: .82rem; font-weight: 600; color: var(--forest); }
+
         @media (max-width: 768px) {
             .contact-grid { grid-template-columns: 1fr; }
+            .contact-photo-header { flex-direction: column; text-align: center; }
         }
     </style>
     <script>if(localStorage.getItem('portfolio-dark-mode')==='dark')document.documentElement.classList.add('dark-mode');</script>
@@ -186,6 +216,17 @@
 
 <main class="main">
 
+    <!-- Foto + presentación -->
+    <div class="contact-photo-header">
+        <img src="assets/yo sin fondo.png" alt="Karsten García Palomino"
+             onerror="this.src='assets/yo.jpg'">
+        <div>
+            <h2>Karsten Guillermo <em>García Palomino</em></h2>
+            <p class="tagline">Ing. Ambiental · UAC · Cusco, Perú &nbsp;·&nbsp; Desarrollador Web · Analista de Datos</p>
+            <a href="mailto:karstenpalomino@gmail.com" class="mail-link">karstenpalomino@gmail.com</a>
+        </div>
+    </div>
+
     <!-- Redes principales -->
     <div class="area-head">
         <div>
@@ -220,7 +261,7 @@
             <span class="platform-cta">Ver canal →</span>
         </a>
 
-        <a href="mailto:yoninnn5pelotudon@gmail.com" class="social-feature-card">
+        <a href="mailto:karstenpalomino@gmail.com" class="social-feature-card">
             <div class="social-platform-badge">@</div>
             <span class="platform-name">Correo electrónico</span>
             <span class="platform-handle">Gmail</span>
@@ -274,11 +315,11 @@
                 <span class="contact-link-arrow">→</span>
             </a>
 
-            <a href="mailto:yoninnn5pelotudon@gmail.com" class="contact-link-item">
+            <a href="mailto:karstenpalomino@gmail.com" class="contact-link-item">
                 <div class="contact-link-icon">@</div>
                 <div class="contact-link-info">
                     <span class="contact-link-label">Correo electrónico</span>
-                    <span class="contact-link-value">yoninnn5pelotudon@gmail.com</span>
+                    <span class="contact-link-value">karstenpalomino@gmail.com</span>
                 </div>
                 <span class="contact-link-arrow">→</span>
             </a>
