@@ -6,7 +6,7 @@
     <title>Currículum Vitae · Karsten García Palomino</title>
     <link rel="stylesheet" href="styles/global.css">
     <style>
-        /* ── CV-specific styles ── */
+        /* ── CV layout ── */
         .cv-header {
             display: grid;
             grid-template-columns: 1fr auto;
@@ -33,14 +33,14 @@
             color: var(--quill);
             margin-bottom: 1rem;
         }
-        .cv-contact-inline {
+        .cv-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
             margin-top: .6rem;
         }
-        .cv-contact-inline a {
-            font-size: .76rem;
+        .cv-links a {
+            font-size: .75rem;
             font-weight: 500;
             color: var(--forest);
             border: 1px solid var(--border-em);
@@ -48,7 +48,7 @@
             padding: 3px 10px;
             transition: background-color .18s;
         }
-        .cv-contact-inline a:hover { background-color: var(--moss); }
+        .cv-links a:hover { background-color: var(--moss); }
         .cv-badge {
             display: flex;
             flex-direction: column;
@@ -76,10 +76,8 @@
             color: var(--mist);
         }
 
-        /* ── Sección CV ── */
-        .cv-section {
-            margin-bottom: 2.8rem;
-        }
+        /* ── CV sections ── */
+        .cv-section { margin-bottom: 2.8rem; }
         .cv-section-title {
             display: flex;
             align-items: center;
@@ -94,8 +92,8 @@
             font-weight: 600;
             color: var(--ink);
         }
-        .cv-section-title .section-marker {
-            width: 28px; height: 28px;
+        .section-marker {
+            width: 26px; height: 26px;
             border-radius: 50%;
             border: 1.5px solid var(--border-em);
             background-color: var(--surface);
@@ -108,8 +106,7 @@
             flex-shrink: 0;
         }
 
-        /* ── Ítem de timeline ── */
-        .cv-items { display: flex; flex-direction: column; gap: 1px; }
+        /* ── CV items (education/experience) ── */
         .cv-item {
             background-color: var(--surface);
             border: 1px solid var(--border);
@@ -117,20 +114,19 @@
             padding: 1.3rem 1.5rem;
             display: grid;
             grid-template-columns: 1fr auto;
-            gap: .5rem 1.5rem;
+            gap: .4rem 1.5rem;
             transition: border-color .18s, box-shadow .18s;
             margin-bottom: 10px;
         }
         .cv-item:hover { border-color: var(--border-em); box-shadow: var(--shadow-sm); }
-        .cv-item-main {}
         .cv-item-period {
-            font-size: .7rem;
+            font-size: .68rem;
             font-weight: 600;
             letter-spacing: .06em;
             text-transform: uppercase;
             color: var(--forest);
             white-space: nowrap;
-            margin-top: 3px;
+            margin-top: 4px;
         }
         .cv-item h3 {
             font-family: var(--ff-serif);
@@ -138,20 +134,20 @@
             font-weight: 600;
             color: var(--ink);
             line-height: 1.25;
-            margin-bottom: .25rem;
+            margin-bottom: .2rem;
         }
         .cv-item .institution {
-            font-size: .78rem;
+            font-size: .77rem;
             font-weight: 500;
             color: var(--forest);
-            margin-bottom: .5rem;
+            margin-bottom: .45rem;
         }
         .cv-item p {
             font-size: .82rem;
             color: var(--quill);
             line-height: 1.7;
         }
-        .cv-item .status-chip {
+        .status-chip {
             display: inline-block;
             margin-top: .5rem;
             padding: 2px 8px;
@@ -164,52 +160,14 @@
             color: var(--forest);
         }
 
-        /* ── Certificados ── */
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 12px;
-        }
-        .cert-card {
-            background-color: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--r-md);
-            padding: 1.2rem 1.3rem;
-            display: flex; flex-direction: column; gap: .4rem;
-            transition: border-color .18s, box-shadow .18s;
-        }
-        .cert-card:hover { border-color: var(--border-em); box-shadow: var(--shadow-sm); }
-        .cert-icon {
-            font-size: 1.2rem;
-            margin-bottom: .2rem;
-            line-height: 1;
-        }
-        .cert-card h4 {
-            font-family: var(--ff-serif);
-            font-size: .97rem;
-            font-weight: 600;
-            color: var(--ink);
-            line-height: 1.25;
-        }
-        .cert-issuer {
-            font-size: .72rem;
-            font-weight: 500;
-            color: var(--forest);
-        }
-        .cert-year {
-            font-size: .68rem;
-            color: var(--mist);
-            margin-top: auto;
-        }
-
-        /* ── Competencias doble columna ── */
+        /* ── Skills ── */
         .skills-cols {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
         }
         .skills-group h4 {
-            font-size: .67rem;
+            font-size: .65rem;
             font-weight: 600;
             letter-spacing: .12em;
             text-transform: uppercase;
@@ -217,18 +175,258 @@
             margin-bottom: .5rem;
         }
 
+        /* ── Credly banner ── */
+        .credly-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            padding: 1.2rem 1.5rem;
+            background-color: var(--surface);
+            border: 1px solid var(--border-em);
+            border-radius: var(--r-md);
+            margin-bottom: 1.8rem;
+            flex-wrap: wrap;
+        }
+        .credly-banner-text { flex: 1; }
+        .credly-banner-text h4 {
+            font-family: var(--ff-serif);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: .2rem;
+        }
+        .credly-banner-text p {
+            font-size: .78rem;
+            color: var(--quill);
+        }
+        .credly-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            border: 1px solid var(--forest);
+            border-radius: var(--r-sm);
+            font-size: .78rem;
+            font-weight: 600;
+            color: var(--forest);
+            background-color: var(--moss);
+            white-space: nowrap;
+            transition: background-color .18s;
+        }
+        .credly-btn:hover { background-color: var(--raised); }
+
+        /* ── Cert grid ── */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 10px;
+            margin-bottom: 1.5rem;
+        }
+        .cert-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-md);
+            padding: 1.1rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: .35rem;
+            cursor: pointer;
+            transition: border-color .18s, box-shadow .18s, transform .18s;
+            text-align: left;
+        }
+        .cert-card:hover {
+            border-color: var(--forest);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
+        }
+        .cert-date {
+            font-size: .63rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--forest);
+        }
+        .cert-card h4 {
+            font-family: var(--ff-serif);
+            font-size: .93rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.28;
+        }
+        .cert-issuer {
+            font-size: .71rem;
+            font-weight: 500;
+            color: var(--quill);
+        }
+        .cert-hours {
+            font-size: .65rem;
+            color: var(--mist);
+            margin-top: auto;
+            padding-top: .3rem;
+        }
+        .cert-hint {
+            font-size: .65rem;
+            color: var(--forest);
+            margin-top: auto;
+            padding-top: .3rem;
+            opacity: .7;
+        }
+
+        /* ── Pruebas de formación ── */
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 10px;
+        }
+        .evidence-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-md);
+            overflow: hidden;
+            cursor: pointer;
+            transition: border-color .18s, box-shadow .18s, transform .18s;
+        }
+        .evidence-card:hover {
+            border-color: var(--forest);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
+        }
+        .evidence-thumb {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            display: block;
+            background-color: var(--raised);
+        }
+        .evidence-thumb-pdf {
+            width: 100%;
+            height: 130px;
+            background-color: var(--raised);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--ff-serif);
+            font-size: 2rem;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--border-em);
+        }
+        .evidence-info {
+            padding: .8rem 1rem;
+        }
+        .evidence-type {
+            font-size: .63rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--forest);
+            margin-bottom: .2rem;
+        }
+        .evidence-info h4 {
+            font-family: var(--ff-serif);
+            font-size: .9rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.25;
+        }
+        .evidence-hint {
+            font-size: .65rem;
+            color: var(--mist);
+            margin-top: .3rem;
+        }
+
+        /* ── Lightbox ── */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(12, 18, 9, 0.94);
+            z-index: 999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox-inner {
+            position: relative;
+            width: 100%;
+            max-width: 980px;
+            height: 88vh;
+            display: flex;
+            flex-direction: column;
+            gap: .6rem;
+        }
+        .lightbox-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .lightbox-title {
+            font-family: var(--ff-serif);
+            font-size: .95rem;
+            font-weight: 600;
+            color: #D8D2C2;
+            font-style: italic;
+        }
+        .lightbox-close {
+            background: none;
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: var(--r-sm);
+            color: #D8D2C2;
+            font-size: 1rem;
+            padding: 4px 12px;
+            cursor: pointer;
+            transition: background-color .18s;
+        }
+        .lightbox-close:hover { background-color: rgba(255,255,255,.08); }
+        .lightbox-frame-wrap {
+            flex: 1;
+            border-radius: var(--r-md);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.1);
+            background: #fff;
+        }
+        .lightbox-frame-wrap iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border: none;
+        }
+        .lightbox-frame-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* ── Responsive ── */
         @media (max-width: 768px) {
             .cv-header { grid-template-columns: 1fr; }
             .cv-badge { display: none; }
             .cv-item { grid-template-columns: 1fr; }
             .cv-item-period { order: -1; }
             .skills-cols { grid-template-columns: 1fr; }
-            .cert-grid { grid-template-columns: 1fr; }
+            .lightbox-inner { height: 92vh; }
         }
     </style>
     <script>if(localStorage.getItem('portfolio-dark-mode')==='dark')document.documentElement.classList.add('dark-mode');</script>
 </head>
 <body>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+        <div class="lightbox-bar">
+            <span class="lightbox-title" id="lbTitle"></span>
+            <button class="lightbox-close" id="lbClose">Cerrar ✕</button>
+        </div>
+        <div class="lightbox-frame-wrap" id="lbWrap">
+            <iframe id="lbFrame" src="" title="Documento"></iframe>
+        </div>
+    </div>
+</div>
 
 <nav class="nav">
     <a href="index.html" class="nav-logo">K. García Palomino <span>· Ing. Ambiental</span></a>
@@ -253,17 +451,17 @@
 
 <main class="main">
 
-    <!-- Encabezado del CV -->
+    <!-- Encabezado -->
     <div class="cv-header">
         <div>
             <div class="cv-title">Currículum Vitae · Perfil Profesional</div>
             <h1 class="cv-name">Karsten Guillermo<br><em>García Palomino</em></h1>
-            <div class="cv-contact-inline">
-                <a href="mailto:yoninnn5pelotudon@gmail.com">Correo electrónico</a>
+            <div class="cv-links">
+                <a href="mailto:yoninnn5pelotudon@gmail.com">yoninnn5pelotudon@gmail.com</a>
                 <a href="https://github.com/QueMsDa" target="_blank" rel="noopener">GitHub</a>
                 <a href="https://www.linkedin.com/in/karsten-guillermo2000/" target="_blank" rel="noopener">LinkedIn</a>
                 <a href="https://www.twitch.tv/karstengp" target="_blank" rel="noopener">Twitch</a>
-                <a href="contacto.html">Ver contacto completo</a>
+                <a href="https://www.credly.com/users/karsten-guillermo-garcia-palomino.90a21ff8/badges" target="_blank" rel="noopener">Credly Badges</a>
             </div>
         </div>
         <div class="cv-badge">
@@ -281,132 +479,118 @@
         <div class="card" style="margin-bottom:0">
             <p>
                 Profesional de trayectoria multidisciplinar con formación académica superior en
-                Ingeniería Ambiental, Psicología y Administración de Empresas. Combina una sólida
-                base técnica en gestión ambiental, modelamiento hidrológico y tecnologías limpias
-                con competencias transversales adquiridas en el desarrollo web, la mixología profesional,
-                la terapia manual y el emprendimiento comercial. Orientado a la resolución de problemas
-                complejos con rigor técnico, visión estratégica y capacidad de adaptación a entornos
-                cambiantes. Basado en Cusco, Perú.
+                Ingeniería Ambiental, Psicología y Administración de Empresas en instituciones de
+                Argentina y Perú. Combina sólida base técnica en gestión ambiental, modelamiento
+                hidrológico y tecnologías limpias con competencias en desarrollo de software,
+                análisis de datos con Python, mixología profesional, terapia manual y emprendimiento
+                comercial. Orientado a la resolución de problemas complejos con rigor técnico,
+                visión estratégica y adaptación a entornos cambiantes. Basado en Cusco, Perú.
             </p>
         </div>
     </div>
 
-    <!-- Formación Académica -->
+    <!-- Formación académica -->
     <div class="cv-section">
         <div class="cv-section-title">
             <span class="section-marker">I</span>
             <h2>Formación Académica</h2>
         </div>
-        <div class="cv-items">
 
-            <div class="cv-item">
-                <div class="cv-item-main">
-                    <h3>Ingeniería Ambiental</h3>
-                    <div class="institution">Universidad Andina del Cusco (UAC) · Cusco, Perú</div>
-                    <p>Carrera de ingeniería con énfasis en gestión sostenible de recursos hídricos,
-                    evaluación de impacto ambiental y tecnologías de producción más limpia. Formación
-                    en modelamiento hidrológico con HEC-HMS, análisis espacial con ArcGIS y gestión
-                    de cuencas bajo el marco normativo de la Ley 29338.</p>
-                    <span class="status-chip">En curso · 8.º semestre</span>
-                </div>
-                <div class="cv-item-period">2021 – Presente</div>
+        <div class="cv-item">
+            <div>
+                <h3>Ingeniería Ambiental</h3>
+                <div class="institution">Universidad Andina del Cusco (UAC) · Cusco, Perú</div>
+                <p>Carrera con énfasis en gestión sostenible de recursos hídricos, evaluación de
+                impacto ambiental y tecnologías de producción más limpia. Formación en modelamiento
+                hidrológico con HEC-HMS, análisis espacial con ArcGIS y gestión de cuencas bajo
+                la Ley 29338 de Recursos Hídricos del Perú.</p>
+                <span class="status-chip">En curso · 8.º semestre</span>
             </div>
+            <div class="cv-item-period">2021 – Presente</div>
+        </div>
 
-            <div class="cv-item">
-                <div class="cv-item-main">
-                    <h3>Psicología</h3>
-                    <div class="institution">Universidad de Buenos Aires (UBA) · Buenos Aires, Argentina</div>
-                    <p>Estudios superiores en ciencias del comportamiento humano con formación en
-                    metodología de investigación científica, psicología social, estadística aplicada
-                    a las ciencias sociales y fundamentos del análisis clínico. La UBA, institución de
-                    excelencia académica a nivel latinoamericano, ofreció un entorno intelectualmente
-                    riguroso que consolidó habilidades analíticas y de pensamiento crítico.</p>
-                    <span class="status-chip">Estudios cursados</span>
-                </div>
-                <div class="cv-item-period">Buenos Aires</div>
+        <div class="cv-item">
+            <div>
+                <h3>Psicología</h3>
+                <div class="institution">Universidad de Buenos Aires (UBA) · Buenos Aires, Argentina</div>
+                <p>Estudios en ciencias del comportamiento humano con formación en metodología
+                de investigación científica, psicología social, estadística aplicada a las ciencias
+                sociales y fundamentos del análisis clínico. Institución de referencia latinoamericana
+                que consolidó habilidades analíticas y de pensamiento crítico.</p>
+                <span class="status-chip">Estudios cursados</span>
             </div>
+            <div class="cv-item-period">Buenos Aires</div>
+        </div>
 
-            <div class="cv-item">
-                <div class="cv-item-main">
-                    <h3>Administración de Empresas</h3>
-                    <div class="institution">Universidad Nacional de Lomas de Zamora (UNLZ) · Buenos Aires, Argentina</div>
-                    <p>Formación en gestión organizacional, contabilidad general, economía de empresas,
-                    dirección estratégica y fundamentos del derecho comercial. Los estudios en administración
-                    aportaron una perspectiva estructurada para la toma de decisiones en contextos
-                    empresariales y para la gestión eficiente de emprendimientos propios.</p>
-                    <span class="status-chip">Estudios cursados</span>
-                </div>
-                <div class="cv-item-period">Buenos Aires</div>
+        <div class="cv-item">
+            <div>
+                <h3>Administración de Empresas</h3>
+                <div class="institution">Universidad Nacional de Lomas de Zamora (UNLZ) · Buenos Aires, Argentina</div>
+                <p>Formación en gestión organizacional, contabilidad, economía de empresas,
+                dirección estratégica y fundamentos del derecho comercial. Perspectiva estructurada
+                para la toma de decisiones en contextos empresariales y para la gestión eficiente
+                de emprendimientos propios.</p>
+                <span class="status-chip">Estudios cursados</span>
             </div>
-
+            <div class="cv-item-period">Buenos Aires</div>
         </div>
     </div>
 
-    <!-- Experiencia Profesional -->
+    <!-- Experiencia -->
     <div class="cv-section">
         <div class="cv-section-title">
             <span class="section-marker">II</span>
             <h2>Experiencia Profesional</h2>
         </div>
-        <div class="cv-items">
 
-            <div class="cv-item">
-                <div class="cv-item-main">
-                    <h3>Desarrollador Web Freelance</h3>
-                    <div class="institution">Actividad independiente</div>
-                    <p>Diseño, desarrollo y despliegue de sitios web y aplicaciones interactivas
-                    mediante tecnologías modernas del ecosistema web. Especialización en interfaces
-                    responsivas elaboradas con HTML5, CSS3 y JavaScript; experiencia con la biblioteca
-                    React para el desarrollo de interfaces de usuario dinámicas. Gestión autónoma de
-                    proyectos desde la conceptualización hasta el despliegue en plataformas cloud
-                    como Vercel y GitHub Pages.</p>
-                    <span class="status-chip">Actividad vigente</span>
-                </div>
-                <div class="cv-item-period">Vigente</div>
+        <div class="cv-item">
+            <div>
+                <h3>Desarrollador Web y Analista de Datos</h3>
+                <div class="institution">Actividad independiente</div>
+                <p>Diseño, desarrollo y despliegue de sitios web y aplicaciones interactivas
+                con HTML5, CSS3, JavaScript y React. Análisis de datos con Python, pandas y
+                bibliotecas de visualización. Gestión autónoma de proyectos desde la conceptualización
+                hasta el despliegue en plataformas cloud como Vercel.</p>
+                <span class="status-chip">Actividad vigente</span>
             </div>
+            <div class="cv-item-period">Vigente</div>
+        </div>
 
-            <div class="cv-item">
-                <div class="cv-item-main">
-                    <h3>Emprendedor — Comercialización de Artículos para el Bienestar Íntimo</h3>
-                    <div class="institution">Emprendimiento propio · Buenos Aires, Argentina</div>
-                    <p>Fundación y gestión integral de un emprendimiento comercial orientado a la
-                    distribución de productos para el bienestar íntimo y la salud sexual adulta.
-                    Responsable de la selección y aprovisionamiento de catálogo, estrategia de
-                    marketing digital, comunicación con proveedores, atención personalizada al
-                    cliente y administración general del negocio. La experiencia fortaleció
-                    competencias en ventas, gestión de inventario, servicio al cliente y
-                    operación comercial en entornos competitivos.</p>
-                </div>
-                <div class="cv-item-period">Buenos Aires</div>
+        <div class="cv-item">
+            <div>
+                <h3>Emprendedor — Comercialización de Artículos para el Bienestar Íntimo</h3>
+                <div class="institution">Emprendimiento propio · Buenos Aires, Argentina</div>
+                <p>Fundación y gestión integral de emprendimiento comercial orientado a la
+                distribución de productos para el bienestar íntimo y la salud sexual adulta.
+                Responsable de catálogo, aprovisionamiento, marketing digital, atención
+                personalizada al cliente y administración general del negocio. Competencias
+                desarrolladas en ventas, gestión de inventario y operación comercial.</p>
             </div>
+            <div class="cv-item-period">Buenos Aires</div>
+        </div>
 
-            <div class="cv-item">
-                <div class="cv-item-main">
-                    <h3>Bartender Profesional</h3>
-                    <div class="institution">Industria de la hospitalidad · Buenos Aires, Argentina</div>
-                    <p>Elaboración de cócteles clásicos y de autor bajo protocolos de mixología
-                    profesional. Atención al cliente en entornos de alta demanda y exigencia de
-                    calidad. Gestión de stock e insumos, mantenimiento de estándares de presentación
-                    y contribución a la experiencia global del establecimiento. Desarrollo de
-                    habilidades de comunicación interpersonal, trabajo bajo presión y resolución
-                    ágil de situaciones en entornos de servicio.</p>
-                </div>
-                <div class="cv-item-period">Buenos Aires</div>
+        <div class="cv-item">
+            <div>
+                <h3>Bartender Profesional</h3>
+                <div class="institution">Industria de la hospitalidad · Buenos Aires, Argentina</div>
+                <p>Elaboración de cócteles clásicos y de autor bajo protocolos de mixología
+                profesional. Atención al cliente en entornos de alta demanda, gestión de stock
+                e insumos y mantenimiento de estándares de presentación. Desarrollo de habilidades
+                de comunicación, trabajo bajo presión y resolución ágil de situaciones de servicio.</p>
             </div>
+            <div class="cv-item-period">Buenos Aires</div>
+        </div>
 
-            <div class="cv-item">
-                <div class="cv-item-main">
-                    <h3>Masajista Profesional — Masoterapia</h3>
-                    <div class="institution">Actividad independiente · Buenos Aires, Argentina</div>
-                    <p>Aplicación de técnicas de masoterapia de relajación, deportiva y terapéutica
-                    orientadas al bienestar integral del cliente. Atención personalizada con evaluación
-                    previa de necesidades, adaptación de la técnica al perfil de cada persona y
-                    seguimiento posterior. Gestión autónoma de agenda, coordinación de sesiones y
-                    mantenimiento de un entorno profesional de confianza y confidencialidad.</p>
-                </div>
-                <div class="cv-item-period">Buenos Aires</div>
+        <div class="cv-item">
+            <div>
+                <h3>Masajista Profesional — Masoterapia</h3>
+                <div class="institution">Actividad independiente · Buenos Aires, Argentina</div>
+                <p>Aplicación de técnicas de masoterapia de relajación, deportiva y terapéutica
+                orientadas al bienestar integral. Atención personalizada con evaluación previa
+                de necesidades, adaptación de la técnica a cada perfil y gestión autónoma de
+                agenda y coordinación de sesiones.</p>
             </div>
-
+            <div class="cv-item-period">Buenos Aires</div>
         </div>
     </div>
 
@@ -416,48 +600,336 @@
             <span class="section-marker">III</span>
             <h2>Certificaciones y Formación Complementaria</h2>
         </div>
+
+        <!-- Credly banner -->
+        <div class="credly-banner">
+            <div class="credly-badge-icon" style="width:42px;height:42px;border-radius:50%;border:1.5px solid var(--border-em);background:var(--raised);display:flex;align-items:center;justify-content:center;font-family:var(--ff-serif);font-weight:700;font-style:italic;color:var(--forest);font-size:1.1rem;flex-shrink:0;">C</div>
+            <div class="credly-banner-text">
+                <h4>Badges digitales verificados en Credly</h4>
+                <p>Credenciales de Oracle Next Education y otras certificaciones con verificación en línea.</p>
+            </div>
+            <a href="https://www.credly.com/users/karsten-guillermo-garcia-palomino.90a21ff8/badges"
+               target="_blank" rel="noopener" class="credly-btn">
+                Ver todos los badges →
+            </a>
+        </div>
+
+        <!-- UAC -->
+        <div class="cv-section-title" style="margin-top:1.5rem">
+            <span class="section-marker" style="width:20px;height:20px;font-size:.7rem;">·</span>
+            <h2 style="font-size:1rem">Universidad Andina del Cusco</h2>
+        </div>
         <div class="cert-grid">
 
-            <div class="cert-card">
-                <div class="cert-icon">◇</div>
-                <h4>Desarrollo Web — HTML, CSS y JavaScript</h4>
-                <div class="cert-issuer">Formación autodidacta y cursos en línea</div>
-                <div class="cert-year">Agregar institución y año</div>
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/022200142i[R][R].pdf"
+                 data-lb-title="Competencias Digitales y TI — UAC"
+                 data-lb-type="pdf">
+                <div class="cert-date">UAC · 80 horas</div>
+                <h4>Competencias Digitales y Tecnologías de Información</h4>
+                <div class="cert-issuer">Centro de Formación en TI — Universidad Andina del Cusco</div>
+                <div class="cert-hint">Clic para visualizar →</div>
             </div>
 
-            <div class="cert-card">
-                <div class="cert-icon">◈</div>
-                <h4>React — Desarrollo de Interfaces Modernas</h4>
-                <div class="cert-issuer">Formación en línea</div>
-                <div class="cert-year">Agregar institución y año</div>
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/GARCIA PALOMINO KARSTEN GUILLERMO (1).pdf"
+                 data-lb-title="Seminario Investigación Científica y Humanística — 15 mar 2024"
+                 data-lb-type="pdf">
+                <div class="cert-date">15 mar 2024</div>
+                <h4>Seminario: Investigación Científica y Humanística — Trayectorias Multidisciplinarias</h4>
+                <div class="cert-issuer">Vicerrectorado de Investigación — UAC</div>
+                <div class="cert-hint">Clic para visualizar →</div>
             </div>
 
-            <div class="cert-card">
-                <div class="cert-icon">◉</div>
-                <h4>Bartender Profesional — Mixología</h4>
-                <div class="cert-issuer">Agregar institución</div>
-                <div class="cert-year">Agregar año</div>
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/Certif.- Socialización exp invest (599)-276.pdf"
+                 data-lb-title="III Taller Socialización de Experiencias de Investigación — 26-27 mar 2024"
+                 data-lb-type="pdf">
+                <div class="cert-date">26–27 mar 2024</div>
+                <h4>III Taller de Socialización de Experiencias de Investigación y Emprendimiento</h4>
+                <div class="cert-issuer">Dirección de Gestión de la Investigación — UAC</div>
+                <div class="cert-hint">Clic para visualizar →</div>
             </div>
 
-            <div class="cert-card">
-                <div class="cert-icon">◎</div>
-                <h4>Masoterapia Profesional</h4>
-                <div class="cert-issuer">Agregar institución</div>
-                <div class="cert-year">Agregar año</div>
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/Certif.- Sem. Int. Invest. Cientif. RyP (466)-235.pdf"
+                 data-lb-title="Seminario Internacional Investigación Científica: Retos y Perspectivas — 16-17 may 2024"
+                 data-lb-type="pdf">
+                <div class="cert-date">16–17 may 2024</div>
+                <h4>Seminario Internacional: Investigación Científica — Retos y Perspectivas</h4>
+                <div class="cert-issuer">Vicerrectorado de Investigación — UAC</div>
+                <div class="cert-hint">Clic para visualizar →</div>
             </div>
 
-            <div class="cert-card">
-                <div class="cert-icon">◌</div>
-                <h4>Agregar certificado</h4>
-                <div class="cert-issuer">Institución</div>
-                <div class="cert-year">Año</div>
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/GARCIA PALOMINO KARSTEN GUILLERMO.pdf"
+                 data-lb-title="Taller Estimación de GEI — 12 nov 2024"
+                 data-lb-type="pdf">
+                <div class="cert-date">12 nov 2024</div>
+                <h4>Taller: Estimación de Gases de Efecto Invernadero y su Aplicación en Investigación</h4>
+                <div class="cert-issuer">Centro de Estudios Ambientales (CEA) — UAC</div>
+                <div class="cert-hint">Clic para visualizar →</div>
             </div>
 
-            <div class="cert-card">
-                <div class="cert-icon">◆</div>
-                <h4>Agregar certificado</h4>
-                <div class="cert-issuer">Institución</div>
-                <div class="cert-year">Año</div>
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/Certif.- Metod. procesamiento datos (60)-26.pdf"
+                 data-lb-title="Taller Metodologías para el Procesamiento de Datos — 6 dic 2024"
+                 data-lb-type="pdf">
+                <div class="cert-date">6 dic 2024</div>
+                <h4>Taller: Metodologías para el Procesamiento de Datos en Estudios Ambientales y SST</h4>
+                <div class="cert-issuer">CICA — Círculo de Investigaciones en Calidad Ambiental — UAC</div>
+                <div class="cert-hint">Clic para visualizar →</div>
+            </div>
+
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/GARCIA PALOMINO , KARSTEN GUILLERMO (1).pdf"
+                 data-lb-title="I Foro Nacional Semana Mundial del Agua 2025 — 17 mar 2025"
+                 data-lb-type="pdf">
+                <div class="cert-date">17 mar 2025</div>
+                <h4>I Foro Nacional — Semana Mundial del Agua 2025: Seguridad Hídrica y Retroceso Glaciar Andino</h4>
+                <div class="cert-issuer">Vicerrectorado de Investigación — UAC</div>
+                <div class="cert-hint">Clic para visualizar →</div>
+            </div>
+
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/Certif.- III Encuentro defensores univ (1148)-1070-022200142I-KARSTEN GUILLERMO GARCIA PALOMINO.pdf"
+                 data-lb-title="III Encuentro Defensores Universitarios Macro Región Sur — 24-26 sep 2025"
+                 data-lb-type="pdf">
+                <div class="cert-date">24–26 sep 2025</div>
+                <h4>III Encuentro de Defensores Universitarios de la Macro Región Sur del Perú</h4>
+                <div class="cert-issuer">Defensoría Universitaria — UAC · 36 horas académicas</div>
+                <div class="cert-hint">Clic para visualizar →</div>
+            </div>
+
+        </div>
+
+        <!-- Alura / Oracle ONE -->
+        <div class="cv-section-title" style="margin-top:1.5rem">
+            <span class="section-marker" style="width:20px;height:20px;font-size:.7rem;">·</span>
+            <h2 style="font-size:1rem">Desarrollo de Software · Alura + Oracle</h2>
+        </div>
+        <div class="cert-grid">
+
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/certificado de amigo secreto.pdf"
+                 data-lb-title="Challenge Amigo Secreto — JavaScript"
+                 data-lb-type="pdf">
+                <div class="cert-date">Challenge · JavaScript</div>
+                <h4>Challenge Amigo Secreto — Aplicación JavaScript</h4>
+                <div class="cert-issuer">Alura Latam</div>
+                <div class="cert-hint">Clic para visualizar →</div>
+            </div>
+
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/certificado de git.pdf"
+                 data-lb-title="Git — Control de versiones"
+                 data-lb-type="pdf">
+                <div class="cert-date">Control de versiones</div>
+                <h4>Git — Versionado de Código y Colaboración</h4>
+                <div class="cert-issuer">Alura Latam</div>
+                <div class="cert-hint">Clic para visualizar →</div>
+            </div>
+
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/Karsten Guillermo Garcia Palomino - Curso Aprender a aprender_ tecnicas para tu autodesarrollo - Alura.pdf"
+                 data-lb-title="Aprender a aprender — 20 ene 2025"
+                 data-lb-type="pdf">
+                <div class="cert-date">20 ene 2025 · 8h</div>
+                <h4>Aprender a Aprender: Técnicas para el Autodesarrollo</h4>
+                <div class="cert-issuer">Alura Latam + Oracle</div>
+                <div class="cert-hint">Clic para visualizar →</div>
+            </div>
+
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/Karsten Guillermo Garcia Palomino - Curso Lógica de programación_ sumérgete en la programación con JavaScript - Alura (1).pdf"
+                 data-lb-title="Lógica de programación: JavaScript — 30 ene 2025"
+                 data-lb-type="pdf">
+                <div class="cert-date">30 ene 2025 · 8h</div>
+                <h4>Lógica de Programación: Sumérgete en JavaScript</h4>
+                <div class="cert-issuer">Alura Latam + Oracle</div>
+                <div class="cert-hint">Clic para visualizar →</div>
+            </div>
+
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/Karsten Guillermo Garcia Palomino - Curso Lógica de programación_ explorar funciones y listas - Alura.pdf"
+                 data-lb-title="Lógica de programación: funciones y listas — 4 feb 2025"
+                 data-lb-type="pdf">
+                <div class="cert-date">4 feb 2025 · 8h</div>
+                <h4>Lógica de Programación: Funciones y Listas</h4>
+                <div class="cert-issuer">Alura Latam + Oracle</div>
+                <div class="cert-hint">Clic para visualizar →</div>
+            </div>
+
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/Karsten Guillermo Garcia Palomino - Curso HTML y CSS_ ambientes de desarrollo, estructura de archivos y tags - Alura.pdf"
+                 data-lb-title="HTML y CSS: ambientes de desarrollo — 3 mar 2025"
+                 data-lb-type="pdf">
+                <div class="cert-date">3 mar 2025 · 6h</div>
+                <h4>HTML y CSS: Ambientes de Desarrollo, Archivos y Tags</h4>
+                <div class="cert-issuer">Alura Latam + Oracle</div>
+                <div class="cert-hint">Clic para visualizar →</div>
+            </div>
+
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/Karsten Guillermo Garcia Palomino - Curso HTML y CSS_ Clases, Posicionamiento y Flexbox - Alura.pdf"
+                 data-lb-title="HTML y CSS: Clases, Posicionamiento y Flexbox — 4 mar 2025"
+                 data-lb-type="pdf">
+                <div class="cert-date">4 mar 2025 · 6h</div>
+                <h4>HTML y CSS: Clases, Posicionamiento y Flexbox</h4>
+                <div class="cert-issuer">Alura Latam + Oracle</div>
+                <div class="cert-hint">Clic para visualizar →</div>
+            </div>
+
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/Karsten Guillermo Garcia Palomino - Curso HTML y CSS_ header, footer y variables CSS - Alura.pdf"
+                 data-lb-title="HTML y CSS: header, footer y variables — 4 mar 2025"
+                 data-lb-type="pdf">
+                <div class="cert-date">4 mar 2025 · 6h</div>
+                <h4>HTML y CSS: Header, Footer y Variables CSS</h4>
+                <div class="cert-issuer">Alura Latam + Oracle</div>
+                <div class="cert-hint">Clic para visualizar →</div>
+            </div>
+
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/Karsten Guillermo Garcia Palomino - Curso Practicando Python para Data Science_ Challenge Alura Store - Alura.pdf"
+                 data-lb-title="Python para Data Science: Challenge Alura Store — 24 jul 2025"
+                 data-lb-type="pdf">
+                <div class="cert-date">24 jul 2025 · 6h</div>
+                <h4>Practicando Python para Data Science: Challenge Alura Store</h4>
+                <div class="cert-issuer">Alura Latam + Oracle</div>
+                <div class="cert-hint">Clic para visualizar →</div>
+            </div>
+
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/Karsten Guillermo Garcia Palomino - Curso Challenge Telecom X_ análisis de evasión de clientes - Alura.pdf"
+                 data-lb-title="Challenge Telecom X: análisis de evasión — 24 jul 2025"
+                 data-lb-type="pdf">
+                <div class="cert-date">24 jul 2025 · 4h</div>
+                <h4>Challenge Telecom X: Análisis de Evasión de Clientes</h4>
+                <div class="cert-issuer">Alura Latam + Oracle</div>
+                <div class="cert-hint">Clic para visualizar →</div>
+            </div>
+
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/Karsten Guillermo Garcia Palomino - Curso Visualización de datos_ creando gráficos con bibliotecas de Python - Alura.pdf"
+                 data-lb-title="Visualización de datos con Python — 18 ago 2025"
+                 data-lb-type="pdf">
+                <div class="cert-date">18 ago 2025 · 10h</div>
+                <h4>Visualización de Datos: Gráficos con Bibliotecas de Python</h4>
+                <div class="cert-issuer">Alura Latam + Oracle</div>
+                <div class="cert-hint">Clic para visualizar →</div>
+            </div>
+
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/Karsten Guillermo Garcia Palomino - Curso Challenge Telecom X_ análisis de evasión de clientes - Parte 2 - Alura.pdf"
+                 data-lb-title="Challenge Telecom X Parte 2 — 19 ago 2025"
+                 data-lb-type="pdf">
+                <div class="cert-date">19 ago 2025 · 6h</div>
+                <h4>Challenge Telecom X: Análisis de Evasión de Clientes — Parte 2</h4>
+                <div class="cert-issuer">Alura Latam + Oracle</div>
+                <div class="cert-hint">Clic para visualizar →</div>
+            </div>
+
+            <div class="cert-card"
+                 data-lb-src="assets/certificados/Karsten Guillermo Garcia Palomino - Programa -.pdf"
+                 data-lb-title="Programa Oracle Next Education (ONE) — 19 ago 2025"
+                 data-lb-type="pdf"
+                 style="border-color:var(--border-em)">
+                <div class="cert-date">19 ago 2025 · 307h · 7 cursos</div>
+                <h4>Programa Oracle Next Education (ONE) — Completado</h4>
+                <div class="cert-issuer">Alura Latam + Oracle · Programa completo</div>
+                <div class="cert-hint">Clic para visualizar →</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Pruebas de formación -->
+    <div class="cv-section">
+        <div class="cv-section-title">
+            <span class="section-marker">IV</span>
+            <h2>Pruebas de Formación y Trabajos Académicos</h2>
+        </div>
+        <div class="evidence-grid">
+
+            <div class="evidence-card"
+                 data-lb-src="assets/certificados/pruebas de formacion/revit.jpeg"
+                 data-lb-title="Modelado con Autodesk Revit"
+                 data-lb-type="image">
+                <img src="assets/certificados/pruebas de formacion/revit.jpeg"
+                     alt="Autodesk Revit" class="evidence-thumb"
+                     onerror="this.style.display='none'">
+                <div class="evidence-info">
+                    <div class="evidence-type">Software · Modelado BIM</div>
+                    <h4>Modelado Arquitectónico con Autodesk Revit</h4>
+                    <div class="evidence-hint">Clic para ampliar →</div>
+                </div>
+            </div>
+
+            <div class="evidence-card"
+                 data-lb-src="assets/certificados/pruebas de formacion/revit 0.jpeg"
+                 data-lb-title="Modelado con Autodesk Revit — Vista 2"
+                 data-lb-type="image">
+                <img src="assets/certificados/pruebas de formacion/revit 0.jpeg"
+                     alt="Autodesk Revit 2" class="evidence-thumb"
+                     onerror="this.style.display='none'">
+                <div class="evidence-info">
+                    <div class="evidence-type">Software · Modelado BIM</div>
+                    <h4>Autodesk Revit — Vista de Proyecto</h4>
+                    <div class="evidence-hint">Clic para ampliar →</div>
+                </div>
+            </div>
+
+            <div class="evidence-card"
+                 data-lb-src="assets/certificados/pruebas de formacion/visita a planta sedacusco.jpeg"
+                 data-lb-title="Visita técnica — Planta SEDACUSCO"
+                 data-lb-type="image">
+                <img src="assets/certificados/pruebas de formacion/visita a planta sedacusco.jpeg"
+                     alt="Planta SEDACUSCO" class="evidence-thumb"
+                     onerror="this.style.display='none'">
+                <div class="evidence-info">
+                    <div class="evidence-type">Visita técnica · Ingeniería</div>
+                    <h4>Visita a Planta de Tratamiento — SEDACUSCO</h4>
+                    <div class="evidence-hint">Clic para ampliar →</div>
+                </div>
+            </div>
+
+            <div class="evidence-card"
+                 data-lb-src="assets/certificados/pruebas de formacion/visita a planta santa ana purificación de agua sedacusco.jpeg"
+                 data-lb-title="Visita técnica — Planta Santa Ana, SEDACUSCO"
+                 data-lb-type="image">
+                <img src="assets/certificados/pruebas de formacion/visita a planta santa ana purificación de agua sedacusco.jpeg"
+                     alt="Planta Santa Ana" class="evidence-thumb"
+                     onerror="this.style.display='none'">
+                <div class="evidence-info">
+                    <div class="evidence-type">Visita técnica · Ingeniería</div>
+                    <h4>Visita a Planta Santa Ana — Purificación de Agua SEDACUSCO</h4>
+                    <div class="evidence-hint">Clic para ampliar →</div>
+                </div>
+            </div>
+
+            <div class="evidence-card"
+                 data-lb-src="assets/certificados/pruebas de formacion/areas degradadas puno 3.0.pdf"
+                 data-lb-title="Análisis de Áreas Degradadas — Puno"
+                 data-lb-type="pdf">
+                <div class="evidence-thumb-pdf">SIG</div>
+                <div class="evidence-info">
+                    <div class="evidence-type">Análisis SIG · Medio ambiente</div>
+                    <h4>Análisis de Áreas Degradadas — Región Puno</h4>
+                    <div class="evidence-hint">Clic para visualizar →</div>
+                </div>
+            </div>
+
+            <div class="evidence-card"
+                 data-lb-src="assets/certificados/pruebas de formacion/OPERACIONES Y PROCESOS UNITARIOS II poster.pdf"
+                 data-lb-title="Póster Académico — Operaciones y Procesos Unitarios II"
+                 data-lb-type="pdf">
+                <div class="evidence-thumb-pdf">PDF</div>
+                <div class="evidence-info">
+                    <div class="evidence-type">Trabajo académico · Ingeniería</div>
+                    <h4>Póster Académico: Operaciones y Procesos Unitarios II</h4>
+                    <div class="evidence-hint">Clic para visualizar →</div>
+                </div>
             </div>
 
         </div>
@@ -466,7 +938,7 @@
     <!-- Competencias -->
     <div class="cv-section">
         <div class="cv-section-title">
-            <span class="section-marker">IV</span>
+            <span class="section-marker">V</span>
             <h2>Competencias</h2>
         </div>
         <div class="skills-cols">
@@ -479,20 +951,21 @@
                     <span class="chip">Gestión de cuencas</span>
                     <span class="chip">Ley 29338</span>
                     <span class="chip">Producción más limpia</span>
-                    <span class="chip">ACV · PINCH</span>
-                    <span class="chip">ISO 50001</span>
+                    <span class="chip">ACV · PINCH · ISO 50001</span>
+                    <span class="chip">Autodesk Revit</span>
                 </div>
             </div>
             <div class="skills-group">
-                <h4>Desarrollo Web</h4>
+                <h4>Desarrollo de Software y Datos</h4>
                 <div class="skill-chips">
                     <span class="chip accent">HTML5 · CSS3</span>
                     <span class="chip accent">JavaScript</span>
                     <span class="chip accent">React</span>
-                    <span class="chip">Diseño responsivo</span>
+                    <span class="chip accent">Python</span>
+                    <span class="chip">pandas · matplotlib</span>
                     <span class="chip">Git · GitHub</span>
                     <span class="chip">Vercel</span>
-                    <span class="chip">Accesibilidad web</span>
+                    <span class="chip">Análisis de datos</span>
                 </div>
             </div>
             <div class="skills-group">
@@ -516,23 +989,26 @@
         </div>
     </div>
 
-    <!-- Datos adicionales -->
-    <div class="data-row" style="margin-top:1rem">
+    <div class="data-row" style="margin-top:.5rem">
+        <div class="data-item">
+            <span class="data-num">21</span>
+            <span class="data-lbl">Certificados</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">307h</span>
+            <span class="data-lbl">Oracle ONE</span>
+        </div>
         <div class="data-item">
             <span class="data-num">3</span>
             <span class="data-lbl">Universidades</span>
         </div>
         <div class="data-item">
-            <span class="data-num">4+</span>
-            <span class="data-lbl">Áreas de práctica</span>
-        </div>
-        <div class="data-item">
-            <span class="data-num">Bilingüe</span>
-            <span class="data-lbl">ES · EN</span>
-        </div>
-        <div class="data-item">
             <span class="data-num">ARG · PER</span>
             <span class="data-lbl">Experiencia regional</span>
+        </div>
+        <div class="data-item">
+            <span class="data-num">ES · EN</span>
+            <span class="data-lbl">Idiomas</span>
         </div>
     </div>
 
@@ -543,5 +1019,58 @@
 </footer>
 
 <script src="scripts/main.js"></script>
+<script>
+(function () {
+    var lb     = document.getElementById('lightbox');
+    var lbWrap = document.getElementById('lbWrap');
+    var lbFrame= document.getElementById('lbFrame');
+    var lbTitle= document.getElementById('lbTitle');
+    var lbClose= document.getElementById('lbClose');
+
+    function openLb(src, title, type) {
+        lbTitle.textContent = title;
+        if (type === 'image') {
+            lbFrame.style.display = 'none';
+            var img = lbWrap.querySelector('img') || document.createElement('img');
+            img.src = src;
+            img.style.cssText = 'width:100%;height:100%;object-fit:contain;display:block;';
+            if (!lbWrap.querySelector('img')) lbWrap.appendChild(img);
+            lbWrap.querySelector('img').style.display = 'block';
+        } else {
+            if (lbWrap.querySelector('img')) lbWrap.querySelector('img').style.display = 'none';
+            lbFrame.style.display = 'block';
+            lbFrame.src = src;
+        }
+        lb.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLb() {
+        lb.classList.remove('active');
+        lbFrame.src = '';
+        if (lbWrap.querySelector('img')) lbWrap.querySelector('img').src = '';
+        document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('[data-lb-src]').forEach(function (el) {
+        el.addEventListener('click', function () {
+            openLb(
+                el.getAttribute('data-lb-src'),
+                el.getAttribute('data-lb-title'),
+                el.getAttribute('data-lb-type') || 'pdf'
+            );
+        });
+        el.setAttribute('role', 'button');
+        el.setAttribute('tabindex', '0');
+        el.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') el.click();
+        });
+    });
+
+    lbClose.addEventListener('click', closeLb);
+    lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
+})();
+</script>
 </body>
 </html>
