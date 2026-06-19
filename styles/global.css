@@ -442,6 +442,7 @@ html.dark-mode .unit-bubble.active .bubble-circle {
 }
 .doc-link:hover { background-color: var(--moss); border-color: var(--forest); }
 .doc-link svg { width: 11px; height: 11px; flex-shrink: 0; stroke: currentColor; }
+.doc-link--missing { opacity: .45; cursor: not-allowed; pointer-events: none; }
 
 /* ─── FIGURA (imagen académica) ─────────────────── */
 .img-fig {
