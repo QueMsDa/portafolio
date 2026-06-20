@@ -23,13 +23,28 @@
         var burger = document.getElementById('burger');
         var navLinks = document.getElementById('navLinks');
         if (!burger || !navLinks) return;
-        burger.addEventListener('click', function () {
-            navLinks.classList.toggle('open');
+
+        function closeMenu() {
+            navLinks.classList.remove('open');
+            burger.classList.remove('is-open');
+        }
+
+        burger.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var isOpen = navLinks.classList.toggle('open');
+            burger.classList.toggle('is-open', isOpen);
         });
+
         navLinks.querySelectorAll('a').forEach(function (a) {
-            a.addEventListener('click', function () {
-                navLinks.classList.remove('open');
-            });
+            a.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('click', function (e) {
+            if (navLinks.classList.contains('open') &&
+                !navLinks.contains(e.target) &&
+                !burger.contains(e.target)) {
+                closeMenu();
+            }
         });
     }
 

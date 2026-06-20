@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600&display=swap');
 
 /* ─── TOKENS ─────────────────────────────────────── */
 :root {
@@ -602,17 +602,19 @@ html.dark-mode .unit-bubble.active .bubble-circle {
 .area-head h2 { font-family: var(--ff-serif); font-size: 1.3rem; font-weight: 600; color: var(--ink); }
 .area-head p { font-size: .8rem; color: var(--quill); margin-top: .18rem; }
 
-/* ─── RESPONSIVE ─────────────────────────────────── */
+/* --- RESPONSIVE ----------------------------------------- */
+
+/* Tablet (900px) */
 @media (max-width: 900px) {
-    .unit-nav { grid-template-columns: 1fr; }
-    .card-grid-2 { grid-template-columns: 1fr; }
+    .card-grid-2  { grid-template-columns: 1fr; }
     .profile-wrap { grid-template-columns: 1fr; }
-    .profile-img { max-width: 260px; }
+    .profile-img  { max-width: 260px; margin: 0 auto; }
+    .unit-nav     { gap: 1.8rem; }
 }
 
+/* Movil (768px) */
 @media (max-width: 768px) {
     .nav { padding: 0 4%; }
-
     .nav-links {
         display: none;
         position: fixed;
@@ -625,33 +627,51 @@ html.dark-mode .unit-bubble.active .bubble-circle {
         border-top: 1px solid var(--border);
         z-index: 99;
         overflow-y: auto;
+        box-shadow: 0 8px 24px rgba(27,32,23,.12);
     }
     .nav-links.open { display: flex; }
     .nav-links a {
         border-radius: 0;
-        padding: 13px 5%;
-        font-size: .82rem;
+        padding: 14px 5%;
+        font-size: .88rem;
         border-bottom: 1px solid var(--border);
         width: 100%;
         text-transform: none;
         letter-spacing: normal;
     }
-
     .nav-burger { display: flex; }
-
-    .page-hero { padding: 2.8rem 4% 2rem; }
-    .hero-home { min-height: 70vh; padding: 3rem 4%; }
-    .main { padding: 2rem 4% 3.5rem; }
-
-    .data-row { display: grid; grid-template-columns: repeat(2, 1fr); }
-    .card-grid { grid-template-columns: 1fr; }
+    .nav-burger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-burger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-burger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .page-hero  { padding: 2.5rem 4% 2rem; }
+    .hero-home  { min-height: 65vh; padding: 3rem 4%; }
+    .main       { padding: 2rem 4% 3rem; }
+    .data-row    { display: grid; grid-template-columns: repeat(2, 1fr); }
+    .card-grid   { grid-template-columns: 1fr; }
+    .card-grid-2 { grid-template-columns: 1fr; }
     .courses-grid { grid-template-columns: repeat(2, 1fr); }
+    .unit-nav       { gap: 1.2rem; }
+    .bubble-circle  { width: 72px; height: 72px; }
+    .bubble-circle .numeral { font-size: 1.7rem; }
+    .bubble-title   { font-size: .82rem; max-width: 100px; }
+    .doc-link { padding: 7px 12px; font-size: .78rem; }
 }
 
+/* Movil pequeno (480px) */
 @media (max-width: 480px) {
-    .hero-inner h1 { font-size: clamp(2rem, 8vw, 2.5rem); }
-    .page-hero h1 { font-size: clamp(1.8rem, 7vw, 2.5rem); }
-    .courses-grid { grid-template-columns: 1fr; }
-    .data-row { grid-template-columns: repeat(2, 1fr); }
-    .profile-img { max-width: 200px; }
+    .nav-logo span  { display: none; }
+    .hero-inner h1  { font-size: clamp(1.9rem, 8vw, 2.4rem); }
+    .page-hero h1   { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+    .lead           { font-size: .9rem; }
+    .courses-grid   { grid-template-columns: 1fr; }
+    .data-row       { grid-template-columns: repeat(2, 1fr); }
+    .profile-img    { max-width: 180px; }
+    .unit-nav       { gap: .75rem; }
+    .bubble-circle  { width: 62px; height: 62px; }
+    .bubble-circle .numeral { font-size: 1.4rem; }
+    .bubble-lbl     { font-size: .57rem; }
+    .bubble-title   { font-size: .76rem; max-width: 82px; }
+    .section-head h2 { font-size: 1.1rem; }
+    .section-num    { font-size: 1.55rem; }
+    .card           { padding: 1rem 1.1rem; }
 }
