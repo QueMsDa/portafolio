@@ -141,20 +141,23 @@ export async function getCurso(slug: string): Promise<{ curso: Curso; secciones:
   if (!cursoRows.length) return null;
   const curso = cursoRows[0];
 
-  // 3 parallel queries instead of N+1 nested queries
-  const [{ rows: seccionRows }, { rows: temaRows }, { rows: docRows }] = await Promise.all([
-    sql`SELECT id, slug, numero, titulo, subtitulo, bubble_label, bubble_title, num_style, orden
-        FROM secciones WHERE curso_id = ${curso.id} ORDER BY orden`,
-    sql`SELECT t.id, t.seccion_id, t.label, t.titulo, t.descripcion, t.pill, t.orden
-        FROM temas t
-        INNER JOIN secciones s ON s.id = t.seccion_id
-        WHERE s.curso_id = ${curso.id} ORDER BY t.orden`,
-    sql`SELECT d.id, d.tema_id, d.nombre, d.url, d.disponible, d.orden
-        FROM documentos d
-        INNER JOIN temas t ON t.id = d.tema_id
-        INNER JOIN secciones s ON s.id = t.seccion_id
-        WHERE s.curso_id = ${curso.id} ORDER BY d.orden`,
-  ]);
+  // 3 sequential queries to avoid connection pool exhaustion
+  const { rows: seccionRows } = await sql`
+    SELECT id, slug, numero, titulo, subtitulo, bubble_label, bubble_title, num_style, orden
+    FROM secciones WHERE curso_id = ${curso.id} ORDER BY orden`;
+
+  const { rows: temaRows } = await sql`
+    SELECT t.id, t.seccion_id, t.label, t.titulo, t.descripcion, t.pill, t.orden
+    FROM temas t
+    INNER JOIN secciones s ON s.id = t.seccion_id
+    WHERE s.curso_id = ${curso.id} ORDER BY t.orden`;
+
+  const { rows: docRows } = await sql`
+    SELECT d.id, d.tema_id, d.nombre, d.url, d.disponible, d.orden
+    FROM documentos d
+    INNER JOIN temas t ON t.id = d.tema_id
+    INNER JOIN secciones s ON s.id = t.seccion_id
+    WHERE s.curso_id = ${curso.id} ORDER BY d.orden`;
 
   // Group into nested structure in memory
   const docsPerTema = new Map<number, Documento[]>();
