@@ -50,7 +50,20 @@ function CardGrid({ seccion }: { seccion: Seccion }) {
 
 export default async function CursoPage({ params }: Props) {
   const { curso: slug } = await params;
-  const data = await getCurso(slug);
+
+  let data;
+  try {
+    data = await getCurso(slug);
+  } catch (err) {
+    console.error('[CursoPage] getCurso error:', err);
+    return (
+      <div style={{ padding: '2rem', color: 'red' }}>
+        <h1>Error cargando curso</h1>
+        <pre style={{ fontSize: '0.8rem', whiteSpace: 'pre-wrap' }}>{String(err)}</pre>
+      </div>
+    );
+  }
+
   if (!data) notFound();
 
   const { curso, secciones } = data;
