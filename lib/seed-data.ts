@@ -35,6 +35,12 @@ export const PROYECTOS = [
     tech_label: 'Proyecto 6 · Next.js · TypeScript · SQL · Sharp',
     url_vercel: 'https://cromalab-indol.vercel.app', url_github: 'https://github.com/QueMsDa/cromas-analisis',
   },
+  {
+    numero: 7, titulo: 'Finanzas Personal — App Android + Cloud',
+    descripcion: 'App Android nativa (Kotlin + Jetpack Compose) para análisis financiero personal en tiempo real. Registra gastos manualmente o importándolos desde capturas de pantalla de Yape mediante OCR (Google ML Kit). Base de datos cloud con Supabase PostgreSQL y sincronización automática con Google Sheets y Excel. Sin IA para el análisis, solo datos reales.',
+    tech_label: 'Proyecto 7 · Android · Kotlin · Supabase · ML Kit',
+    url_vercel: null, url_github: 'https://github.com/QueMsDa/finanzas-personales',
+  },
 ];
 
 export const CURSOS = [
