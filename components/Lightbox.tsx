@@ -44,7 +44,14 @@ export default function Lightbox({ items }: { items: LbItem[] }) {
             <p className="lb-title">{active.title}</p>
             {active.type === 'img'
               ? <img src={active.src} alt={active.title} className="lb-img" />
-              : <iframe src={active.src} className="lb-frame" title={active.title} />
+              : (
+                <>
+                  <iframe src={active.src} className="lb-frame" title={active.title} />
+                  <a href={active.src} target="_blank" rel="noopener noreferrer" className="lb-pdf-link">
+                    Abrir PDF en nueva pestaña ↗
+                  </a>
+                </>
+              )
             }
           </div>
         )}

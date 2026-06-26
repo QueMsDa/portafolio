@@ -3,40 +3,36 @@ import Lightbox, { type LbItem } from '@/components/Lightbox';
 
 export const metadata: Metadata = { title: 'Curriculum Vitae' };
 
+const P = '/assets/certificados';
+
 const CERTS_UAC: LbItem[] = [
-  { src: '/assets/certificados/1.jpg', title: 'Actualización Curricular — UAC', type: 'img' },
-  { src: '/assets/certificados/2.jpg', title: 'Excel Avanzado — UAC', type: 'img' },
-  { src: '/assets/certificados/3.jpg', title: 'GIS Básico ArcGIS — UAC', type: 'img' },
-  { src: '/assets/certificados/4.jpg', title: 'Emprendimiento — UAC', type: 'img' },
-  { src: '/assets/certificados/5.jpg', title: 'Investigación Formativa — UAC', type: 'img' },
-  { src: '/assets/certificados/6.jpg', title: 'Gestión Ambiental — UAC', type: 'img' },
-  { src: '/assets/certificados/7.jpg', title: 'Legislación Ambiental — UAC', type: 'img' },
-  { src: '/assets/certificados/8.jpg', title: 'Impacto Ambiental — UAC', type: 'img' },
+  { src: `${P}/GARCIA PALOMINO KARSTEN GUILLERMO.pdf`,                                       title: 'Certificado UAC — Karsten G. P.',                    type: 'pdf' },
+  { src: `${P}/GARCIA PALOMINO KARSTEN GUILLERMO (1).pdf`,                                   title: 'Certificado UAC (2)',                                 type: 'pdf' },
+  { src: `${P}/GARCIA PALOMINO , KARSTEN GUILLERMO (1).pdf`,                                 title: 'Certificado UAC (3)',                                 type: 'pdf' },
+  { src: `${P}/022200142i[R][R].pdf`,                                                         title: 'Constancia — Cód. 022200142i',                        type: 'pdf' },
+  { src: `${P}/Certif.- III Encuentro defensores univ (1148)-1070-022200142I-KARSTEN GUILLERMO GARCIA PALOMINO.pdf`, title: 'Cert. III Encuentro Defensores Univ.', type: 'pdf' },
+  { src: `${P}/Certif.- Metod. procesamiento datos (60)-26.pdf`,                             title: 'Cert. Metodología Procesamiento de Datos',           type: 'pdf' },
+  { src: `${P}/Certif.- Sem. Int. Invest. Cientif. RyP (466)-235.pdf`,                      title: 'Cert. Sem. Investigación Científica',                type: 'pdf' },
+  { src: `${P}/Certif.- Socialización exp invest (599)-276.pdf`,                             title: 'Cert. Socialización Experiencias de Investigación',  type: 'pdf' },
 ];
 
 const CERTS_ORACLE: LbItem[] = [
-  { src: '/assets/certificados/oracle/1.jpg', title: 'Lógica de Programación — Alura/Oracle ONE', type: 'img' },
-  { src: '/assets/certificados/oracle/2.jpg', title: 'HTML y CSS: ambientes de desarrollo — Alura', type: 'img' },
-  { src: '/assets/certificados/oracle/3.jpg', title: 'HTML y CSS: clases y posicionamiento — Alura', type: 'img' },
-  { src: '/assets/certificados/oracle/4.jpg', title: 'HTML y CSS: cabecera, footer y variables CSS — Alura', type: 'img' },
-  { src: '/assets/certificados/oracle/5.jpg', title: 'HTML y CSS: responsividad con mobile-first — Alura', type: 'img' },
-  { src: '/assets/certificados/oracle/6.jpg', title: 'JavaScript: primeros pasos — Alura', type: 'img' },
-  { src: '/assets/certificados/oracle/7.jpg', title: 'JavaScript: arrays y objetos — Alura', type: 'img' },
-  { src: '/assets/certificados/oracle/8.jpg', title: 'JavaScript: funciones y listas — Alura', type: 'img' },
-  { src: '/assets/certificados/oracle/9.jpg', title: 'Git y GitHub: repositorio, commit y versiones — Alura', type: 'img' },
-  { src: '/assets/certificados/oracle/10.jpg', title: 'React: desarrollando con JavaScript — Alura', type: 'img' },
-  { src: '/assets/certificados/oracle/11.jpg', title: 'React: como los componentes funcionan — Alura', type: 'img' },
-  { src: '/assets/certificados/oracle/12.jpg', title: 'Formación Front End — Oracle ONE (307 h)', type: 'img' },
-  { src: '/assets/certificados/oracle/13.jpg', title: 'Oracle ONE — Completado', type: 'img' },
+  { src: `${P}/Karsten Guillermo Garcia Palomino - Curso Lógica de programación_ sumérgete en la programación con JavaScript - Alura (1).pdf`, title: 'Lógica de Programación — Alura/Oracle ONE', type: 'pdf' },
+  { src: `${P}/Karsten Guillermo Garcia Palomino - Curso HTML y CSS_ ambientes de desarrollo, estructura de archivos y tags - Alura.pdf`,       title: 'HTML y CSS: ambientes de desarrollo — Alura', type: 'pdf' },
+  { src: `${P}/Karsten Guillermo Garcia Palomino - Curso HTML y CSS_ Clases, Posicionamiento y Flexbox - Alura.pdf`,                           title: 'HTML y CSS: clases y posicionamiento — Alura', type: 'pdf' },
+  { src: `${P}/Karsten Guillermo Garcia Palomino - Curso HTML y CSS_ header, footer y variables CSS - Alura.pdf`,                              title: 'HTML y CSS: cabecera, footer y variables CSS — Alura', type: 'pdf' },
+  { src: `${P}/Karsten Guillermo Garcia Palomino - Curso Lógica de programación_ explorar funciones y listas - Alura.pdf`,                     title: 'JavaScript: funciones y listas — Alura', type: 'pdf' },
+  { src: `${P}/certificado de git.pdf`,                                                        title: 'Git y GitHub — Alura', type: 'pdf' },
+  { src: `${P}/Karsten Guillermo Garcia Palomino - Programa -.pdf`,                           title: 'Formación Front End — Oracle ONE (307 h)', type: 'pdf' },
+  { src: `${P}/certificado de amigo secreto.pdf`,                                              title: 'JavaScript: Amigo Secreto — Alura', type: 'pdf' },
 ];
 
 const EVIDENCIAS: LbItem[] = [
-  { src: '/assets/evidencias/revit1.jpg',   title: 'Modelado BIM — Revit (1)', type: 'img' },
-  { src: '/assets/evidencias/revit2.jpg',   title: 'Modelado BIM — Revit (2)', type: 'img' },
-  { src: '/assets/evidencias/seda1.jpg',    title: 'Visita SEDACUSCO (1)', type: 'img' },
-  { src: '/assets/evidencias/seda2.jpg',    title: 'Visita SEDACUSCO (2)', type: 'img' },
-  { src: '/assets/evidencias/sig.pdf',      title: 'Práctica SIG — Análisis espacial (PDF)', type: 'pdf' },
-  { src: '/assets/evidencias/poster.pdf',   title: 'Póster Científico — Investigación Formativa (PDF)', type: 'pdf' },
+  { src: `${P}/pruebas de formacion/revit 0.jpeg`,                                              title: 'Modelado BIM — Revit (1)', type: 'img' },
+  { src: `${P}/pruebas de formacion/revit.jpeg`,                                                title: 'Modelado BIM — Revit (2)', type: 'img' },
+  { src: `${P}/pruebas de formacion/visita a planta santa ana purificación de agua sedacusco.jpeg`, title: 'Visita SEDACUSCO — Planta Santa Ana', type: 'img' },
+  { src: `${P}/pruebas de formacion/visita a planta sedacusco.jpeg`,                            title: 'Visita SEDACUSCO (2)', type: 'img' },
+  { src: `${P}/pruebas de formacion/OPERACIONES Y PROCESOS UNITARIOS II poster.pdf`,            title: 'Póster Científico — Investigación Formativa', type: 'pdf' },
 ];
 
 const FORMACION = [
