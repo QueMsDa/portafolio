@@ -141,65 +141,46 @@ export async function getCurso(slug: string): Promise<{ curso: Curso; secciones:
   if (!cursoRows.length) return null;
   const curso = cursoRows[0];
 
-  // Single JOIN query instead of N+1 nested queries
-  const { rows } = await sql`
-    SELECT
-      s.id          AS s_id,
-      s.slug        AS s_slug,
-      s.numero      AS s_numero,
-      s.titulo      AS s_titulo,
-      s.subtitulo   AS s_subtitulo,
-      s.bubble_label,
-      s.bubble_title,
-      s.num_style,
-      s.orden       AS s_orden,
-      t.id          AS t_id,
-      t.label       AS t_label,
-      t.titulo      AS t_titulo,
-      t.descripcion AS t_descripcion,
-      t.pill        AS t_pill,
-      t.orden       AS t_orden,
-      d.id          AS d_id,
-      d.nombre      AS d_nombre,
-      d.url         AS d_url,
-      d.disponible  AS d_disponible,
-      d.orden       AS d_orden
-    FROM secciones s
-    LEFT JOIN temas      t ON t.seccion_id = s.id
-    LEFT JOIN documentos d ON d.tema_id    = t.id
-    WHERE s.curso_id = ${curso.id}
-    ORDER BY s.orden, t.orden, d.orden
-  `;
+  // 3 parallel queries instead of N+1 nested queries
+  const [{ rows: seccionRows }, { rows: temaRows }, { rows: docRows }] = await Promise.all([
+    sql`SELECT id, slug, numero, titulo, subtitulo, bubble_label, bubble_title, num_style, orden
+        FROM secciones WHERE curso_id = ${curso.id} ORDER BY orden`,
+    sql`SELECT t.id, t.seccion_id, t.label, t.titulo, t.descripcion, t.pill, t.orden
+        FROM temas t
+        INNER JOIN secciones s ON s.id = t.seccion_id
+        WHERE s.curso_id = ${curso.id} ORDER BY t.orden`,
+    sql`SELECT d.id, d.tema_id, d.nombre, d.url, d.disponible, d.orden
+        FROM documentos d
+        INNER JOIN temas t ON t.id = d.tema_id
+        INNER JOIN secciones s ON s.id = t.seccion_id
+        WHERE s.curso_id = ${curso.id} ORDER BY d.orden`,
+  ]);
 
-  // Group flat rows into nested structure
-  const seccionMap = new Map<number, Seccion>();
-  const temaMap    = new Map<number, Tema>();
-
-  for (const r of rows) {
-    if (!seccionMap.has(r.s_id)) {
-      seccionMap.set(r.s_id, {
-        id: r.s_id, slug: r.s_slug, numero: r.s_numero,
-        titulo: r.s_titulo, subtitulo: r.s_subtitulo,
-        bubble_label: r.bubble_label, bubble_title: r.bubble_title,
-        num_style: r.num_style, orden: r.s_orden, temas: [],
-      });
-    }
-    if (r.t_id && !temaMap.has(r.t_id)) {
-      const tema: Tema = {
-        id: r.t_id, label: r.t_label, titulo: r.t_titulo,
-        descripcion: r.t_descripcion, pill: r.t_pill, documentos: [],
-      };
-      temaMap.set(r.t_id, tema);
-      seccionMap.get(r.s_id)!.temas.push(tema);
-    }
-    if (r.d_id && r.t_id) {
-      temaMap.get(r.t_id)!.documentos.push({
-        id: r.d_id, nombre: r.d_nombre, url: r.d_url, disponible: r.d_disponible,
-      });
-    }
+  // Group into nested structure in memory
+  const docsPerTema = new Map<number, Documento[]>();
+  for (const d of docRows) {
+    if (!docsPerTema.has(d.tema_id)) docsPerTema.set(d.tema_id, []);
+    docsPerTema.get(d.tema_id)!.push({ id: d.id, nombre: d.nombre, url: d.url, disponible: d.disponible });
   }
 
-  const secciones = Array.from(seccionMap.values()).sort((a, b) => a.orden - b.orden);
+  const temasPerSeccion = new Map<number, Tema[]>();
+  for (const t of temaRows) {
+    if (!temasPerSeccion.has(t.seccion_id)) temasPerSeccion.set(t.seccion_id, []);
+    temasPerSeccion.get(t.seccion_id)!.push({
+      id: t.id, label: t.label, titulo: t.titulo,
+      descripcion: t.descripcion, pill: t.pill,
+      documentos: docsPerTema.get(t.id) ?? [],
+    });
+  }
+
+  const secciones: Seccion[] = seccionRows.map(s => ({
+    id: s.id, slug: s.slug, numero: s.numero,
+    titulo: s.titulo, subtitulo: s.subtitulo,
+    bubble_label: s.bubble_label, bubble_title: s.bubble_title,
+    num_style: s.num_style, orden: s.orden,
+    temas: temasPerSeccion.get(s.id) ?? [],
+  }));
+
   return { curso, secciones };
 }
 

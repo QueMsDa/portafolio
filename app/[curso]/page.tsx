@@ -5,6 +5,7 @@ import UnitNav from '@/components/UnitNav';
 import type { Seccion, Tema } from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
+export const maxDuration = 30;
 
 interface Props { params: Promise<{ curso: string }> }
 
