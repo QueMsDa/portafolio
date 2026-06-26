@@ -141,30 +141,65 @@ export async function getCurso(slug: string): Promise<{ curso: Curso; secciones:
   if (!cursoRows.length) return null;
   const curso = cursoRows[0];
 
-  const { rows: seccionRows } = await sql<Omit<Seccion, 'temas'>>`
-    SELECT id, slug, numero, titulo, subtitulo, bubble_label, bubble_title, num_style, orden
-    FROM secciones WHERE curso_id = ${curso.id} ORDER BY orden
+  // Single JOIN query instead of N+1 nested queries
+  const { rows } = await sql`
+    SELECT
+      s.id          AS s_id,
+      s.slug        AS s_slug,
+      s.numero      AS s_numero,
+      s.titulo      AS s_titulo,
+      s.subtitulo   AS s_subtitulo,
+      s.bubble_label,
+      s.bubble_title,
+      s.num_style,
+      s.orden       AS s_orden,
+      t.id          AS t_id,
+      t.label       AS t_label,
+      t.titulo      AS t_titulo,
+      t.descripcion AS t_descripcion,
+      t.pill        AS t_pill,
+      t.orden       AS t_orden,
+      d.id          AS d_id,
+      d.nombre      AS d_nombre,
+      d.url         AS d_url,
+      d.disponible  AS d_disponible,
+      d.orden       AS d_orden
+    FROM secciones s
+    LEFT JOIN temas      t ON t.seccion_id = s.id
+    LEFT JOIN documentos d ON d.tema_id    = t.id
+    WHERE s.curso_id = ${curso.id}
+    ORDER BY s.orden, t.orden, d.orden
   `;
 
-  const secciones: Seccion[] = await Promise.all(
-    seccionRows.map(async (s) => {
-      const { rows: temaRows } = await sql<Omit<Tema, 'documentos'>>`
-        SELECT id, label, titulo, descripcion, pill FROM temas
-        WHERE seccion_id = ${s.id} ORDER BY orden
-      `;
-      const temas: Tema[] = await Promise.all(
-        temaRows.map(async (t) => {
-          const { rows: docRows } = await sql<Documento>`
-            SELECT id, nombre, url, disponible FROM documentos
-            WHERE tema_id = ${t.id} ORDER BY orden
-          `;
-          return { ...t, documentos: docRows };
-        })
-      );
-      return { ...s, temas };
-    })
-  );
+  // Group flat rows into nested structure
+  const seccionMap = new Map<number, Seccion>();
+  const temaMap    = new Map<number, Tema>();
 
+  for (const r of rows) {
+    if (!seccionMap.has(r.s_id)) {
+      seccionMap.set(r.s_id, {
+        id: r.s_id, slug: r.s_slug, numero: r.s_numero,
+        titulo: r.s_titulo, subtitulo: r.s_subtitulo,
+        bubble_label: r.bubble_label, bubble_title: r.bubble_title,
+        num_style: r.num_style, orden: r.s_orden, temas: [],
+      });
+    }
+    if (r.t_id && !temaMap.has(r.t_id)) {
+      const tema: Tema = {
+        id: r.t_id, label: r.t_label, titulo: r.t_titulo,
+        descripcion: r.t_descripcion, pill: r.t_pill, documentos: [],
+      };
+      temaMap.set(r.t_id, tema);
+      seccionMap.get(r.s_id)!.temas.push(tema);
+    }
+    if (r.d_id && r.t_id) {
+      temaMap.get(r.t_id)!.documentos.push({
+        id: r.d_id, nombre: r.d_nombre, url: r.d_url, disponible: r.d_disponible,
+      });
+    }
+  }
+
+  const secciones = Array.from(seccionMap.values()).sort((a, b) => a.orden - b.orden);
   return { curso, secciones };
 }
 
