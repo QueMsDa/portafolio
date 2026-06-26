@@ -82,9 +82,10 @@ export default async function CursoPage({ params }: Props) {
 
       <section className="section">
         {curso.tiene_unidades ? (
-          <UnitNav secciones={secciones}>
-            {(active) => <CardGrid seccion={active} />}
-          </UnitNav>
+          <UnitNav
+            secciones={secciones}
+            panels={secciones.map(s => <CardGrid key={s.id} seccion={s} />)}
+          />
         ) : (
           <>
             {secciones[0] && <CardGrid seccion={secciones[0]} />}

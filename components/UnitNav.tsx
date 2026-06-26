@@ -4,10 +4,10 @@ import type { Seccion } from '@/lib/db';
 
 interface Props {
   secciones: Seccion[];
-  children: (active: Seccion) => React.ReactNode;
+  panels: React.ReactNode[];
 }
 
-export default function UnitNav({ secciones, children }: Props) {
+export default function UnitNav({ secciones, panels }: Props) {
   const [activeIdx, setActiveIdx] = useState(0);
   const active = secciones[activeIdx];
 
@@ -36,7 +36,7 @@ export default function UnitNav({ secciones, children }: Props) {
           <h2 className="unit-section__title">{active.titulo}</h2>
           {active.subtitulo && <p className="unit-section__sub">{active.subtitulo}</p>}
         </div>
-        {children(active)}
+        {panels[activeIdx]}
       </div>
     </>
   );
