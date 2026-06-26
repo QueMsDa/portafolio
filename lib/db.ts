@@ -1,4 +1,5 @@
 import { sql } from '@vercel/postgres';
+import { cache } from 'react';
 
 export { sql };
 
@@ -134,7 +135,7 @@ export type Documento = {
   disponible: boolean;
 };
 
-export async function getCurso(slug: string): Promise<{ curso: Curso; secciones: Seccion[] } | null> {
+export const getCurso = cache(async function getCurso(slug: string): Promise<{ curso: Curso; secciones: Seccion[] } | null> {
   const { rows: cursoRows } = await sql<Curso>`
     SELECT * FROM cursos WHERE slug = ${slug}
   `;
@@ -185,7 +186,7 @@ export async function getCurso(slug: string): Promise<{ curso: Curso; secciones:
   }));
 
   return { curso, secciones };
-}
+});
 
 export async function getProyectos(): Promise<Proyecto[]> {
   const { rows } = await sql<Proyecto>`

@@ -11,9 +11,13 @@ interface Props { params: Promise<{ curso: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { curso: slug } = await params;
-  const data = await getCurso(slug);
-  if (!data) return { title: 'Curso no encontrado' };
-  return { title: data.curso.nombre };
+  try {
+    const data = await getCurso(slug);
+    if (!data) return { title: 'Curso no encontrado' };
+    return { title: data.curso.nombre };
+  } catch {
+    return { title: slug };
+  }
 }
 
 function DocList({ tema }: { tema: Tema }) {
