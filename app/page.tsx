@@ -11,6 +11,7 @@ const CURSOS = [
   { slug: 'riesgos-ambientales', nombre: 'Riesgos Ambientales',        icon: '◉', desc: 'Identificación, evaluación y planes de manejo' },
   { slug: 'topicos-pml',         nombre: 'Tópicos de PML',             icon: '◎', desc: 'Principios, herramientas e implementación de PML' },
   { slug: 'diseno-plantas',      nombre: 'Diseño de Plantas',          icon: '◈', desc: 'Tratamiento secundario, UASB, MBBR y planeación de instalaciones' },
+];
 
 export default function Home() {
   return (
