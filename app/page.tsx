@@ -43,7 +43,6 @@ export default function Home() {
       <div className="data-row">
         <div className="data-row__inner">
           {[
-            { value: '8.º', label: 'Semestre' },
             { value: '4', label: 'Apps web' },
             { value: 'ArcGIS', label: 'GIS' },
             { value: 'HEC-HMS', label: 'Modelamiento' },
@@ -61,7 +60,7 @@ export default function Home() {
       <section className="section">
         <div className="section-head">
           <p className="section-head__label">Portafolios</p>
-          <h2 className="section-head__title">Cursos del semestre</h2>
+          <h2 className="section-head__title">Cursos del portafolio</h2>
         </div>
         <div className="courses-grid">
           {CURSOS.map(c => (
