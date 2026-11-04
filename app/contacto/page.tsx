@@ -12,7 +12,7 @@ export default function Contacto() {
         <p className="page-hero__eyebrow">Karsten García Palomino</p>
         <h1 className="page-hero__title">Ponerse en contacto</h1>
         <Image
-          src="/assets/yo sin fondo.png"
+          src="/assets/foto-perfil.jpg"
           alt="Karsten García Palomino"
           width={100} height={100}
           style={{ margin: '1.25rem auto 0', borderRadius: '50%', border: '2px solid var(--border-em)' }}
