@@ -16,20 +16,23 @@ const CURSOS = [
   { href: '/tecnologias-limpias', nombre: 'Tecnologías Limpias' },
   { href: '/riesgos-ambientales', nombre: 'Riesgos Ambientales' },
   { href: '/topicos-pml',         nombre: 'Tópicos de PML' },
+  { href: '/diseno-plantas',      nombre: 'Diseño de Plantas' },
 ];
 
 const GALLERY = [
-  { src: '/assets/yo.jpg',                   alt: 'Karsten perfil' },
+  { src: '/assets/foto-perfil.jpg',          alt: 'Karsten perfil' },
   { src: '/assets/yo de viaje .jpg',         alt: 'Karsten de viaje' },
   { src: '/assets/disparando.jpg',           alt: 'Karsten en práctica' },
   { src: '/assets/20260317_110410.png',      alt: 'Karsten campo' },
+  { src: '/assets/campo-1.jpg',              alt: 'Karsten en trabajo de campo con megáfono' },
+  { src: '/assets/campo-2.jpg',              alt: 'Karsten en trabajo de campo en San Sebastián' },
 ];
 
 export default function SobreMi() {
   return (
     <>
       <header className="page-hero">
-        <p className="page-hero__eyebrow">Portafolio · UAC 2026</p>
+        <p className="page-hero__eyebrow">Portafolio · UAC </p>
         <h1 className="page-hero__title">Sobre mí</h1>
         <p className="page-hero__lead">Estudiante de Ingeniería Ambiental, desarrollador web y curioso permanente.</p>
       </header>
@@ -37,7 +40,7 @@ export default function SobreMi() {
       <div className="profile-wrap">
         <div>
           <Image
-            src="/assets/yo.jpg"
+            src="/assets/foto-perfil.jpg"
             alt="Karsten García Palomino"
             width={240} height={240}
             className="profile-photo"
@@ -57,7 +60,7 @@ export default function SobreMi() {
             con gestión de outfits.
           </p>
           <p>
-            Nací en Argentina y vivo en Cusco. Eso me dio una perspectiva doble — técnica y territorial — que llevo a
+            Nací en Perú y vivo en Cusco, pero viví unos años en Argentina y eso me dio una perspectiva doble — técnica y territorial — que llevo a
             cada proyecto. Me interesa la intersección entre ingeniería ambiental y tecnología como palanca de cambio
             en contextos con limitado acceso a herramientas especializadas.
           </p>

@@ -31,7 +31,7 @@ export default function Home() {
           </div>
         </div>
         <Image
-          src="/assets/yo sin fondo.png"
+          src="/assets/foto-perfil.jpg"
           alt="Foto de Karsten García Palomino"
           width={220} height={220}
           className="hero-home__photo"
